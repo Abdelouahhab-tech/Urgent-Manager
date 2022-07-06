@@ -170,6 +170,7 @@
             this.gtxtUpdatedPass.TextOffset = new System.Drawing.Point(10, 0);
             this.gtxtUpdatedPass.UseSystemPasswordChar = true;
             this.gtxtUpdatedPass.Visible = false;
+            this.gtxtUpdatedPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtUpdatedPass_KeyDown);
             // 
             // icEyes
             // 
@@ -398,8 +399,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(755, 600);
-            this.MinimumSize = new System.Drawing.Size(755, 600);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
