@@ -9,4 +9,6 @@ C:\Users\21267\documents\visual studio 2015\Projects\Urgent Manager\Urgent Manag
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\Guna.UI2.dll
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.Alimentation.resources
+C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.Optimisation.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent Manager.csprojResolveAssemblyReference.cache
+C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.OptimaisationWindows.UrgentManager.resources

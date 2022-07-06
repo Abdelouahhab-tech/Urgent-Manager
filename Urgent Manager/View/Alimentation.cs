@@ -12,6 +12,7 @@ namespace Urgent_Manager.View
 {
     public partial class Alimentation : Form
     {
+        private bool isMaximized = false;
         public Alimentation()
         {
             InitializeComponent();
@@ -21,10 +22,6 @@ namespace Urgent_Manager.View
         {
             lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:MM:ss");
             timer1.Start();
-            guna2DataGridView1.Rows.Add("hello", "hjsxdghjsd");
-            guna2DataGridView1.Rows.Add("hello", "hjsxdghjsd");
-            guna2DataGridView1.Rows.Add("hello", "hjsxdghjsd");
-            guna2DataGridView1.Rows.Add("hello", "hjsxdghjsd");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
