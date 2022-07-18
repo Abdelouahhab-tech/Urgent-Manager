@@ -29,5 +29,11 @@ namespace Urgent_Manager.View.OptimaisationWindows
                 e.Effect = DragDropEffects.All;
             }
         }
+
+        private void btnUrgentDelete_Click(object sender, EventArgs e)
+        {
+            ArchivedUrgents archive = new ArchivedUrgents();
+            archive.ShowDialog();
+        }
     }
 }

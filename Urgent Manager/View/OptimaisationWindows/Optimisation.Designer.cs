@@ -30,23 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.sideBar = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.sideBar = new System.Windows.Forms.Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.icUrgent = new FontAwesome.Sharp.IconButton();
             this.icBarrs = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
-            this.sideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sideBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,63 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 47);
             this.panel1.TabIndex = 0;
-            // 
-            // lblUser
-            // 
-            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(726, 14);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(121, 19);
-            this.lblUser.TabIndex = 6;
-            this.lblUser.Text = " Welcome Abdo";
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(453, 14);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(0, 19);
-            this.lblDate.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // sideBar
-            // 
-            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.sideBar.Controls.Add(this.btnLogout);
-            this.sideBar.Controls.Add(this.iconButton1);
-            this.sideBar.Controls.Add(this.icUrgent);
-            this.sideBar.Controls.Add(this.icBarrs);
-            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sideBar.Location = new System.Drawing.Point(0, 47);
-            this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(204, 653);
-            this.sideBar.TabIndex = 1;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(204, 47);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(996, 653);
-            this.mainPanel.TabIndex = 2;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.panel1;
-            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2ControlBox3
             // 
@@ -144,8 +87,61 @@
             this.guna2ControlBox2.Size = new System.Drawing.Size(41, 47);
             this.guna2ControlBox2.TabIndex = 7;
             // 
+            // lblUser
+            // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(726, 14);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(121, 19);
+            this.lblUser.TabIndex = 6;
+            this.lblUser.Text = " Welcome Abdo";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(453, 14);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(0, 19);
+            this.lblDate.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Urgent_Manager.Properties.Resources.aptiveDark;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(153, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // sideBar
+            // 
+            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.sideBar.Controls.Add(this.btnLogout);
+            this.sideBar.Controls.Add(this.iconButton1);
+            this.sideBar.Controls.Add(this.icUrgent);
+            this.sideBar.Controls.Add(this.icBarrs);
+            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sideBar.Location = new System.Drawing.Point(0, 47);
+            this.sideBar.Name = "sideBar";
+            this.sideBar.Size = new System.Drawing.Size(204, 653);
+            this.sideBar.TabIndex = 1;
+            // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -158,12 +154,12 @@
             this.btnLogout.Image = global::Urgent_Manager.Properties.Resources.turn_off;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLogout.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnLogout.Location = new System.Drawing.Point(-1, 576);
+            this.btnLogout.Location = new System.Drawing.Point(-1, 605);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(120)))));
             this.btnLogout.Size = new System.Drawing.Size(204, 45);
             this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Se déconnecter";
+            this.btnLogout.Text = "Log Out";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(10, 0);
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -186,7 +182,7 @@
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(204, 38);
             this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "Gestion d\'archive\r\n";
+            this.iconButton1.Text = "    Archive Management\r\n";
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
@@ -208,7 +204,7 @@
             this.icUrgent.Name = "icUrgent";
             this.icUrgent.Size = new System.Drawing.Size(204, 38);
             this.icUrgent.TabIndex = 0;
-            this.icUrgent.Text = "    Gestion des Urgents";
+            this.icUrgent.Text = "    Urgent Management\r\n";
             this.icUrgent.UseVisualStyleBackColor = true;
             this.icUrgent.Click += new System.EventHandler(this.icUrgent_Click);
             // 
@@ -232,15 +228,20 @@
             this.icBarrs.UseVisualStyleBackColor = false;
             this.icBarrs.Click += new System.EventHandler(this.icBarrs_Click);
             // 
-            // pictureBox1
+            // mainPanel
             // 
-            this.pictureBox1.Image = global::Urgent_Manager.Properties.Resources.aptiveDark;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(204, 47);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(996, 653);
+            this.mainPanel.TabIndex = 2;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panel1;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2Elipse1
             // 
@@ -263,8 +264,8 @@
             this.Load += new System.EventHandler(this.Optimisation_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.sideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.sideBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

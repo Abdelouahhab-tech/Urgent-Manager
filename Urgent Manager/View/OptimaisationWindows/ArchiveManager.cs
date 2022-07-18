@@ -16,5 +16,10 @@ namespace Urgent_Manager.View.OptimaisationWindows
         {
             InitializeComponent();
         }
+
+        private void ArchiveManager_Load(object sender, EventArgs e)
+        {
+            gdateTimeUrgent.Value = DateTime.Now;
+        }
     }
 }

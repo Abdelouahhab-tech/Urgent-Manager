@@ -69,13 +69,14 @@ namespace Urgent_Manager
                     gtxtUpdatedPass.Visible = false;
                     icUpdatedPass.Visible = false;
                     gtxtUserName.Visible = true;
+                    gtxtUserName.Focus();
                     gtxtPass.Visible = true;
                     icEyes.Visible = true;
                     btnLogin.Visible = true;
                     btnLogin.Location = new Point(28,400);
                     this.Size = new Size(755, 600);
                     btnLogin.Image = Properties.Resources.user__1_;
-                    btnLogin.Text = "Connexion";
+                    btnLogin.Text = "Log In";
                 }
                 else
                 {
@@ -86,7 +87,7 @@ namespace Urgent_Manager
                     btnLogin.Location = new Point(28, 400);
                     this.Size = new Size(755, 600);
                     btnLogin.Image = Properties.Resources.user__1_;
-                    btnLogin.Text = "Connexion";
+                    btnLogin.Text = "Log In";
                 }
             }
             else
@@ -98,7 +99,7 @@ namespace Urgent_Manager
                 btnLogin.Location = new Point(28, 270);
                 this.Size = new Size(755, 500);
                 btnLogin.Image = Properties.Resources.user__1_;
-                btnLogin.Text = "Connexion";
+                btnLogin.Text = "Log In";
                 gtxtUserName.Visible = false;
                 gtxtUpdatedPass.Visible = false;
                 icUpdatedPass.Visible = false;
@@ -125,13 +126,14 @@ namespace Urgent_Manager
                             if (isUpdated)
                             {
                                 // Connect The Specific User To His Window
-                                update = false;
+                                update = true;
                                 MessageBox.Show("Welcome " + cmbRoles.Text);
                             }
                             else
                             {
                                 update = true;
                                 gtxtUpdatedPass.Visible = true;
+                                gtxtUpdatedPass.Focus();
                                 icUpdatedPass.Visible = true;
                                 gtxtUserName.Visible = true;
                                 gtxtPass.Visible = true;
@@ -139,8 +141,13 @@ namespace Urgent_Manager
                                 btnLogin.Visible = true;
                                 btnLogin.Location = new Point(28, 464);
                                 btnLogin.Image = Properties.Resources.update;
-                                btnLogin.Text = "Modifier";
+                                btnLogin.Text = "Update";
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sorry You Are Not Authorized To This Session !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            init();
                         }
                     }
                     else
@@ -199,7 +206,7 @@ namespace Urgent_Manager
             icEyes.Visible = false;
             icUpdatedPass.Visible = false;
             btnLogin.Visible = false;
-            cmbRoles.Text = "";
+            cmbRoles.SelectedIndex = -1;
         }
 
         private void gtxtUpdatedPass_KeyDown(object sender, KeyEventArgs e)

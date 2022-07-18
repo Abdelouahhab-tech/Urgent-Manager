@@ -20,18 +20,29 @@ namespace Urgent_Manager.View
 
         private void Alimentation_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:MM:ss");
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:MM:ss");
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             guna2ControlBox2.PerformClick();
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gtxtScanne_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnScanneUrgent.PerformClick();
         }
     }
 }

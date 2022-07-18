@@ -79,6 +79,108 @@
     <Compile Include="View\Alimentation.Designer.cs">
       <DependentUpon>Alimentation.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DashBoard\Area.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Area.Designer.cs">
+      <DependentUpon>Area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Bobine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Bobine.Designer.cs">
+      <DependentUpon>Bobine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Family.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Family.Designer.cs">
+      <DependentUpon>Family.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Group.Designer.cs">
+      <DependentUpon>Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Kit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Kit.Designer.cs">
+      <DependentUpon>Kit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Machine.Designer.cs">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Marker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Marker.Designer.cs">
+      <DependentUpon>Marker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Protection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Protection.Designer.cs">
+      <DependentUpon>Protection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Seal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Seal.Designer.cs">
+      <DependentUpon>Seal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Terminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Terminal.Designer.cs">
+      <DependentUpon>Terminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Tool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Tool.Designer.cs">
+      <DependentUpon>Tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\Wire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\Wire.Designer.cs">
+      <DependentUpon>Wire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoard\WireData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoard\WireData.Designer.cs">
+      <DependentUpon>WireData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Operateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Operateur.Designer.cs">
+      <DependentUpon>Operateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OptimaisationWindows\ArchivedUrgents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OptimaisationWindows\ArchivedUrgents.Designer.cs">
+      <DependentUpon>ArchivedUrgents.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\OptimaisationWindows\ArchiveManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +214,60 @@
     </Compile>
     <EmbeddedResource Include="View\Alimentation.resx">
       <DependentUpon>Alimentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Area.resx">
+      <DependentUpon>Area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Bobine.resx">
+      <DependentUpon>Bobine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Family.resx">
+      <DependentUpon>Family.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Group.resx">
+      <DependentUpon>Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Kit.resx">
+      <DependentUpon>Kit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Machine.resx">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Marker.resx">
+      <DependentUpon>Marker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Protection.resx">
+      <DependentUpon>Protection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Seal.resx">
+      <DependentUpon>Seal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Terminal.resx">
+      <DependentUpon>Terminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Tool.resx">
+      <DependentUpon>Tool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\Wire.resx">
+      <DependentUpon>Wire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoard\WireData.resx">
+      <DependentUpon>WireData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Operateur.resx">
+      <DependentUpon>Operateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OptimaisationWindows\ArchivedUrgents.resx">
+      <DependentUpon>ArchivedUrgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OptimaisationWindows\ArchiveManager.resx">
+      <DependentUpon>ArchiveManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\OptimaisationWindows\Optimisation.resx">
       <DependentUpon>Optimisation.cs</DependentUpon>
@@ -170,6 +326,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarmDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminalR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminalSealD - Copie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminalSealG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

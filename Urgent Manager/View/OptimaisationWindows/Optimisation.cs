@@ -16,18 +16,19 @@ namespace Urgent_Manager.View
         public Optimisation()
         {
             InitializeComponent();
+            timer1.Start();
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            subForm(new UrgentManager());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:MM:ss");
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void Optimisation_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:MM:ss");
-            timer1.Start();
-            subForm(new UrgentManager());
+
         }
 
         private void icBarrs_Click(object sender, EventArgs e)

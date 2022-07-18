@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Urgent_Manager.View;
+using Urgent_Manager.View.DashBoard;
 
 namespace Urgent_Manager
 {
@@ -17,7 +18,7 @@ namespace Urgent_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Optimisation());
+            Application.Run(new Dashboard());
         }
     }
 }

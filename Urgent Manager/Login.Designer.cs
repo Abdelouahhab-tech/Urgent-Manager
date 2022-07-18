@@ -46,6 +46,9 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +103,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(364, 31);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Sélectionner votre rôle pour se connecter\r\n";
+            this.label3.Text = "Choose Your Role To Sign In\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnLogin
@@ -116,11 +120,12 @@
             this.btnLogin.Image = global::Urgent_Manager.Properties.Resources.user__1_;
             this.btnLogin.ImageOffset = new System.Drawing.Point(-10, 0);
             this.btnLogin.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLogin.IndicateFocus = true;
             this.btnLogin.Location = new System.Drawing.Point(28, 464);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(364, 44);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Connexion";
+            this.btnLogin.Text = "Log In";
             this.btnLogin.Visible = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -163,11 +168,11 @@
             this.gtxtUpdatedPass.Name = "gtxtUpdatedPass";
             this.gtxtUpdatedPass.PasswordChar = '●';
             this.gtxtUpdatedPass.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
-            this.gtxtUpdatedPass.PlaceholderText = "Modifier votre mot de passe";
+            this.gtxtUpdatedPass.PlaceholderText = "Update Your Password";
             this.gtxtUpdatedPass.SelectedText = "";
             this.gtxtUpdatedPass.Size = new System.Drawing.Size(364, 41);
             this.gtxtUpdatedPass.TabIndex = 3;
-            this.gtxtUpdatedPass.TextOffset = new System.Drawing.Point(10, 0);
+            this.gtxtUpdatedPass.TextOffset = new System.Drawing.Point(63, 0);
             this.gtxtUpdatedPass.UseSystemPasswordChar = true;
             this.gtxtUpdatedPass.Visible = false;
             this.gtxtUpdatedPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtUpdatedPass_KeyDown);
@@ -211,11 +216,11 @@
             this.gtxtPass.Name = "gtxtPass";
             this.gtxtPass.PasswordChar = '●';
             this.gtxtPass.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
-            this.gtxtPass.PlaceholderText = "Mot de passe";
+            this.gtxtPass.PlaceholderText = "Passeword";
             this.gtxtPass.SelectedText = "";
             this.gtxtPass.Size = new System.Drawing.Size(364, 41);
             this.gtxtPass.TabIndex = 2;
-            this.gtxtPass.TextOffset = new System.Drawing.Point(10, 0);
+            this.gtxtPass.TextOffset = new System.Drawing.Point(63, 0);
             this.gtxtPass.UseSystemPasswordChar = true;
             this.gtxtPass.Visible = false;
             // 
@@ -242,11 +247,11 @@
             this.gtxtUserName.Name = "gtxtUserName";
             this.gtxtUserName.PasswordChar = '\0';
             this.gtxtUserName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
-            this.gtxtUserName.PlaceholderText = "Non d\'utilisateur";
+            this.gtxtUserName.PlaceholderText = "User Name";
             this.gtxtUserName.SelectedText = "";
             this.gtxtUserName.Size = new System.Drawing.Size(364, 41);
             this.gtxtUserName.TabIndex = 1;
-            this.gtxtUserName.TextOffset = new System.Drawing.Point(10, 0);
+            this.gtxtUserName.TextOffset = new System.Drawing.Point(63, 0);
             this.gtxtUserName.Visible = false;
             // 
             // iconPictureBox2
@@ -288,7 +293,7 @@
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(364, 41);
             this.cmbRoles.TabIndex = 0;
-            this.cmbRoles.TextOffset = new System.Drawing.Point(55, 0);
+            this.cmbRoles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cmbRoles.SelectedIndexChanged += new System.EventHandler(this.cmbRoles_SelectedIndexChanged);
             // 
             // iconPictureBox1
@@ -311,7 +316,7 @@
             this.guna2ControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(379, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(353, 1);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox3.TabIndex = 2;
@@ -319,10 +324,14 @@
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom;
             this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ControlBox1.CustomIconSize = 15F;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.Red;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(408, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(401, 1);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 0;
@@ -342,6 +351,9 @@
             // 
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gradientPanel1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.gradientPanel1.Controls.Add(this.label5);
+            this.gradientPanel1.Controls.Add(this.label4);
+            this.gradientPanel1.Controls.Add(this.pictureBox2);
             this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
@@ -351,6 +363,40 @@
             this.gradientPanel1.Size = new System.Drawing.Size(302, 600);
             this.gradientPanel1.TabIndex = 0;
             this.gradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(8, 567);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(284, 26);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "All Rights Reserved | 2022 V1.0.0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(8, 541);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(284, 26);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Developed By Hamdach Abdelouahhab";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Urgent_Manager.Properties.Resources.alarmDark;
+            this.pictureBox2.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(78, 57);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -409,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -437,6 +484,9 @@
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMessages;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
