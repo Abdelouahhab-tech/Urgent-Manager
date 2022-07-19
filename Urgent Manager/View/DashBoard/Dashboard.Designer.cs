@@ -40,6 +40,8 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnArchiveManager = new FontAwesome.Sharp.IconButton();
+            this.btnUrgentManager = new FontAwesome.Sharp.IconButton();
             this.btnStatistics = new FontAwesome.Sharp.IconButton();
             this.btnCredentials = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -76,7 +78,7 @@
             this.NavBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.NavBar.Location = new System.Drawing.Point(0, 0);
             this.NavBar.Name = "NavBar";
-            this.NavBar.Size = new System.Drawing.Size(1200, 47);
+            this.NavBar.Size = new System.Drawing.Size(1253, 47);
             this.NavBar.TabIndex = 1;
             this.NavBar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NavBar_MouseDoubleClick);
             // 
@@ -87,7 +89,7 @@
             this.guna2ControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(1113, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(1166, 0);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(41, 47);
             this.guna2ControlBox3.TabIndex = 10;
@@ -98,7 +100,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(739, 14);
+            this.lblUser.Location = new System.Drawing.Point(765, 14);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(121, 19);
             this.lblUser.TabIndex = 6;
@@ -110,7 +112,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(453, 14);
+            this.lblDate.Location = new System.Drawing.Point(479, 14);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(0, 19);
             this.lblDate.TabIndex = 1;
@@ -122,7 +124,7 @@
             this.guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1158, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1211, 0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(41, 47);
             this.guna2ControlBox2.TabIndex = 9;
@@ -130,6 +132,8 @@
             // sideBar
             // 
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.sideBar.Controls.Add(this.btnArchiveManager);
+            this.sideBar.Controls.Add(this.btnUrgentManager);
             this.sideBar.Controls.Add(this.btnStatistics);
             this.sideBar.Controls.Add(this.btnCredentials);
             this.sideBar.Controls.Add(this.panelControls);
@@ -173,7 +177,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(204, 47);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(996, 653);
+            this.mainPanel.Size = new System.Drawing.Size(1049, 653);
             this.mainPanel.TabIndex = 3;
             // 
             // guna2DragControl1
@@ -187,6 +191,52 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnArchiveManager
+            // 
+            this.btnArchiveManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArchiveManager.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnArchiveManager.FlatAppearance.BorderSize = 0;
+            this.btnArchiveManager.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(120)))));
+            this.btnArchiveManager.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.btnArchiveManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArchiveManager.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArchiveManager.ForeColor = System.Drawing.Color.White;
+            this.btnArchiveManager.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnArchiveManager.IconColor = System.Drawing.Color.White;
+            this.btnArchiveManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnArchiveManager.IconSize = 35;
+            this.btnArchiveManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArchiveManager.Location = new System.Drawing.Point(0, 504);
+            this.btnArchiveManager.Name = "btnArchiveManager";
+            this.btnArchiveManager.Size = new System.Drawing.Size(204, 38);
+            this.btnArchiveManager.TabIndex = 7;
+            this.btnArchiveManager.Text = "    Archive Manager";
+            this.btnArchiveManager.UseVisualStyleBackColor = true;
+            this.btnArchiveManager.Click += new System.EventHandler(this.btnArchiveManager_Click);
+            // 
+            // btnUrgentManager
+            // 
+            this.btnUrgentManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUrgentManager.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnUrgentManager.FlatAppearance.BorderSize = 0;
+            this.btnUrgentManager.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(120)))));
+            this.btnUrgentManager.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.btnUrgentManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrgentManager.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrgentManager.ForeColor = System.Drawing.Color.White;
+            this.btnUrgentManager.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.btnUrgentManager.IconColor = System.Drawing.Color.White;
+            this.btnUrgentManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUrgentManager.IconSize = 35;
+            this.btnUrgentManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUrgentManager.Location = new System.Drawing.Point(0, 460);
+            this.btnUrgentManager.Name = "btnUrgentManager";
+            this.btnUrgentManager.Size = new System.Drawing.Size(204, 38);
+            this.btnUrgentManager.TabIndex = 6;
+            this.btnUrgentManager.Text = "    Urgent Manager";
+            this.btnUrgentManager.UseVisualStyleBackColor = true;
+            this.btnUrgentManager.Click += new System.EventHandler(this.btnUrgentManager_Click);
             // 
             // btnStatistics
             // 
@@ -209,6 +259,7 @@
             this.btnStatistics.TabIndex = 5;
             this.btnStatistics.Text = "    Urgent Statistics";
             this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnCredentials
             // 
@@ -573,7 +624,7 @@
             this.btnLogout.Image = global::Urgent_Manager.Properties.Resources.turn_off;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLogout.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnLogout.Location = new System.Drawing.Point(0, 614);
+            this.btnLogout.Location = new System.Drawing.Point(0, 615);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(120)))));
             this.btnLogout.Size = new System.Drawing.Size(204, 38);
@@ -621,7 +672,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.ClientSize = new System.Drawing.Size(1253, 700);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.NavBar);
@@ -670,5 +721,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Timer timer1;
+        private FontAwesome.Sharp.IconButton btnArchiveManager;
+        private FontAwesome.Sharp.IconButton btnUrgentManager;
     }
 }

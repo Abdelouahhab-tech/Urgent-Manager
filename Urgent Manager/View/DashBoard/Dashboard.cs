@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Urgent_Manager.View.OptimaisationWindows;
 
 namespace Urgent_Manager.View.DashBoard
 {
@@ -31,12 +32,16 @@ namespace Urgent_Manager.View.DashBoard
                 panelControls.Visible = false;
                 btnCredentials.Location = new Point(0, 57);
                 btnStatistics.Location = new Point(0, 95);
+                btnUrgentManager.Location = new Point(0, 133);
+                btnArchiveManager.Location = new Point(0, 171);
             }
             else
             {
                 panelControls.Visible = true;
                 btnCredentials.Location = new Point(0, 378);
                 btnStatistics.Location = new Point(0, 416);
+                btnUrgentManager.Location = new Point(0, 460);
+                btnArchiveManager.Location = new Point(0, 504);
             }
         }
 
@@ -45,6 +50,8 @@ namespace Urgent_Manager.View.DashBoard
 
             btnCredentials.Location = new Point(0, 57);
             btnStatistics.Location = new Point(0, 95);
+            btnUrgentManager.Location = new Point(0, 133);
+            btnArchiveManager.Location = new Point(0, 171);
         }
 
         private void btnMachine_Click(object sender, EventArgs e)
@@ -144,6 +151,21 @@ namespace Urgent_Manager.View.DashBoard
         private void btnCredentials_Click(object sender, EventArgs e)
         {
             subForm(new User());
+        }
+
+        private void btnUrgentManager_Click(object sender, EventArgs e)
+        {
+            subForm(new UrgentManager());
+        }
+
+        private void btnArchiveManager_Click(object sender, EventArgs e)
+        {
+            subForm(new ArchiveManager());
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            subForm(new Statistics());
         }
     }
 }
