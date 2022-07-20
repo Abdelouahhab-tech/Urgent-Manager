@@ -39,4 +39,5 @@ C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manag
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\LiveCharts.xml
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\eCryptography.dll
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent Manager.csprojResolveAssemblyReference.cache

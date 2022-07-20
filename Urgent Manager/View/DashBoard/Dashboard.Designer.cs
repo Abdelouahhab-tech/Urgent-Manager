@@ -34,16 +34,13 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sideBar = new System.Windows.Forms.Panel();
-            this.panelControls = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnArchiveManager = new FontAwesome.Sharp.IconButton();
             this.btnUrgentManager = new FontAwesome.Sharp.IconButton();
             this.btnStatistics = new FontAwesome.Sharp.IconButton();
             this.btnCredentials = new FontAwesome.Sharp.IconButton();
+            this.panelControls = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnMarker = new FontAwesome.Sharp.IconButton();
@@ -59,11 +56,15 @@
             this.btnArea = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.icUrgent = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.NavBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sideBar.SuspendLayout();
             this.panelControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NavBar
@@ -129,9 +130,20 @@
             this.guna2ControlBox2.Size = new System.Drawing.Size(41, 47);
             this.guna2ControlBox2.TabIndex = 9;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Urgent_Manager.Properties.Resources.aptiveDark;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(153, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // sideBar
             // 
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.sideBar.Controls.Add(this.label1);
             this.sideBar.Controls.Add(this.btnArchiveManager);
             this.sideBar.Controls.Add(this.btnUrgentManager);
             this.sideBar.Controls.Add(this.btnStatistics);
@@ -144,53 +156,6 @@
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(204, 653);
             this.sideBar.TabIndex = 2;
-            // 
-            // panelControls
-            // 
-            this.panelControls.AutoScroll = true;
-            this.panelControls.Controls.Add(this.iconButton1);
-            this.panelControls.Controls.Add(this.iconButton2);
-            this.panelControls.Controls.Add(this.btnMarker);
-            this.panelControls.Controls.Add(this.btnGroup);
-            this.panelControls.Controls.Add(this.btnProtection);
-            this.panelControls.Controls.Add(this.btnSeal);
-            this.panelControls.Controls.Add(this.btnMachine);
-            this.panelControls.Controls.Add(this.btnKit);
-            this.panelControls.Controls.Add(this.btnTerminal);
-            this.panelControls.Controls.Add(this.btnOutil);
-            this.panelControls.Controls.Add(this.btnBobine);
-            this.panelControls.Controls.Add(this.btnFamille);
-            this.panelControls.Controls.Add(this.btnArea);
-            this.panelControls.Location = new System.Drawing.Point(0, 63);
-            this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(204, 300);
-            this.panelControls.TabIndex = 3;
-            this.panelControls.Visible = false;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 10;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(204, 47);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1049, 653);
-            this.mainPanel.TabIndex = 3;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.NavBar;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnArchiveManager
             // 
@@ -207,7 +172,7 @@
             this.btnArchiveManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnArchiveManager.IconSize = 35;
             this.btnArchiveManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArchiveManager.Location = new System.Drawing.Point(0, 504);
+            this.btnArchiveManager.Location = new System.Drawing.Point(0, 549);
             this.btnArchiveManager.Name = "btnArchiveManager";
             this.btnArchiveManager.Size = new System.Drawing.Size(204, 38);
             this.btnArchiveManager.TabIndex = 7;
@@ -230,7 +195,7 @@
             this.btnUrgentManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUrgentManager.IconSize = 35;
             this.btnUrgentManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUrgentManager.Location = new System.Drawing.Point(0, 460);
+            this.btnUrgentManager.Location = new System.Drawing.Point(0, 505);
             this.btnUrgentManager.Name = "btnUrgentManager";
             this.btnUrgentManager.Size = new System.Drawing.Size(204, 38);
             this.btnUrgentManager.TabIndex = 6;
@@ -253,7 +218,7 @@
             this.btnStatistics.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStatistics.IconSize = 35;
             this.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistics.Location = new System.Drawing.Point(0, 416);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 461);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(204, 38);
             this.btnStatistics.TabIndex = 5;
@@ -276,13 +241,35 @@
             this.btnCredentials.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCredentials.IconSize = 35;
             this.btnCredentials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCredentials.Location = new System.Drawing.Point(0, 378);
+            this.btnCredentials.Location = new System.Drawing.Point(0, 423);
             this.btnCredentials.Name = "btnCredentials";
             this.btnCredentials.Size = new System.Drawing.Size(204, 38);
             this.btnCredentials.TabIndex = 4;
             this.btnCredentials.Text = "    User\'s Credentials";
             this.btnCredentials.UseVisualStyleBackColor = true;
             this.btnCredentials.Click += new System.EventHandler(this.btnCredentials_Click);
+            // 
+            // panelControls
+            // 
+            this.panelControls.AutoScroll = true;
+            this.panelControls.Controls.Add(this.iconButton1);
+            this.panelControls.Controls.Add(this.iconButton2);
+            this.panelControls.Controls.Add(this.btnMarker);
+            this.panelControls.Controls.Add(this.btnGroup);
+            this.panelControls.Controls.Add(this.btnProtection);
+            this.panelControls.Controls.Add(this.btnSeal);
+            this.panelControls.Controls.Add(this.btnMachine);
+            this.panelControls.Controls.Add(this.btnKit);
+            this.panelControls.Controls.Add(this.btnTerminal);
+            this.panelControls.Controls.Add(this.btnOutil);
+            this.panelControls.Controls.Add(this.btnBobine);
+            this.panelControls.Controls.Add(this.btnFamille);
+            this.panelControls.Controls.Add(this.btnArea);
+            this.panelControls.Location = new System.Drawing.Point(0, 108);
+            this.panelControls.Name = "panelControls";
+            this.panelControls.Size = new System.Drawing.Size(204, 300);
+            this.panelControls.TabIndex = 3;
+            this.panelControls.Visible = false;
             // 
             // iconButton1
             // 
@@ -649,7 +636,7 @@
             this.icUrgent.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icUrgent.IconSize = 35;
             this.icUrgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icUrgent.Location = new System.Drawing.Point(0, 19);
+            this.icUrgent.Location = new System.Drawing.Point(0, 64);
             this.icUrgent.Name = "icUrgent";
             this.icUrgent.Size = new System.Drawing.Size(204, 38);
             this.icUrgent.TabIndex = 0;
@@ -657,15 +644,42 @@
             this.icUrgent.UseVisualStyleBackColor = true;
             this.icUrgent.Click += new System.EventHandler(this.icUrgent_Click);
             // 
-            // pictureBox1
+            // guna2Elipse1
             // 
-            this.pictureBox1.Image = global::Urgent_Manager.Properties.Resources.aptiveDark;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(204, 47);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1049, 653);
+            this.mainPanel.TabIndex = 3;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.NavBar;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "DashBoard";
             // 
             // Dashboard
             // 
@@ -683,9 +697,10 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.NavBar.ResumeLayout(false);
             this.NavBar.PerformLayout();
-            this.sideBar.ResumeLayout(false);
-            this.panelControls.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.sideBar.ResumeLayout(false);
+            this.sideBar.PerformLayout();
+            this.panelControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -723,5 +738,6 @@
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton btnArchiveManager;
         private FontAwesome.Sharp.IconButton btnUrgentManager;
+        private System.Windows.Forms.Label label1;
     }
 }

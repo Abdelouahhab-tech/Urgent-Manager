@@ -30,28 +30,28 @@ namespace Urgent_Manager.View.DashBoard
             if (panelControls.Visible)
             {
                 panelControls.Visible = false;
-                btnCredentials.Location = new Point(0, 57);
-                btnStatistics.Location = new Point(0, 95);
-                btnUrgentManager.Location = new Point(0, 133);
-                btnArchiveManager.Location = new Point(0, 171);
+                btnCredentials.Location = new Point(0, 102);
+                btnStatistics.Location = new Point(0, 140);
+                btnUrgentManager.Location = new Point(0, 178);
+                btnArchiveManager.Location = new Point(0, 216);
             }
             else
             {
                 panelControls.Visible = true;
-                btnCredentials.Location = new Point(0, 378);
-                btnStatistics.Location = new Point(0, 416);
-                btnUrgentManager.Location = new Point(0, 460);
-                btnArchiveManager.Location = new Point(0, 504);
+                btnCredentials.Location = new Point(0, 423);
+                btnStatistics.Location = new Point(0, 461);
+                btnUrgentManager.Location = new Point(0, 499);
+                btnArchiveManager.Location = new Point(0, 537);
             }
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
 
-            btnCredentials.Location = new Point(0, 57);
-            btnStatistics.Location = new Point(0, 95);
-            btnUrgentManager.Location = new Point(0, 133);
-            btnArchiveManager.Location = new Point(0, 171);
+            btnCredentials.Location = new Point(0, 102);
+            btnStatistics.Location = new Point(0, 140);
+            btnUrgentManager.Location = new Point(0, 178);
+            btnArchiveManager.Location = new Point(0, 216);
         }
 
         private void btnMachine_Click(object sender, EventArgs e)

@@ -4,11 +4,231 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Urgent_Manager.Model;
 
 namespace Urgent_Manager.Controller
 {
     public class UserController
     {
 
+        // Insert Data To dbo_User
+       public void InsertUser(UserModel user)
+        {
+            try
+            {
+
+                    DbHelper.connection.Open();
+
+                    string QUERY = "INSERT INTO dbo_User VALUES(@userID,@Pass,@FullName,@role,@zone,@isUpdated,@EntryAgent)";
+
+                    SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                    cmd.Parameters.AddWithValue("@userID", user.UserName);
+                    string encryptedPass = Eramake.eCryptography.Encrypt(user.Password);
+                    cmd.Parameters.AddWithValue("@Pass", encryptedPass);
+                    cmd.Parameters.AddWithValue("@FullName", user.Fullname);
+                    cmd.Parameters.AddWithValue("@role", user.Role);
+                    cmd.Parameters.AddWithValue("@zone", user.Zone);
+                    cmd.Parameters.AddWithValue("@isUpdated", user.IsUpdated);
+                    cmd.Parameters.AddWithValue("@EntryAgent", user.Entry);
+
+                int result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                        MessageBox.Show("Data Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Sorry It Was An Error While Saving Your Data Try Again !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    DbHelper.connection.Close();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("An Error Accured While Adding Data \n\n" + ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Delete Data From dbo_User
+
+        public void DeleteUser(string ID)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "DELETE FROM dbo_User WHERE userID = @id";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@id", ID);
+                int result = cmd.ExecuteNonQuery();
+
+                if (result == 1)
+                    MessageBox.Show("Data Deleted Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Sorry It Was An Error While Deleting Your Data Try Again !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                DbHelper.connection.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("An Error Accured While Deleting The Required Data !\n\n"+ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Update Data From dbo_User
+
+        public void UpdateUser(UserModel user)
+        {
+            try
+            {
+
+                DbHelper.connection.Open();
+
+                string QUERY = "UPDATE dbo_User SET Pass=@Pass,FullName=@FullName,zone=@zone,role=@role,isUpdated=@isUpdated,EntryAgent=@EntryAgent WHERE userID = @id";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                string encryptedPass = Eramake.eCryptography.Encrypt(user.Password);
+                cmd.Parameters.AddWithValue("@Pass", encryptedPass);
+                cmd.Parameters.AddWithValue("@FullName", user.Fullname);
+                cmd.Parameters.AddWithValue("@zone", user.Zone);
+                cmd.Parameters.AddWithValue("@role", user.Role);
+                cmd.Parameters.AddWithValue("@isUpdated", user.IsUpdated);
+                cmd.Parameters.AddWithValue("@EntryAgent", user.Entry);
+                cmd.Parameters.AddWithValue("@id", user.UserName);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result == 1)
+                    MessageBox.Show("Data Updated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Sorry It Was An Error While Updating Your Data Try Again !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                DbHelper.connection.Close();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("It Was An Error While Updating Data Try Again !\n\n" + ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Check If The User Already Exist
+
+        public bool IsExist(string id)
+        {
+            try
+            {
+
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT * FROM dbo_User WHERE userID=@id";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    DbHelper.connection.Close();
+                    return true;
+                }
+                else
+                {
+                    DbHelper.connection.Close();
+                    return false;
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("It Was An Error ! \n\n" + ex.Message, "Failure", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+                return false;
+            }
+        }
+
+        // Get Data From dbo_User
+
+        public List<UserModel> fetch()
+        {
+            List<UserModel> list = new List<UserModel>();
+
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT * FROM dbo_User";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        UserModel user = new UserModel();
+                        user.UserName = reader[0].ToString();
+                        user.Password = reader[1].ToString();
+                        user.Fullname = reader[2].ToString();
+                        user.Role = reader[3].ToString();
+                        user.Zone = reader[4].ToString();
+                        user.IsUpdated = Convert.ToInt32(reader[5]);
+                        user.Entry = reader[6].ToString();
+                        list.Add(user);
+                    }
+
+                    DbHelper.connection.Close();
+                    return list;
+                }
+                else
+                {
+                    DbHelper.connection.Close();
+                    return list;
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("It Was An Error While Fethcing Data !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+                return list;
+            }
+        }
+
+        // Get Single User From dbo_User
+
+        public UserModel SingleRecord(string id)
+        {
+            UserModel user = new UserModel();
+
+            try
+            {
+
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT * FROM dbo_User WHERE userID=@userID";
+                SqlCommand cmd = new SqlCommand(QUERY,DbHelper.connection);
+                cmd.Parameters.AddWithValue("@userID", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        user.UserName = reader[0].ToString();
+                        user.Password = Eramake.eCryptography.Decrypt(reader[1].ToString());
+                        user.Fullname = reader[2].ToString();
+                        user.Role = reader[3].ToString();
+                        user.Zone = reader[4].ToString();
+                        user.IsUpdated = Convert.ToInt32(reader[5]);
+                    }
+
+                    DbHelper.connection.Close();
+                    return user;
+                }
+
+                DbHelper.connection.Close();
+                return user;
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("It Was An Error While Fetching Data Try Again ! \n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+                return user;
+            }
+        }
     }
 }

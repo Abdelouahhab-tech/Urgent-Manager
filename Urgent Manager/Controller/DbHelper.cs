@@ -10,6 +10,6 @@ namespace Urgent_Manager.Controller
     public class DbHelper
     {
         // Connection Instance
-        public static SqlConnection connection = new SqlConnection(@"");
+        public static SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=Express;User ID=Aptiv;Password=Aptiv22");
     }
 }
