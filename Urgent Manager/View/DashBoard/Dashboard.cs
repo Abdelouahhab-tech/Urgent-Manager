@@ -47,11 +47,47 @@ namespace Urgent_Manager.View.DashBoard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            if (Login.username != "")
+                lblUser.Text = "Welcome " + Login.username;
+            else
+                lblUser.Text = "";
             btnCredentials.Location = new Point(0, 102);
             btnStatistics.Location = new Point(0, 140);
             btnUrgentManager.Location = new Point(0, 178);
             btnArchiveManager.Location = new Point(0, 216);
+
+            // Give The Access Depend On User's Role
+            if(Login.role != "")
+            {
+                if(Login.role == "Entry Agent")
+                {
+                    btnCredentials.Visible = false;
+                    btnUrgentManager.Visible = false;
+                    btnArchiveManager.Visible = false;
+                    btnStatistics.Visible = false;
+                    panelControls.Height = 500;
+                    subForm(new WireData());
+                }
+                else if(Login.role == "Shift Leader")
+                {
+                    icUrgent.Visible = false;
+                    btnCredentials.Visible = false;
+                    btnArchiveManager.Visible = false;
+                    btnUrgentManager.Location = new Point(0, 64);
+                    btnStatistics.Location = new Point(0, 102);
+                    subForm(new Statistics());
+                }
+                else
+                {
+                    subForm(new Statistics());
+                }
+            }
+            else
+            {
+                Login log = new Login();
+                log.Show();
+                Close();
+            }
         }
 
         private void btnMachine_Click(object sender, EventArgs e)

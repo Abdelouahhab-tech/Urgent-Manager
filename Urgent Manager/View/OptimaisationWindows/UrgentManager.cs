@@ -35,5 +35,19 @@ namespace Urgent_Manager.View.OptimaisationWindows
             ArchivedUrgents archive = new ArchivedUrgents();
             archive.ShowDialog();
         }
+
+        private void UrgentManager_Load(object sender, EventArgs e)
+        {
+            gtxtSearch.Focus();
+            if(Login.role != "")
+            {
+                if (Login.role != "Administrator")
+                {
+                    icExport.Location = new Point(471, 23);
+                    icPrint.Location = new Point(420, 23);
+                    btnUrgentDelete.Visible = false;
+                }
+            }
+        }
     }
 }

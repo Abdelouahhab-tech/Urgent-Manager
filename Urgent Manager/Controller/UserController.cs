@@ -230,5 +230,95 @@ namespace Urgent_Manager.Controller
                 return user;
             }
         }
+
+        // Check If The User Is Authenticated
+
+        public bool IsAuth(string username,string password)
+        {
+            try
+            {
+
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT * FROM dbo_User WHERE userID=@userId and Pass=@pass";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@userId", username);
+                cmd.Parameters.AddWithValue("@pass", password);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    DbHelper.connection.Close();
+                    return true;
+                }
+                else
+                {
+                    DbHelper.connection.Close();
+                    return false;
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request!\n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+                return false;
+            }
+        }
+
+        // Check If The User Is Login For The First Time
+
+        public bool IsLoggingForTheFirstTime(string username)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+                string QUERY = "SELECT isUpdated FROM dbo_User WHERE userID=@userId and isUpdated=@isUpdated";
+                SqlCommand cmd = new SqlCommand(QUERY,DbHelper.connection);
+                cmd.Parameters.AddWithValue("@userID", username);
+                cmd.Parameters.AddWithValue("@isupdated", 1);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    DbHelper.connection.Close();
+                    return true;
+                }
+                else
+                {
+                    DbHelper.connection.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request Try Again !\n\n" + ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+                return false;
+            }
+        }
+
+        // Update User's Credentials
+
+        public int UpdatePass(string username,string pass)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "UPDATE dbo_User SET Pass= @pass,isUpdated=@isUpdated WHERE userID=@userId";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                cmd.Parameters.AddWithValue("@isUpdated", 1);
+                cmd.Parameters.AddWithValue("@userId", username);
+                int result = cmd.ExecuteNonQuery();
+                DbHelper.connection.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                DbHelper.connection.Close();
+                return 0;
+            }
+        }
     }
 }

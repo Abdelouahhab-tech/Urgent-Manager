@@ -17,6 +17,7 @@ namespace Urgent_Manager.View.DashBoard
 
         UserController userController = new UserController();
         UserModel user = new UserModel();
+  
         public User()
         {
             InitializeComponent();
@@ -39,14 +40,14 @@ namespace Urgent_Manager.View.DashBoard
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(gtxtUsername.Text.Trim() != "" && gtxtPass.Text.Trim()!= "" && cmbRole.Text.Trim() != "")
+            if(gtxtUsername.Text.Trim() != "" && gtxtPass.Text.Trim()!= "" && cmbRole.Text.Trim() != "" && gtxtPass.Text.Trim().Length >= 4)
             {
                 user.UserName = gtxtUsername.Text;
                 user.Password = gtxtPass.Text;
                 user.Fullname = gtxtFullName.Text != "" ? gtxtFullName.Text : "";
                 user.Role = cmbRole.Text;
                 user.Zone = cmbArea.Text != "" && cmbArea.Text != "None" ? cmbArea.Text : "";
-                user.Entry = "Admin";
+                user.Entry = Login.username != "" ? Login.username : "";
                 user.IsUpdated = chUpdate.Checked ? 1 : 0;
 
                 userController.InsertUser(user);
@@ -73,6 +74,12 @@ namespace Urgent_Manager.View.DashBoard
                     lblRole.ForeColor = Color.Red;
                     cmbRole.Focus();
                     cmbRole.FocusedState.BorderColor = Color.White;
+                }else if(gtxtPass.Text.Length < 4)
+                {
+                    lblPass.ForeColor = Color.Red;
+                    gtxtPass.Focus();
+                    gtxtPass.FocusedState.BorderColor = Color.White;
+                    MessageBox.Show("Password Must Be More Than Four Letters", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -105,7 +112,7 @@ namespace Urgent_Manager.View.DashBoard
             {
                 if (userController.IsExist(gtxtUsername.Text))
                 {
-                   if(gtxtPass.Text.Trim() != "" && cmbRole.Text != "")
+                   if(gtxtPass.Text.Trim() != "" && cmbRole.Text.Trim() != "" && gtxtPass.Text.Trim().Length >= 4)
                     {
                         UserModel user = new UserModel();
                         user.UserName = gtxtUsername.Text;
@@ -113,7 +120,7 @@ namespace Urgent_Manager.View.DashBoard
                         user.Role = cmbRole.Text;
                         user.Fullname = gtxtFullName.Text != "" ? gtxtFullName.Text : "";
                         user.Zone = cmbArea.Text != "" && cmbArea.Text != "None" ? cmbArea.Text : "";
-                        user.Entry = "Admin";
+                        user.Entry = Login.username != "" ? Login.username : "";
                         user.IsUpdated = chUpdate.Checked ? 1 : 0;
 
                         userController.UpdateUser(user);
@@ -133,6 +140,13 @@ namespace Urgent_Manager.View.DashBoard
                             lblRole.ForeColor = Color.Red;
                             cmbRole.Focus();
                             cmbRole.FocusedState.BorderColor = Color.White;
+                        }
+                        else if (gtxtPass.Text.Length < 4)
+                        {
+                            lblPass.ForeColor = Color.Red;
+                            gtxtPass.Focus();
+                            gtxtPass.FocusedState.BorderColor = Color.White;
+                            MessageBox.Show("Password Must Be More Than 4 Letters", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }

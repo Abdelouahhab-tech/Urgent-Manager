@@ -61,7 +61,7 @@
             // pieChart1
             // 
             this.pieChart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pieChart1.Location = new System.Drawing.Point(834, 98);
+            this.pieChart1.Location = new System.Drawing.Point(834, 91);
             this.pieChart1.Name = "pieChart1";
             this.pieChart1.Size = new System.Drawing.Size(248, 216);
             this.pieChart1.TabIndex = 1;
@@ -190,7 +190,7 @@
             // 
             this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cartesianChart1.Location = new System.Drawing.Point(17, 394);
+            this.cartesianChart1.Location = new System.Drawing.Point(12, 394);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(1144, 244);
             this.cartesianChart1.TabIndex = 6;

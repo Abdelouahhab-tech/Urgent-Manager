@@ -44,5 +44,10 @@ namespace Urgent_Manager.View
             if (e.KeyCode == Keys.Enter)
                 btnScanneUrgent.PerformClick();
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

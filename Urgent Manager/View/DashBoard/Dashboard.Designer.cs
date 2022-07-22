@@ -36,6 +36,7 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sideBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnArchiveManager = new FontAwesome.Sharp.IconButton();
             this.btnUrgentManager = new FontAwesome.Sharp.IconButton();
             this.btnStatistics = new FontAwesome.Sharp.IconButton();
@@ -60,7 +61,6 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.NavBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sideBar.SuspendLayout();
@@ -103,9 +103,8 @@
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(765, 14);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(121, 19);
+            this.lblUser.Size = new System.Drawing.Size(0, 19);
             this.lblUser.TabIndex = 6;
-            this.lblUser.Text = " Welcome Abdo";
             // 
             // lblDate
             // 
@@ -156,6 +155,18 @@
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(204, 653);
             this.sideBar.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "DashBoard";
             // 
             // btnArchiveManager
             // 
@@ -668,18 +679,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 29);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "DashBoard";
             // 
             // Dashboard
             // 

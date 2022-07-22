@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Urgent_Manager.Controller;
 using Urgent_Manager.Model;
+using Urgent_Manager.View;
+using Urgent_Manager.View.DashBoard;
 
 namespace Urgent_Manager
 {
@@ -16,6 +18,9 @@ namespace Urgent_Manager
     {
         private bool isUpdate = false;
         private bool update = false;
+        public static string username = "";
+        public static string role = "";
+        UserController controller = new UserController();
         public Login()
         {
             InitializeComponent();
@@ -62,9 +67,12 @@ namespace Urgent_Manager
 
         private void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbRoles.Text.Trim() != "Operateur")
+            if(cmbRoles.Text.Trim() != "Operator")
             {
                 update = false;
+                gtxtUserName.Text = "";
+                gtxtPass.Text = "";
+                gtxtUserName.Focus();
                 if (!isUpdate)
                 {
                     gtxtUpdatedPass.Visible = false;
@@ -75,6 +83,7 @@ namespace Urgent_Manager
                     icEyes.Visible = true;
                     btnLogin.Visible = true;
                     btnLogin.Location = new Point(28,400);
+                    guna2ProgressBar1.Location = new Point(28, 480);
                     this.Size = new Size(755, 600);
                     btnLogin.Image = Properties.Resources.user__1_;
                     btnLogin.Text = "Log In";
@@ -86,6 +95,7 @@ namespace Urgent_Manager
                     icEyes.Visible = true;
                     btnLogin.Visible = true;
                     btnLogin.Location = new Point(28, 400);
+                    guna2ProgressBar1.Location = new Point(28, 480);
                     this.Size = new Size(755, 600);
                     btnLogin.Image = Properties.Resources.user__1_;
                     btnLogin.Text = "Log In";
@@ -98,6 +108,7 @@ namespace Urgent_Manager
                 icEyes.Visible = false;
                 btnLogin.Visible = true;
                 btnLogin.Location = new Point(28, 270);
+                guna2ProgressBar1.Location = new Point(28, 350);
                 this.Size = new Size(755, 500);
                 btnLogin.Image = Properties.Resources.user__1_;
                 btnLogin.Text = "Log In";
@@ -111,7 +122,7 @@ namespace Urgent_Manager
         {
             // If The Users Role Is Different To Operateur
 
-            if(cmbRoles.Text.Trim() != "Operateur")
+            if(cmbRoles.Text.Trim() != "Operator")
             {
                 if (!update)
                 {
@@ -119,16 +130,30 @@ namespace Urgent_Manager
                     if (gtxtUserName.Text.Trim() != "" && gtxtPass.Text.Trim() != "")
                     {
                         // Check The Users Credentials
-                        bool isAuth = true;
+                        bool isAuth = controller.IsAuth(gtxtUserName.Text,Eramake.eCryptography.Encrypt(gtxtPass.Text));
                         if (isAuth)
                         {
                             // Check If He Is Logged In For The First Time Or Not
-                            bool isUpdated = false;
-                            if (isUpdated)
+                            isUpdate = controller.IsLoggingForTheFirstTime(gtxtUserName.Text);
+                            if (isUpdate)
                             {
                                 // Connect The Specific User To His Window
-                                update = true;
-                                MessageBox.Show("Welcome " + cmbRoles.Text);
+                                UserModel user = controller.SingleRecord(gtxtUserName.Text);
+                                username = user.Fullname;
+                                role = user.Role;
+                                if(user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
+                                {
+                                    guna2ProgressBar1.Visible = true;
+                                    Dashboard dash = new Dashboard();
+                                    dash.Show();
+                                    Hide();
+                                }else if(user.Role == "Alimentation")
+                                {
+                                    guna2ProgressBar1.Visible = true;
+                                    Alimentation alimentation = new Alimentation();
+                                    alimentation.Show();
+                                    Hide();
+                                }
                             }
                             else
                             {
@@ -141,6 +166,7 @@ namespace Urgent_Manager
                                 icEyes.Visible = true;
                                 btnLogin.Visible = true;
                                 btnLogin.Location = new Point(28, 464);
+                                guna2ProgressBar1.Location = new Point(28, 520);
                                 btnLogin.Image = Properties.Resources.update;
                                 btnLogin.Text = "Update";
                             }
@@ -148,13 +174,17 @@ namespace Urgent_Manager
                         else
                         {
                             MessageBox.Show("Sorry You Are Not Authorized To This Session !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            init();
+                            gtxtUserName.Text = "";
+                            gtxtUserName.Focus();
+                            gtxtPass.Text = "";
+                            lblWrongCredentials.Visible = true;
+                            timer1.Start();
                         }
                     }
                     else
                     {
                         // All The Fields Are Required
-                        MessageBox.Show("Username and Password Are Required");
+                        MessageBox.Show("Username and Password Are Required","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -163,36 +193,79 @@ namespace Urgent_Manager
                     if (gtxtUserName.Text.Trim() != "" && gtxtPass.Text.Trim() != "" && gtxtUpdatedPass.Text != "")
                     {
                         // Check If The User Is Auth Again
-                        bool isAuth = true;
+                        bool isAuth = controller.IsAuth(gtxtUserName.Text, Eramake.eCryptography.Encrypt(gtxtPass.Text));
                         if (isAuth)
                         {
                             // Check If The New Password Is Different From The Old Password
-                            if (gtxtPass.Text.Trim() != gtxtUpdatedPass.Text.Trim())
+                            if (gtxtPass.Text.Trim() != gtxtUpdatedPass.Text.Trim() && gtxtUpdatedPass.Text.Trim().Length >= 4)
                             {
                                 // Update Users Credentials With The New Ones and Connect The User To His Specific Window
-                                MessageBox.Show("Welcome " + cmbRoles.Text);
-                                init();
+                                int result = controller.UpdatePass(gtxtUserName.Text, Eramake.eCryptography.Encrypt(gtxtUpdatedPass.Text));
+                                if(result == 1)
+                                {
+                                    UserModel user = controller.SingleRecord(gtxtUserName.Text);
+                                    username = user.Fullname;
+                                    role = user.Role;
+                                    if (user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
+                                    {
+                                        guna2ProgressBar1.Visible = true;
+                                        Dashboard dash = new Dashboard();
+                                        dash.Show();
+                                        Hide();
+                                    }
+                                    else if (user.Role == "Alimentation")
+                                    {
+                                        guna2ProgressBar1.Visible = true;
+                                        Alimentation alimentation = new Alimentation();
+                                        alimentation.Show();
+                                        Hide();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("It Was An Error While Processing Your Update !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    init();
+                                }
                             }
                             else
                             {
-                                // Choose a diffent Password To Your Old One
-                                MessageBox.Show("Choose a deffirent Password To Yor Old One");
-                                gtxtUpdatedPass.Focus();
-                                gtxtUpdatedPass.SelectAll();
+                                if(gtxtPass.Text.Trim() == gtxtUpdatedPass.Text.Trim())
+                                {
+                                    // Choose a diffent Password To Your Old One
+                                    MessageBox.Show("Choose a deffirent Password To Your Old One", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    gtxtUpdatedPass.Focus();
+                                    gtxtUpdatedPass.SelectAll();
+                                }else if(gtxtUpdatedPass.Text.Trim().Length < 4)
+                                {
+                                    MessageBox.Show("Password Must Be More Than 4 Letters", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    gtxtUpdatedPass.Focus();
+                                    gtxtUpdatedPass.SelectAll();
+                                }
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sorry You Are Not Authorized To This Session !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            gtxtUserName.Text = "";
+                            gtxtUserName.Focus();
+                            gtxtPass.Text = "";
+                            lblWrongCredentials.Visible = true;
+                            timer1.Start();
                         }
                     }
                     else
                     {
                         // All The Fields Are Required
-                        MessageBox.Show("All The Fields Are Required");
+                        MessageBox.Show("All The Fields Are Required","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
             }
             else
             {
                 // Connect To The Operator Window
-                MessageBox.Show("Welcome " + cmbRoles.Text);
+                Operateur op = new Operateur();
+                op.Show();
+                Hide();
             }
         }
 
@@ -214,6 +287,32 @@ namespace Urgent_Manager
         {
             if (e.KeyCode == Keys.Enter)
                 btnLogin.PerformClick();
+        }
+
+        private void gtxtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        int count = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(count == 3)
+            {
+                timer1.Stop();
+                lblWrongCredentials.Visible = false;
+                count = 0;
+                return;
+            }
+            count++;
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

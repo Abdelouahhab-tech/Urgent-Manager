@@ -55,6 +55,8 @@ namespace Urgent_Manager.View
                 lblSealL.Text = "33265987";
                 lblMarkerR.Text = "RD";
                 lblMarkerL.Text = "BK";
+                lblToolR.Text = "GG4204";
+                lblToolL.Text = "GG4232";
             }
         }
 
@@ -77,6 +79,11 @@ namespace Urgent_Manager.View
                 lblMc.Visible = false;
                 isPlanB = false;
             }
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

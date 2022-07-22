@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -82,6 +82,10 @@
             this.lblMarkerL = new System.Windows.Forms.Label();
             this.lblMarkerR = new System.Windows.Forms.Label();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblToolR = new System.Windows.Forms.Label();
+            this.lblToolRHeader = new System.Windows.Forms.Label();
+            this.lblToolL = new System.Windows.Forms.Label();
+            this.lblToolLHeader = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -164,14 +168,15 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(42, 47);
             this.guna2ControlBox1.TabIndex = 0;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // guna2DataGridView1
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
             this.guna2DataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -179,14 +184,14 @@
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.guna2DataGridView1.ColumnHeadersHeight = 40;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Famille,
@@ -197,31 +202,31 @@
             this.Groupe,
             this.Area});
             this.guna2DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.White;
             this.guna2DataGridView1.Location = new System.Drawing.Point(12, 226);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.guna2DataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,7 +330,7 @@
             this.picWire.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picWire.BackColor = System.Drawing.Color.White;
             this.picWire.Image = global::Urgent_Manager.Properties.Resources.wire;
-            this.picWire.Location = new System.Drawing.Point(212, 134);
+            this.picWire.Location = new System.Drawing.Point(196, 134);
             this.picWire.Name = "picWire";
             this.picWire.Size = new System.Drawing.Size(766, 47);
             this.picWire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -338,7 +343,7 @@
             this.lblBobine.BackColor = System.Drawing.Color.Black;
             this.lblBobine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBobine.ForeColor = System.Drawing.Color.White;
-            this.lblBobine.Location = new System.Drawing.Point(504, 144);
+            this.lblBobine.Location = new System.Drawing.Point(488, 144);
             this.lblBobine.Name = "lblBobine";
             this.lblBobine.Size = new System.Drawing.Size(183, 28);
             this.lblBobine.TabIndex = 0;
@@ -542,7 +547,7 @@
             // 
             this.picTerminalL.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picTerminalL.Image = global::Urgent_Manager.Properties.Resources.terminal;
-            this.picTerminalL.Location = new System.Drawing.Point(193, 132);
+            this.picTerminalL.Location = new System.Drawing.Point(177, 132);
             this.picTerminalL.Name = "picTerminalL";
             this.picTerminalL.Size = new System.Drawing.Size(101, 50);
             this.picTerminalL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -553,7 +558,7 @@
             // 
             this.picTerminalSealL.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picTerminalSealL.Image = global::Urgent_Manager.Properties.Resources.terminalSealD___Copie;
-            this.picTerminalSealL.Location = new System.Drawing.Point(193, 132);
+            this.picTerminalSealL.Location = new System.Drawing.Point(177, 132);
             this.picTerminalSealL.Name = "picTerminalSealL";
             this.picTerminalSealL.Size = new System.Drawing.Size(101, 50);
             this.picTerminalSealL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -564,7 +569,7 @@
             // 
             this.picTerminalSealR.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picTerminalSealR.Image = global::Urgent_Manager.Properties.Resources.terminalSealG;
-            this.picTerminalSealR.Location = new System.Drawing.Point(914, 132);
+            this.picTerminalSealR.Location = new System.Drawing.Point(898, 132);
             this.picTerminalSealR.Name = "picTerminalSealR";
             this.picTerminalSealR.Size = new System.Drawing.Size(101, 50);
             this.picTerminalSealR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -575,7 +580,7 @@
             // 
             this.picTerminalR.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picTerminalR.Image = global::Urgent_Manager.Properties.Resources.terminalR;
-            this.picTerminalR.Location = new System.Drawing.Point(914, 130);
+            this.picTerminalR.Location = new System.Drawing.Point(898, 130);
             this.picTerminalR.Name = "picTerminalR";
             this.picTerminalR.Size = new System.Drawing.Size(101, 50);
             this.picTerminalR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -589,7 +594,7 @@
             this.lblTerRHeader.BackColor = System.Drawing.Color.White;
             this.lblTerRHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerRHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblTerRHeader.Location = new System.Drawing.Point(911, 107);
+            this.lblTerRHeader.Location = new System.Drawing.Point(895, 107);
             this.lblTerRHeader.Name = "lblTerRHeader";
             this.lblTerRHeader.Size = new System.Drawing.Size(64, 17);
             this.lblTerRHeader.TabIndex = 11;
@@ -603,7 +608,7 @@
             this.lblTerminalR.BackColor = System.Drawing.Color.White;
             this.lblTerminalR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerminalR.ForeColor = System.Drawing.Color.Black;
-            this.lblTerminalR.Location = new System.Drawing.Point(981, 107);
+            this.lblTerminalR.Location = new System.Drawing.Point(965, 107);
             this.lblTerminalR.Name = "lblTerminalR";
             this.lblTerminalR.Size = new System.Drawing.Size(80, 17);
             this.lblTerminalR.TabIndex = 12;
@@ -617,7 +622,7 @@
             this.lblSealR.BackColor = System.Drawing.Color.White;
             this.lblSealR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSealR.ForeColor = System.Drawing.Color.Black;
-            this.lblSealR.Location = new System.Drawing.Point(981, 187);
+            this.lblSealR.Location = new System.Drawing.Point(965, 187);
             this.lblSealR.Name = "lblSealR";
             this.lblSealR.Size = new System.Drawing.Size(80, 17);
             this.lblSealR.TabIndex = 14;
@@ -631,7 +636,7 @@
             this.lblSealRHeader.BackColor = System.Drawing.Color.White;
             this.lblSealRHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSealRHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblSealRHeader.Location = new System.Drawing.Point(911, 187);
+            this.lblSealRHeader.Location = new System.Drawing.Point(895, 187);
             this.lblSealRHeader.Name = "lblSealRHeader";
             this.lblSealRHeader.Size = new System.Drawing.Size(71, 17);
             this.lblSealRHeader.TabIndex = 13;
@@ -645,7 +650,7 @@
             this.lblSealL.BackColor = System.Drawing.Color.White;
             this.lblSealL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSealL.ForeColor = System.Drawing.Color.Black;
-            this.lblSealL.Location = new System.Drawing.Point(262, 187);
+            this.lblSealL.Location = new System.Drawing.Point(246, 187);
             this.lblSealL.Name = "lblSealL";
             this.lblSealL.Size = new System.Drawing.Size(80, 17);
             this.lblSealL.TabIndex = 18;
@@ -659,7 +664,7 @@
             this.lblSealLHeader.BackColor = System.Drawing.Color.White;
             this.lblSealLHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSealLHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblSealLHeader.Location = new System.Drawing.Point(193, 187);
+            this.lblSealLHeader.Location = new System.Drawing.Point(177, 187);
             this.lblSealLHeader.Name = "lblSealLHeader";
             this.lblSealLHeader.Size = new System.Drawing.Size(69, 17);
             this.lblSealLHeader.TabIndex = 17;
@@ -673,7 +678,7 @@
             this.lblTerminalL.BackColor = System.Drawing.Color.White;
             this.lblTerminalL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerminalL.ForeColor = System.Drawing.Color.Black;
-            this.lblTerminalL.Location = new System.Drawing.Point(262, 107);
+            this.lblTerminalL.Location = new System.Drawing.Point(246, 107);
             this.lblTerminalL.Name = "lblTerminalL";
             this.lblTerminalL.Size = new System.Drawing.Size(80, 17);
             this.lblTerminalL.TabIndex = 16;
@@ -687,7 +692,7 @@
             this.lblTerLHeader.BackColor = System.Drawing.Color.White;
             this.lblTerLHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerLHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblTerLHeader.Location = new System.Drawing.Point(193, 107);
+            this.lblTerLHeader.Location = new System.Drawing.Point(177, 107);
             this.lblTerLHeader.Name = "lblTerLHeader";
             this.lblTerLHeader.Size = new System.Drawing.Size(62, 17);
             this.lblTerLHeader.TabIndex = 15;
@@ -701,7 +706,7 @@
             this.lblMarkerL.BackColor = System.Drawing.Color.Black;
             this.lblMarkerL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarkerL.ForeColor = System.Drawing.Color.White;
-            this.lblMarkerL.Location = new System.Drawing.Point(402, 149);
+            this.lblMarkerL.Location = new System.Drawing.Point(386, 149);
             this.lblMarkerL.Name = "lblMarkerL";
             this.lblMarkerL.Size = new System.Drawing.Size(31, 17);
             this.lblMarkerL.TabIndex = 19;
@@ -715,7 +720,7 @@
             this.lblMarkerR.BackColor = System.Drawing.Color.Black;
             this.lblMarkerR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarkerR.ForeColor = System.Drawing.Color.White;
-            this.lblMarkerR.Location = new System.Drawing.Point(757, 149);
+            this.lblMarkerR.Location = new System.Drawing.Point(741, 149);
             this.lblMarkerR.Name = "lblMarkerR";
             this.lblMarkerR.Size = new System.Drawing.Size(28, 17);
             this.lblMarkerR.TabIndex = 20;
@@ -727,12 +732,72 @@
             this.guna2Elipse2.BorderRadius = 10;
             this.guna2Elipse2.TargetControl = this;
             // 
+            // lblToolR
+            // 
+            this.lblToolR.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblToolR.AutoSize = true;
+            this.lblToolR.BackColor = System.Drawing.Color.White;
+            this.lblToolR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToolR.ForeColor = System.Drawing.Color.Black;
+            this.lblToolR.Location = new System.Drawing.Point(1077, 146);
+            this.lblToolR.Name = "lblToolR";
+            this.lblToolR.Size = new System.Drawing.Size(68, 17);
+            this.lblToolR.TabIndex = 22;
+            this.lblToolR.Text = "GG4212";
+            this.lblToolR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblToolRHeader
+            // 
+            this.lblToolRHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblToolRHeader.AutoSize = true;
+            this.lblToolRHeader.BackColor = System.Drawing.Color.White;
+            this.lblToolRHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToolRHeader.ForeColor = System.Drawing.Color.Black;
+            this.lblToolRHeader.Location = new System.Drawing.Point(1007, 146);
+            this.lblToolRHeader.Name = "lblToolRHeader";
+            this.lblToolRHeader.Size = new System.Drawing.Size(71, 17);
+            this.lblToolRHeader.TabIndex = 21;
+            this.lblToolRHeader.Text = "Tool R : ";
+            this.lblToolRHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblToolL
+            // 
+            this.lblToolL.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblToolL.AutoSize = true;
+            this.lblToolL.BackColor = System.Drawing.Color.White;
+            this.lblToolL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToolL.ForeColor = System.Drawing.Color.Black;
+            this.lblToolL.Location = new System.Drawing.Point(91, 149);
+            this.lblToolL.Name = "lblToolL";
+            this.lblToolL.Size = new System.Drawing.Size(68, 17);
+            this.lblToolL.TabIndex = 24;
+            this.lblToolL.Text = "GG4229";
+            this.lblToolL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblToolLHeader
+            // 
+            this.lblToolLHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblToolLHeader.AutoSize = true;
+            this.lblToolLHeader.BackColor = System.Drawing.Color.White;
+            this.lblToolLHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToolLHeader.ForeColor = System.Drawing.Color.Black;
+            this.lblToolLHeader.Location = new System.Drawing.Point(21, 149);
+            this.lblToolLHeader.Name = "lblToolLHeader";
+            this.lblToolLHeader.Size = new System.Drawing.Size(71, 17);
+            this.lblToolLHeader.TabIndex = 23;
+            this.lblToolLHeader.Text = "Tool R : ";
+            this.lblToolLHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Operateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 670);
+            this.Controls.Add(this.lblToolL);
+            this.Controls.Add(this.lblToolLHeader);
+            this.Controls.Add(this.lblToolR);
+            this.Controls.Add(this.lblToolRHeader);
             this.Controls.Add(this.lblMarkerR);
             this.Controls.Add(this.lblMarkerL);
             this.Controls.Add(this.lblSealL);
@@ -823,5 +888,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Long;
         private System.Windows.Forms.DataGridViewTextBoxColumn Groupe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.Label lblToolL;
+        private System.Windows.Forms.Label lblToolLHeader;
+        private System.Windows.Forms.Label lblToolR;
+        private System.Windows.Forms.Label lblToolRHeader;
     }
 }

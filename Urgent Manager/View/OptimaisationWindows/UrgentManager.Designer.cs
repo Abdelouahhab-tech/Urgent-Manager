@@ -37,18 +37,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.cmbMac = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Famille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeadCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Emplacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateUrgent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alimentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUrgentDelete = new Guna.UI2.WinForms.Guna2Button();
             this.icExport = new FontAwesome.Sharp.IconButton();
             this.gtxtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.icPrint = new FontAwesome.Sharp.IconButton();
+            this.Famille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeadCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emplacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateUrgent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alimentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +80,9 @@
             this.Famille,
             this.Unico,
             this.LeadCode,
-            this.Zone,
-            this.Machine,
             this.Emplacement,
+            this.Machine,
+            this.Zone,
             this.DateUrgent,
             this.Status,
             this.Alimentation});
@@ -150,6 +151,7 @@
             this.cmbMac.BackColor = System.Drawing.Color.Transparent;
             this.cmbMac.BorderColor = System.Drawing.Color.White;
             this.cmbMac.BorderRadius = 15;
+            this.cmbMac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbMac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMac.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -162,64 +164,13 @@
             "M01",
             "M02",
             "M03"});
+            this.cmbMac.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.cmbMac.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
             this.cmbMac.Location = new System.Drawing.Point(522, 23);
             this.cmbMac.Name = "cmbMac";
             this.cmbMac.Size = new System.Drawing.Size(109, 36);
             this.cmbMac.TabIndex = 1;
-            // 
-            // Famille
-            // 
-            this.Famille.HeaderText = "Family";
-            this.Famille.Name = "Famille";
-            this.Famille.ReadOnly = true;
-            // 
-            // Unico
-            // 
-            this.Unico.HeaderText = "Unico";
-            this.Unico.Name = "Unico";
-            this.Unico.ReadOnly = true;
-            // 
-            // LeadCode
-            // 
-            this.LeadCode.HeaderText = "Lead Code";
-            this.LeadCode.Name = "LeadCode";
-            this.LeadCode.ReadOnly = true;
-            // 
-            // Zone
-            // 
-            this.Zone.HeaderText = "Area";
-            this.Zone.Name = "Zone";
-            this.Zone.ReadOnly = true;
-            // 
-            // Machine
-            // 
-            this.Machine.HeaderText = "Machine";
-            this.Machine.Name = "Machine";
-            this.Machine.ReadOnly = true;
-            // 
-            // Emplacement
-            // 
-            this.Emplacement.HeaderText = "Location";
-            this.Emplacement.Name = "Emplacement";
-            this.Emplacement.ReadOnly = true;
-            // 
-            // DateUrgent
-            // 
-            this.DateUrgent.HeaderText = "Urgent Date";
-            this.DateUrgent.Name = "DateUrgent";
-            this.DateUrgent.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Alimentation
-            // 
-            this.Alimentation.HeaderText = "Alimentation";
-            this.Alimentation.Name = "Alimentation";
-            this.Alimentation.ReadOnly = true;
+            this.cmbMac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnUrgentDelete
             // 
@@ -233,14 +184,14 @@
             this.btnUrgentDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
             this.btnUrgentDelete.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnUrgentDelete.ForeColor = System.Drawing.Color.White;
-            this.btnUrgentDelete.Image = global::Urgent_Manager.Properties.Resources.delete;
+            this.btnUrgentDelete.Image = global::Urgent_Manager.Properties.Resources.check;
             this.btnUrgentDelete.ImageSize = new System.Drawing.Size(25, 25);
             this.btnUrgentDelete.IndicateFocus = true;
             this.btnUrgentDelete.Location = new System.Drawing.Point(375, 21);
             this.btnUrgentDelete.Name = "btnUrgentDelete";
             this.btnUrgentDelete.Size = new System.Drawing.Size(126, 40);
             this.btnUrgentDelete.TabIndex = 2;
-            this.btnUrgentDelete.Text = "Delete";
+            this.btnUrgentDelete.Text = "Finish";
             this.btnUrgentDelete.Click += new System.EventHandler(this.btnUrgentDelete_Click);
             // 
             // icExport
@@ -291,12 +242,87 @@
             this.gtxtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.gtxtSearch.TextChanged += new System.EventHandler(this.gtxtSearch_TextChanged);
             // 
+            // icPrint
+            // 
+            this.icPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.icPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.icPrint.FlatAppearance.BorderSize = 0;
+            this.icPrint.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.icPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.icPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.icPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icPrint.ForeColor = System.Drawing.Color.White;
+            this.icPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.icPrint.IconColor = System.Drawing.Color.White;
+            this.icPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icPrint.IconSize = 40;
+            this.icPrint.Location = new System.Drawing.Point(261, 25);
+            this.icPrint.Name = "icPrint";
+            this.icPrint.Size = new System.Drawing.Size(45, 38);
+            this.icPrint.TabIndex = 7;
+            this.icPrint.UseVisualStyleBackColor = true;
+            // 
+            // Famille
+            // 
+            this.Famille.HeaderText = "Family";
+            this.Famille.Name = "Famille";
+            this.Famille.ReadOnly = true;
+            // 
+            // Unico
+            // 
+            this.Unico.HeaderText = "Unico";
+            this.Unico.Name = "Unico";
+            this.Unico.ReadOnly = true;
+            // 
+            // LeadCode
+            // 
+            this.LeadCode.HeaderText = "Lead Code";
+            this.LeadCode.Name = "LeadCode";
+            this.LeadCode.ReadOnly = true;
+            // 
+            // Emplacement
+            // 
+            this.Emplacement.HeaderText = "Location";
+            this.Emplacement.Name = "Emplacement";
+            this.Emplacement.ReadOnly = true;
+            // 
+            // Machine
+            // 
+            this.Machine.HeaderText = "Machine";
+            this.Machine.Name = "Machine";
+            this.Machine.ReadOnly = true;
+            // 
+            // Zone
+            // 
+            this.Zone.HeaderText = "Area";
+            this.Zone.Name = "Zone";
+            this.Zone.ReadOnly = true;
+            // 
+            // DateUrgent
+            // 
+            this.DateUrgent.HeaderText = "Urgent Date";
+            this.DateUrgent.Name = "DateUrgent";
+            this.DateUrgent.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Alimentation
+            // 
+            this.Alimentation.HeaderText = "Alimentation";
+            this.Alimentation.Name = "Alimentation";
+            this.Alimentation.ReadOnly = true;
+            // 
             // UrgentManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(956, 680);
+            this.Controls.Add(this.icPrint);
             this.Controls.Add(this.cmbMac);
             this.Controls.Add(this.btnUrgentDelete);
             this.Controls.Add(this.icExport);
@@ -306,6 +332,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UrgentManager";
             this.Text = "UrgentManager";
+            this.Load += new System.EventHandler(this.UrgentManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -320,12 +347,13 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnUrgentDelete;
         private Guna.UI2.WinForms.Guna2ComboBox cmbMac;
+        private FontAwesome.Sharp.IconButton icPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn Famille;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unico;
         private System.Windows.Forms.DataGridViewTextBoxColumn LeadCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Machine;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emplacement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Machine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zone;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateUrgent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alimentation;

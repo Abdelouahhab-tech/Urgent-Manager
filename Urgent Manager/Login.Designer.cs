@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMessages = new System.Windows.Forms.Label();
+            this.lblWrongCredentials = new System.Windows.Forms.Label();
+            this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.icUpdatedPass = new FontAwesome.Sharp.IconPictureBox();
@@ -53,6 +54,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icUpdatedPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icEyes)).BeginInit();
@@ -66,7 +68,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.panel1.Controls.Add(this.lblMessages);
+            this.panel1.Controls.Add(this.lblWrongCredentials);
+            this.panel1.Controls.Add(this.guna2ProgressBar1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.icUpdatedPass);
@@ -85,15 +88,30 @@
             this.panel1.Size = new System.Drawing.Size(453, 600);
             this.panel1.TabIndex = 1;
             // 
-            // lblMessages
+            // lblWrongCredentials
             // 
-            this.lblMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessages.ForeColor = System.Drawing.Color.White;
-            this.lblMessages.Location = new System.Drawing.Point(25, 537);
-            this.lblMessages.Name = "lblMessages";
-            this.lblMessages.Size = new System.Drawing.Size(399, 40);
-            this.lblMessages.TabIndex = 10;
-            this.lblMessages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWrongCredentials.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrongCredentials.ForeColor = System.Drawing.Color.Red;
+            this.lblWrongCredentials.Location = new System.Drawing.Point(26, 553);
+            this.lblWrongCredentials.Name = "lblWrongCredentials";
+            this.lblWrongCredentials.Size = new System.Drawing.Size(415, 43);
+            this.lblWrongCredentials.TabIndex = 11;
+            this.lblWrongCredentials.Text = "If you have forgotten your Credentials, please contact your system administrator";
+            this.lblWrongCredentials.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWrongCredentials.Visible = false;
+            // 
+            // guna2ProgressBar1
+            // 
+            this.guna2ProgressBar1.BorderRadius = 5;
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(28, 530);
+            this.guna2ProgressBar1.Name = "guna2ProgressBar1";
+            this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(364, 15);
+            this.guna2ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.guna2ProgressBar1.TabIndex = 10;
+            this.guna2ProgressBar1.Text = "guna2ProgressBar1";
+            this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ProgressBar1.Visible = false;
             // 
             // label3
             // 
@@ -223,6 +241,7 @@
             this.gtxtPass.TextOffset = new System.Drawing.Point(63, 0);
             this.gtxtPass.UseSystemPasswordChar = true;
             this.gtxtPass.Visible = false;
+            this.gtxtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtPass_KeyDown);
             // 
             // gtxtUserName
             // 
@@ -283,11 +302,10 @@
             this.cmbRoles.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
             this.cmbRoles.ItemHeight = 35;
             this.cmbRoles.Items.AddRange(new object[] {
-            "Administrateur",
-            "Operateur",
+            "Administrator",
             "Alimentation",
-            "Optimisateur",
-            "Agent de Saisie",
+            "Operator",
+            "Entry Agent",
             "Shift Leader"});
             this.cmbRoles.Location = new System.Drawing.Point(28, 210);
             this.cmbRoles.Name = "cmbRoles";
@@ -335,6 +353,7 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 0;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // guna2Elipse1
             // 
@@ -437,6 +456,12 @@
             this.guna2DragControl1.TargetControl = this.gradientPanel1;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,10 +508,12 @@
         private Guna.UI2.WinForms.Guna2TextBox gtxtUpdatedPass;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblMessages;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
+        private System.Windows.Forms.Label lblWrongCredentials;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
