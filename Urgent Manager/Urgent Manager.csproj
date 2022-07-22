@@ -75,8 +75,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AreaController.cs" />
+    <Compile Include="Controller\CableController.cs" />
     <Compile Include="Controller\DbHelper.cs" />
     <Compile Include="Controller\DGVPrinter.cs" />
+    <Compile Include="Controller\FamilyController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="CustomViews\GradientPanel.cs">
       <SubType>Component</SubType>
@@ -87,6 +90,9 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\AreaModel.cs" />
+    <Compile Include="Model\CableModel.cs" />
+    <Compile Include="Model\FamilyModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,11 +120,11 @@
     <Compile Include="View\DashBoard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DashBoard\Family.cs">
+    <Compile Include="View\DashBoard\FamilyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DashBoard\Family.Designer.cs">
-      <DependentUpon>Family.cs</DependentUpon>
+    <Compile Include="View\DashBoard\FamilyView.Designer.cs">
+      <DependentUpon>FamilyView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DashBoard\Group.cs">
       <SubType>Form</SubType>
@@ -247,8 +253,8 @@
     <EmbeddedResource Include="View\DashBoard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DashBoard\Family.resx">
-      <DependentUpon>Family.cs</DependentUpon>
+    <EmbeddedResource Include="View\DashBoard\FamilyView.resx">
+      <DependentUpon>FamilyView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashBoard\Group.resx">
       <DependentUpon>Group.cs</DependentUpon>

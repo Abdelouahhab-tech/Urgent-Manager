@@ -58,8 +58,6 @@ namespace Urgent_Manager
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // Get The Bool Value From Database (isUpdated)
-            // assigne that value to the isUpdated Variable
 
             btnLogin.Location = new Point(28,270);
             this.Size = new Size(755, 500);
@@ -139,7 +137,7 @@ namespace Urgent_Manager
                             {
                                 // Connect The Specific User To His Window
                                 UserModel user = controller.SingleRecord(gtxtUserName.Text);
-                                username = user.Fullname;
+                                username = user.UserName;
                                 role = user.Role;
                                 if(user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
                                 {
@@ -204,7 +202,7 @@ namespace Urgent_Manager
                                 if(result == 1)
                                 {
                                     UserModel user = controller.SingleRecord(gtxtUserName.Text);
-                                    username = user.Fullname;
+                                    username = user.UserName;
                                     role = user.Role;
                                     if (user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
                                     {

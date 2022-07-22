@@ -40,7 +40,6 @@
             this.gtxtAdress = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblAdress = new System.Windows.Forms.Label();
             this.lblLeadPrep = new System.Windows.Forms.Label();
-            this.cmbLeadPrep = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbTerG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTerG = new System.Windows.Forms.Label();
             this.cmbTerD = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -74,6 +73,7 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbLeadPrep = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -272,33 +272,6 @@
             this.lblLeadPrep.Size = new System.Drawing.Size(93, 18);
             this.lblLeadPrep.TabIndex = 30;
             this.lblLeadPrep.Text = "Lead Prep : ";
-            // 
-            // cmbLeadPrep
-            // 
-            this.cmbLeadPrep.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbLeadPrep.BackColor = System.Drawing.Color.Transparent;
-            this.cmbLeadPrep.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.cmbLeadPrep.BorderRadius = 20;
-            this.cmbLeadPrep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbLeadPrep.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbLeadPrep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLeadPrep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.cmbLeadPrep.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbLeadPrep.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbLeadPrep.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbLeadPrep.ForeColor = System.Drawing.Color.White;
-            this.cmbLeadPrep.ItemHeight = 35;
-            this.cmbLeadPrep.Items.AddRange(new object[] {
-            "Cutting",
-            "LP",
-            "Twisting"});
-            this.cmbLeadPrep.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.cmbLeadPrep.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
-            this.cmbLeadPrep.Location = new System.Drawing.Point(566, 161);
-            this.cmbLeadPrep.Name = "cmbLeadPrep";
-            this.cmbLeadPrep.Size = new System.Drawing.Size(191, 41);
-            this.cmbLeadPrep.TabIndex = 4;
-            this.cmbLeadPrep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbTerG
             // 
@@ -949,6 +922,33 @@
             this.guna2Button1.TabIndex = 24;
             this.guna2Button1.Text = "Delete";
             // 
+            // cmbLeadPrep
+            // 
+            this.cmbLeadPrep.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbLeadPrep.BackColor = System.Drawing.Color.Transparent;
+            this.cmbLeadPrep.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.cmbLeadPrep.BorderRadius = 20;
+            this.cmbLeadPrep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbLeadPrep.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbLeadPrep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLeadPrep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.cmbLeadPrep.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbLeadPrep.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbLeadPrep.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbLeadPrep.ForeColor = System.Drawing.Color.White;
+            this.cmbLeadPrep.ItemHeight = 35;
+            this.cmbLeadPrep.Items.AddRange(new object[] {
+            "Simple Wire",
+            "Twisting",
+            "Crimping"});
+            this.cmbLeadPrep.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.cmbLeadPrep.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
+            this.cmbLeadPrep.Location = new System.Drawing.Point(566, 161);
+            this.cmbLeadPrep.Name = "cmbLeadPrep";
+            this.cmbLeadPrep.Size = new System.Drawing.Size(191, 41);
+            this.cmbLeadPrep.TabIndex = 4;
+            this.cmbLeadPrep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Wire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1023,7 +1023,6 @@
         private Guna.UI2.WinForms.Guna2TextBox gtxtAdress;
         private System.Windows.Forms.Label lblAdress;
         private System.Windows.Forms.Label lblLeadPrep;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbLeadPrep;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTerG;
         private System.Windows.Forms.Label lblTerG;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTerD;
@@ -1057,5 +1056,6 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbLeadPrep;
     }
 }

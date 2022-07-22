@@ -32,7 +32,7 @@ namespace Urgent_Manager.Controller
                     cmd.Parameters.AddWithValue("@isUpdated", user.IsUpdated);
                     cmd.Parameters.AddWithValue("@EntryAgent", user.Entry);
 
-                int result = cmd.ExecuteNonQuery();
+                    int result = cmd.ExecuteNonQuery();
                     if (result == 1)
                         MessageBox.Show("Data Added Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
@@ -41,20 +41,20 @@ namespace Urgent_Manager.Controller
 
             }catch(Exception ex)
             {
-                MessageBox.Show("An Error Accured While Adding Data \n\n" + ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("An Error Accured While Processing Your Request \n\n" + ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 DbHelper.connection.Close();
             }
         }
 
         // Delete Data From dbo_User
 
-        public void DeleteUser(string ID)
+        public void Delete(string ID,string table,string column)
         {
             try
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "DELETE FROM dbo_User WHERE userID = @id";
+                string QUERY = "DELETE FROM "+table+" WHERE "+column+" = @id";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 cmd.Parameters.AddWithValue("@id", ID);
                 int result = cmd.ExecuteNonQuery();
@@ -69,7 +69,7 @@ namespace Urgent_Manager.Controller
             }
             catch(Exception ex)
             {
-                MessageBox.Show("An Error Accured While Deleting The Required Data !\n\n"+ex.Message,"Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("It Was An Error While Processing Your Request ! \n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DbHelper.connection.Close();
             }
         }
@@ -112,14 +112,14 @@ namespace Urgent_Manager.Controller
 
         // Check If The User Already Exist
 
-        public bool IsExist(string id)
+        public bool IsExist(string id,string table,string column)
         {
             try
             {
 
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT * FROM dbo_User WHERE userID=@id";
+                string QUERY = "SELECT * FROM "+table+" WHERE "+column+"=@id";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 cmd.Parameters.AddWithValue("@id", id);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -137,7 +137,7 @@ namespace Urgent_Manager.Controller
 
             }catch(Exception ex)
             {
-                MessageBox.Show("It Was An Error ! \n\n" + ex.Message, "Failure", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("It Was An Error While Processing Your Request ! \n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DbHelper.connection.Close();
                 return false;
             }
@@ -183,7 +183,7 @@ namespace Urgent_Manager.Controller
 
             }catch(Exception ex)
             {
-                MessageBox.Show("It Was An Error While Fethcing Data !", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("It Was An Error While Fethcing Data !\n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DbHelper.connection.Close();
                 return list;
             }

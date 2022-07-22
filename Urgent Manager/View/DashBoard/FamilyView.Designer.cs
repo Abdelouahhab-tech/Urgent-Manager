@@ -1,6 +1,6 @@
 ﻿namespace Urgent_Manager.View.DashBoard
 {
-    partial class Family
+    partial class FamilyView
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,6 @@
             this.gtxtFamilyName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblFamilyName = new System.Windows.Forms.Label();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
@@ -146,6 +145,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // MCName
             // 
@@ -182,6 +182,8 @@
             this.gtxtFamilyName.Size = new System.Drawing.Size(401, 41);
             this.gtxtFamilyName.TabIndex = 0;
             this.gtxtFamilyName.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtFamilyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtFamilyName_KeyDown);
+            this.gtxtFamilyName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gtxtFamilyName_KeyUp);
             // 
             // lblFamilyName
             // 
@@ -210,32 +212,12 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnDelete.Image = global::Urgent_Manager.Properties.Resources.delete;
             this.btnDelete.IndicateFocus = true;
-            this.btnDelete.Location = new System.Drawing.Point(537, 163);
+            this.btnDelete.Location = new System.Drawing.Point(404, 163);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 41);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnUpdate.BorderRadius = 20;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
-            this.btnUpdate.Image = global::Urgent_Manager.Properties.Resources.update;
-            this.btnUpdate.IndicateFocus = true;
-            this.btnUpdate.Location = new System.Drawing.Point(411, 163);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(108, 41);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Update";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -258,6 +240,7 @@
             this.btnSave.Size = new System.Drawing.Size(108, 41);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Elipse1
             // 
@@ -272,7 +255,6 @@
             this.ClientSize = new System.Drawing.Size(842, 521);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gtxtFamilyName);
             this.Controls.Add(this.lblFamilyName);
@@ -296,7 +278,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox gtxtFamilyName;
         private System.Windows.Forms.Label lblFamilyName;

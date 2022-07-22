@@ -118,7 +118,7 @@ namespace Urgent_Manager.View.DashBoard
 
         private void btnFamille_Click(object sender, EventArgs e)
         {
-            subForm(new Family());
+            subForm(new FamilyView());
         }
 
         private void btnBobine_Click(object sender, EventArgs e)

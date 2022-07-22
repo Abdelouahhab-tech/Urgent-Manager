@@ -18,7 +18,6 @@ C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manag
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Machine.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Area.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Bobine.resources
-C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Family.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Tool.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Terminal.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.Kit.resources
@@ -40,4 +39,5 @@ C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manag
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\bin\Debug\eCryptography.dll
+C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent_Manager.View.DashBoard.FamilyView.resources
 C:\Users\21267\Documents\Visual Studio 2015\Projects\Urgent Manager\Urgent Manager\obj\Debug\Urgent Manager.csprojResolveAssemblyReference.cache

@@ -50,26 +50,29 @@ namespace Urgent_Manager.View.DashBoard
                 user.Entry = Login.username != "" ? Login.username : "";
                 user.IsUpdated = chUpdate.Checked ? 1 : 0;
 
-                userController.InsertUser(user);
+                if (userController.IsExist(gtxtUsername.Text, "dbo_User", "userID"))
+                    userController.InsertUser(user);
+                else
+                    MessageBox.Show("This User Is Already Exist Try To Add An Other One! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 init();
                 LoadData();
                 
             }
             else
             {
-                if(gtxtUsername.Text == "")
+                if(gtxtUsername.Text.Trim() == "")
                 {
                     lblUsername.ForeColor = Color.Red;
                     gtxtUsername.Focus();
                     gtxtUsername.FocusedState.BorderColor = Color.White;
                 }
-                else if (gtxtPass.Text == "")
+                else if (gtxtPass.Text.Trim() == "")
                 {
                     lblPass.ForeColor = Color.Red;
                     gtxtPass.Focus();
                     gtxtPass.FocusedState.BorderColor = Color.White;
                 }
-                else if (cmbRole.Text == "")
+                else if (cmbRole.Text.Trim() == "")
                 {
                     lblRole.ForeColor = Color.Red;
                     cmbRole.Focus();
@@ -110,7 +113,7 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtUsername.Text.Trim() != "")
             {
-                if (userController.IsExist(gtxtUsername.Text))
+                if (userController.IsExist(gtxtUsername.Text,"dbo_User","userID"))
                 {
                    if(gtxtPass.Text.Trim() != "" && cmbRole.Text.Trim() != "" && gtxtPass.Text.Trim().Length >= 4)
                     {
@@ -123,7 +126,10 @@ namespace Urgent_Manager.View.DashBoard
                         user.Entry = Login.username != "" ? Login.username : "";
                         user.IsUpdated = chUpdate.Checked ? 1 : 0;
 
-                        userController.UpdateUser(user);
+                        if (!userController.IsExist(gtxtUsername.Text, "dbo_User", "userID"))
+                            userController.UpdateUser(user);
+                        else
+                            MessageBox.Show("This User Is Already Exist Try To Add An Other One! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         init();
                         LoadData();
                     }
@@ -174,15 +180,18 @@ namespace Urgent_Manager.View.DashBoard
 
                 if(result == DialogResult.Yes)
                 {
-                    if (userController.IsExist(gtxtUsername.Text))
+                    if (userController.IsExist(gtxtUsername.Text,"dbo_User","userID"))
                     {
-                        userController.DeleteUser(gtxtUsername.Text);
+                        userController.Delete(gtxtUsername.Text, "dbo_User", "userID");
                         init();
                         LoadData();
                     }
                     else
                     {
                         MessageBox.Show("This User Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lblUsername.ForeColor = Color.Red;
+                        gtxtUsername.Focus();
+                        gtxtUsername.FocusedState.BorderColor = Color.White;
                     }
                 }
             }
@@ -251,7 +260,7 @@ namespace Urgent_Manager.View.DashBoard
 
         private void getSingleRecord(string userName)
         {
-            if (userController.IsExist(userName))
+            if (userController.IsExist(userName, "dbo_User", "userID"))
             {
                 UserModel user = new UserModel();
                 user = userController.SingleRecord(userName);
