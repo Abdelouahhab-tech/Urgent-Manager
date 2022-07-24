@@ -80,6 +80,11 @@
     <Compile Include="Controller\DbHelper.cs" />
     <Compile Include="Controller\DGVPrinter.cs" />
     <Compile Include="Controller\FamilyController.cs" />
+    <Compile Include="Controller\MachineController.cs" />
+    <Compile Include="Controller\ProtectionController.cs" />
+    <Compile Include="Controller\SealController.cs" />
+    <Compile Include="Controller\TerminalController.cs" />
+    <Compile Include="Controller\ToolController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="CustomViews\GradientPanel.cs">
       <SubType>Component</SubType>
@@ -93,6 +98,11 @@
     <Compile Include="Model\AreaModel.cs" />
     <Compile Include="Model\CableModel.cs" />
     <Compile Include="Model\FamilyModel.cs" />
+    <Compile Include="Model\MachineModel.cs" />
+    <Compile Include="Model\ProtectionModel.cs" />
+    <Compile Include="Model\SealModel.cs" />
+    <Compile Include="Model\TerminalModel.cs" />
+    <Compile Include="Model\ToolModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

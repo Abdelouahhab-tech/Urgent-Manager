@@ -19,6 +19,7 @@ namespace Urgent_Manager
         private bool isUpdate = false;
         private bool update = false;
         public static string username = "";
+        public static string FullName = "";
         public static string role = "";
         UserController controller = new UserController();
         public Login()
@@ -138,6 +139,7 @@ namespace Urgent_Manager
                                 // Connect The Specific User To His Window
                                 UserModel user = controller.SingleRecord(gtxtUserName.Text);
                                 username = user.UserName;
+                                FullName = user.Fullname;
                                 role = user.Role;
                                 if(user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
                                 {
@@ -203,6 +205,7 @@ namespace Urgent_Manager
                                 {
                                     UserModel user = controller.SingleRecord(gtxtUserName.Text);
                                     username = user.UserName;
+                                    FullName = user.Fullname;
                                     role = user.Role;
                                     if (user.Role == "Administrator" || user.Role == "Shift Leader" || user.Role == "Entry Agent")
                                     {

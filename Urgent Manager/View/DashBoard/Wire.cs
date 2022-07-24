@@ -16,5 +16,10 @@ namespace Urgent_Manager.View.DashBoard
         {
             InitializeComponent();
         }
+
+        private void cmbLeadPrep_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

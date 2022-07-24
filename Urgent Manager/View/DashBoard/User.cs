@@ -53,8 +53,13 @@ namespace Urgent_Manager.View.DashBoard
                 if (userController.IsExist(gtxtUsername.Text, "dbo_User", "userID"))
                     userController.InsertUser(user);
                 else
+                {
                     MessageBox.Show("This User Is Already Exist Try To Add An Other One! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                init();
+                    lblUsername.ForeColor = Color.Red;
+                    gtxtUsername.Focus();
+                    gtxtUsername.SelectAll();
+                    gtxtUsername.FocusedState.BorderColor = Color.White;
+                }
                 LoadData();
                 
             }

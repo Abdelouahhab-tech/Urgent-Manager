@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -316,8 +317,38 @@ namespace Urgent_Manager.Controller
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request Try Again !\n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DbHelper.connection.Close();
                 return 0;
+            }
+        }
+
+        // Fill Combobox With Data
+
+        public void FillCombobox(string table,string column,Guna2ComboBox cmb)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT "+column+" FROM "+table+" ORDER BY "+column+"";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        cmb.Items.Add(reader[0].ToString());
+                    }
+                }
+
+                DbHelper.connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request Try Again !\n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
             }
         }
     }

@@ -47,10 +47,11 @@ namespace Urgent_Manager.View.DashBoard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            if (Login.username != "")
-                lblUser.Text = "Welcome " + Login.username;
+            if (Login.FullName != "")
+                lblUser.Text = "Welcome " + Login.FullName;
             else
                 lblUser.Text = "";
+
             btnCredentials.Location = new Point(0, 102);
             btnStatistics.Location = new Point(0, 140);
             btnUrgentManager.Location = new Point(0, 178);
@@ -66,6 +67,7 @@ namespace Urgent_Manager.View.DashBoard
                     btnArchiveManager.Visible = false;
                     btnStatistics.Visible = false;
                     panelControls.Height = 500;
+                    panelControls.Visible = true;
                     subForm(new WireData());
                 }
                 else if(Login.role == "Shift Leader")

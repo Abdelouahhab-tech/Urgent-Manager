@@ -16,6 +16,8 @@ namespace Urgent_Manager.Model
 
         private string color = "";
 
+        private string guide = "";
+
         private string userID = "";
 
         public string Cable
@@ -80,6 +82,19 @@ namespace Urgent_Manager.Model
             set
             {
                 userID = value;
+            }
+        }
+
+        public string Guide
+        {
+            get
+            {
+                return guide;
+            }
+
+            set
+            {
+                guide = value;
             }
         }
     }

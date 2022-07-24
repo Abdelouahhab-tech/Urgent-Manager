@@ -189,8 +189,20 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtAreaName.Text == "")
                 LoadData();
-            else
+            else if(gtxtAreaName.Text.Trim() != "")
                 getSingleRecord(gtxtAreaName.Text);
+        }
+
+        private void gtxtAreaName_Leave(object sender, EventArgs e)
+        {
+            lblAreaName.ForeColor = Color.White;
+            gtxtAreaName.FocusedState.BorderColor = Color.FromArgb(255, 94, 148, 255);
+        }
+
+        private void cmbParentArea_Leave(object sender, EventArgs e)
+        {
+            lblParentArea.ForeColor = Color.White;
+            cmbParentArea.FocusedState.BorderColor = Color.FromArgb(255, 94, 148, 255);
         }
     }
 }

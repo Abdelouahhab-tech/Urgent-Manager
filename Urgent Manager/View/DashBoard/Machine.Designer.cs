@@ -37,19 +37,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gtxtMachineName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMachine = new System.Windows.Forms.Label();
-            this.gtxtMachineType = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblType = new System.Windows.Forms.Label();
             this.cmbZone = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblZones = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MCName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MCType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MCZone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -98,7 +97,7 @@
             this.gtxtMachineName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtMachineName.ForeColor = System.Drawing.Color.White;
             this.gtxtMachineName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtMachineName.Location = new System.Drawing.Point(296, 106);
+            this.gtxtMachineName.Location = new System.Drawing.Point(292, 92);
             this.gtxtMachineName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtMachineName.Name = "gtxtMachineName";
             this.gtxtMachineName.PasswordChar = '\0';
@@ -107,6 +106,9 @@
             this.gtxtMachineName.Size = new System.Drawing.Size(401, 41);
             this.gtxtMachineName.TabIndex = 0;
             this.gtxtMachineName.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtMachineName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtMachineName_KeyDown);
+            this.gtxtMachineName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gtxtMachineName_KeyUp);
+            this.gtxtMachineName.Leave += new System.EventHandler(this.gtxtMachineName_Leave);
             // 
             // lblMachine
             // 
@@ -114,49 +116,11 @@
             this.lblMachine.AutoSize = true;
             this.lblMachine.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMachine.ForeColor = System.Drawing.Color.White;
-            this.lblMachine.Location = new System.Drawing.Point(163, 117);
+            this.lblMachine.Location = new System.Drawing.Point(159, 103);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(124, 18);
             this.lblMachine.TabIndex = 4;
             this.lblMachine.Text = "Machine Name : ";
-            // 
-            // gtxtMachineType
-            // 
-            this.gtxtMachineType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gtxtMachineType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.gtxtMachineType.BorderRadius = 20;
-            this.gtxtMachineType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gtxtMachineType.DefaultText = "";
-            this.gtxtMachineType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.gtxtMachineType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gtxtMachineType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtMachineType.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtMachineType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gtxtMachineType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtMachineType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gtxtMachineType.ForeColor = System.Drawing.Color.White;
-            this.gtxtMachineType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtMachineType.Location = new System.Drawing.Point(294, 165);
-            this.gtxtMachineType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gtxtMachineType.Name = "gtxtMachineType";
-            this.gtxtMachineType.PasswordChar = '\0';
-            this.gtxtMachineType.PlaceholderText = "Type";
-            this.gtxtMachineType.SelectedText = "";
-            this.gtxtMachineType.Size = new System.Drawing.Size(401, 41);
-            this.gtxtMachineType.TabIndex = 1;
-            this.gtxtMachineType.TextOffset = new System.Drawing.Point(20, 0);
-            // 
-            // lblType
-            // 
-            this.lblType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.ForeColor = System.Drawing.Color.White;
-            this.lblType.Location = new System.Drawing.Point(166, 177);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(118, 18);
-            this.lblType.TabIndex = 6;
-            this.lblType.Text = "Machine Type : ";
             // 
             // cmbZone
             // 
@@ -164,6 +128,7 @@
             this.cmbZone.BackColor = System.Drawing.Color.Transparent;
             this.cmbZone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
             this.cmbZone.BorderRadius = 20;
+            this.cmbZone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbZone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -171,12 +136,15 @@
             this.cmbZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbZone.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbZone.ForeColor = System.Drawing.Color.White;
+            this.cmbZone.IntegralHeight = false;
             this.cmbZone.ItemHeight = 35;
-            this.cmbZone.Location = new System.Drawing.Point(296, 225);
+            this.cmbZone.Location = new System.Drawing.Point(292, 167);
             this.cmbZone.Name = "cmbZone";
             this.cmbZone.Size = new System.Drawing.Size(401, 41);
-            this.cmbZone.TabIndex = 2;
+            this.cmbZone.TabIndex = 1;
             this.cmbZone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbZone.SelectedIndexChanged += new System.EventHandler(this.cmbZone_SelectedIndexChanged);
+            this.cmbZone.Leave += new System.EventHandler(this.cmbZone_Leave);
             // 
             // lblZones
             // 
@@ -184,7 +152,7 @@
             this.lblZones.AutoSize = true;
             this.lblZones.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZones.ForeColor = System.Drawing.Color.White;
-            this.lblZones.Location = new System.Drawing.Point(166, 237);
+            this.lblZones.Location = new System.Drawing.Point(162, 179);
             this.lblZones.Name = "lblZones";
             this.lblZones.Size = new System.Drawing.Size(115, 18);
             this.lblZones.TabIndex = 7;
@@ -215,9 +183,9 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 25;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MCName,
-            this.MCType,
             this.MCZone,
             this.User});
+            this.guna2DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -228,13 +196,13 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(41, 339);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(37, 281);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guna2DataGridView1.Size = new System.Drawing.Size(777, 196);
-            this.guna2DataGridView1.TabIndex = 11;
+            this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -257,16 +225,12 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // MCName
             // 
             this.MCName.HeaderText = "Mc Name";
             this.MCName.Name = "MCName";
-            // 
-            // MCType
-            // 
-            this.MCType.HeaderText = "Mc Type";
-            this.MCType.Name = "MCType";
             // 
             // MCZone
             // 
@@ -298,11 +262,12 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnDelete.Image = global::Urgent_Manager.Properties.Resources.delete;
             this.btnDelete.IndicateFocus = true;
-            this.btnDelete.Location = new System.Drawing.Point(545, 282);
+            this.btnDelete.Location = new System.Drawing.Point(541, 224);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 41);
-            this.btnDelete.TabIndex = 6;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -319,11 +284,12 @@
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnUpdate.Image = global::Urgent_Manager.Properties.Resources.update;
             this.btnUpdate.IndicateFocus = true;
-            this.btnUpdate.Location = new System.Drawing.Point(419, 282);
+            this.btnUpdate.Location = new System.Drawing.Point(415, 224);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 41);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -341,11 +307,36 @@
             this.btnSave.Image = global::Urgent_Manager.Properties.Resources.diskette;
             this.btnSave.ImageOffset = new System.Drawing.Point(-3, 0);
             this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(296, 282);
+            this.btnSave.Location = new System.Drawing.Point(292, 224);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 41);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label3.Location = new System.Drawing.Point(659, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 18);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label2.Location = new System.Drawing.Point(659, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 18);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "*";
             // 
             // gradientPanel1
             // 
@@ -364,6 +355,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(858, 560);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.btnDelete);
@@ -371,8 +364,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblZones);
             this.Controls.Add(this.cmbZone);
-            this.Controls.Add(this.gtxtMachineType);
-            this.Controls.Add(this.lblType);
             this.Controls.Add(this.gtxtMachineName);
             this.Controls.Add(this.lblMachine);
             this.Controls.Add(this.panel1);
@@ -394,19 +385,18 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox gtxtMachineName;
         private System.Windows.Forms.Label lblMachine;
-        private Guna.UI2.WinForms.Guna2TextBox gtxtMachineType;
-        private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblZones;
         private Guna.UI2.WinForms.Guna2ComboBox cmbZone;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MCName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MCType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MCZone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private CustomViews.GradientPanel gradientPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MCName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MCZone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -287,6 +287,7 @@
             this.cmbTerG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbTerG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbTerG.ForeColor = System.Drawing.Color.White;
+            this.cmbTerG.IntegralHeight = false;
             this.cmbTerG.ItemHeight = 35;
             this.cmbTerG.Items.AddRange(new object[] {
             "Cutting",
@@ -326,6 +327,7 @@
             this.cmbTerD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbTerD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbTerD.ForeColor = System.Drawing.Color.White;
+            this.cmbTerD.IntegralHeight = false;
             this.cmbTerD.ItemHeight = 35;
             this.cmbTerD.Items.AddRange(new object[] {
             "Cutting",
@@ -365,6 +367,7 @@
             this.cmbSealG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbSealG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbSealG.ForeColor = System.Drawing.Color.White;
+            this.cmbSealG.IntegralHeight = false;
             this.cmbSealG.ItemHeight = 35;
             this.cmbSealG.Items.AddRange(new object[] {
             "Cutting",
@@ -404,6 +407,7 @@
             this.cmbMarkerD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMarkerD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMarkerD.ForeColor = System.Drawing.Color.White;
+            this.cmbMarkerD.IntegralHeight = false;
             this.cmbMarkerD.ItemHeight = 35;
             this.cmbMarkerD.Items.AddRange(new object[] {
             "Cutting",
@@ -443,6 +447,7 @@
             this.cmbMarkerG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMarkerG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMarkerG.ForeColor = System.Drawing.Color.White;
+            this.cmbMarkerG.IntegralHeight = false;
             this.cmbMarkerG.ItemHeight = 35;
             this.cmbMarkerG.Items.AddRange(new object[] {
             "Cutting",
@@ -482,6 +487,7 @@
             this.cmbSealD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbSealD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbSealD.ForeColor = System.Drawing.Color.White;
+            this.cmbSealD.IntegralHeight = false;
             this.cmbSealD.ItemHeight = 35;
             this.cmbSealD.Items.AddRange(new object[] {
             "Cutting",
@@ -521,6 +527,7 @@
             this.cmbToolG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbToolG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbToolG.ForeColor = System.Drawing.Color.White;
+            this.cmbToolG.IntegralHeight = false;
             this.cmbToolG.ItemHeight = 35;
             this.cmbToolG.Items.AddRange(new object[] {
             "Cutting",
@@ -560,6 +567,7 @@
             this.cmbProtectionD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbProtectionD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbProtectionD.ForeColor = System.Drawing.Color.White;
+            this.cmbProtectionD.IntegralHeight = false;
             this.cmbProtectionD.ItemHeight = 35;
             this.cmbProtectionD.Items.AddRange(new object[] {
             "Cutting",
@@ -599,6 +607,7 @@
             this.cmbProtectionG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbProtectionG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbProtectionG.ForeColor = System.Drawing.Color.White;
+            this.cmbProtectionG.IntegralHeight = false;
             this.cmbProtectionG.ItemHeight = 35;
             this.cmbProtectionG.Items.AddRange(new object[] {
             "Cutting",
@@ -638,6 +647,7 @@
             this.cmbGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbGroup.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbGroup.ForeColor = System.Drawing.Color.White;
+            this.cmbGroup.IntegralHeight = false;
             this.cmbGroup.ItemHeight = 35;
             this.cmbGroup.Items.AddRange(new object[] {
             "Cutting",
@@ -677,6 +687,7 @@
             this.cmbCable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbCable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbCable.ForeColor = System.Drawing.Color.White;
+            this.cmbCable.IntegralHeight = false;
             this.cmbCable.ItemHeight = 35;
             this.cmbCable.Items.AddRange(new object[] {
             "Cutting",
@@ -716,6 +727,7 @@
             this.cmbToolD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbToolD.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbToolD.ForeColor = System.Drawing.Color.White;
+            this.cmbToolD.IntegralHeight = false;
             this.cmbToolD.ItemHeight = 35;
             this.cmbToolD.Items.AddRange(new object[] {
             "Cutting",
@@ -755,6 +767,7 @@
             this.cmbFamily.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbFamily.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbFamily.ForeColor = System.Drawing.Color.White;
+            this.cmbFamily.IntegralHeight = false;
             this.cmbFamily.ItemHeight = 35;
             this.cmbFamily.Items.AddRange(new object[] {
             "Cutting",
@@ -794,6 +807,7 @@
             this.cmbMc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMc.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMc.ForeColor = System.Drawing.Color.White;
+            this.cmbMc.IntegralHeight = false;
             this.cmbMc.ItemHeight = 35;
             this.cmbMc.Items.AddRange(new object[] {
             "Cutting",
@@ -833,6 +847,7 @@
             this.cmbArea.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbArea.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbArea.ForeColor = System.Drawing.Color.White;
+            this.cmbArea.IntegralHeight = false;
             this.cmbArea.ItemHeight = 35;
             this.cmbArea.Items.AddRange(new object[] {
             "Cutting",
@@ -936,6 +951,7 @@
             this.cmbLeadPrep.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbLeadPrep.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbLeadPrep.ForeColor = System.Drawing.Color.White;
+            this.cmbLeadPrep.IntegralHeight = false;
             this.cmbLeadPrep.ItemHeight = 35;
             this.cmbLeadPrep.Items.AddRange(new object[] {
             "Simple Wire",
@@ -948,6 +964,7 @@
             this.cmbLeadPrep.Size = new System.Drawing.Size(191, 41);
             this.cmbLeadPrep.TabIndex = 4;
             this.cmbLeadPrep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbLeadPrep.SelectedIndexChanged += new System.EventHandler(this.cmbLeadPrep_SelectedIndexChanged);
             // 
             // Wire
             // 

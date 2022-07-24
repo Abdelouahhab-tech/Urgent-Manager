@@ -9,24 +9,20 @@ using Urgent_Manager.Model;
 
 namespace Urgent_Manager.Controller
 {
-    public class CableController : UserController
+    public class SealController : UserController
     {
-        // Insert Data Into Cable Table
 
-        public void InsertCable(CableModel cable)
+        public void InsertSeal(SealModel seal)
         {
             try
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "INSERT INTO Cable VALUES(@cableRef,@section,@pvc,@color,@guide,@userID)";
-                SqlCommand cmd = new SqlCommand(QUERY,DbHelper.connection);
-                cmd.Parameters.AddWithValue("@cableRef",cable.Cable);
-                cmd.Parameters.AddWithValue("@section", cable.Section);
-                cmd.Parameters.AddWithValue("@pvc", cable.Pvc);
-                cmd.Parameters.AddWithValue("@color", cable.Color);
-                cmd.Parameters.AddWithValue("@guide", cable.Guide);
-                cmd.Parameters.AddWithValue("@userID", cable.UserID);
+                string QUERY = "INSERT INTO Seal VALUES(@seal,@color,@userID)";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@seal", seal.SealID);
+                cmd.Parameters.AddWithValue("@color", seal.Color);
+                cmd.Parameters.AddWithValue("@userID", seal.UserID);
 
                 int result = cmd.ExecuteNonQuery();
                 if (result == 1)
@@ -43,22 +39,19 @@ namespace Urgent_Manager.Controller
             }
         }
 
-        // Update Data Into Cable Table
+        // Update Data Into Seal Table
 
-        public void UpdateCable(CableModel cable)
+        public void UpdateSeal(SealModel seal)
         {
             try
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "UPDATE Cable SET Section = @section,Pvc = @pvc,Color = @color,Guide=@guide,UserID = @userID WHERE Cable = @cableRef";
+                string QUERY = "UPDATE Seal SET Color = @color,UserID = @userID WHERE Seal = @seal";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
-                cmd.Parameters.AddWithValue("@section",cable.Section);
-                cmd.Parameters.AddWithValue("@pvc", cable.Pvc);
-                cmd.Parameters.AddWithValue("@color", cable.Color);
-                cmd.Parameters.AddWithValue("@guide", cable.Guide);
-                cmd.Parameters.AddWithValue("@userID", cable.UserID);
-                cmd.Parameters.AddWithValue("@cableRef", cable.Cable);
+                cmd.Parameters.AddWithValue("@color", seal.Color);
+                cmd.Parameters.AddWithValue("@userID", seal.UserID);
+                cmd.Parameters.AddWithValue("@seal", seal.SealID);
 
                 int result = cmd.ExecuteNonQuery();
                 if (result == 1)
@@ -75,17 +68,17 @@ namespace Urgent_Manager.Controller
             }
         }
 
-        // FetchRecords From Cable Table
+        // FetchRecords From Seal Table
 
-        public List<CableModel> fetchRecords()
+        public List<SealModel> fetchRecords()
         {
 
-            List<CableModel> list = new List<CableModel>();
+            List<SealModel> list = new List<SealModel>();
             try
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT C.*,U.FullName FROM Cable C,dbo_User U WHERE C.userID=U.userID";
+                string QUERY = "SELECT S.*,U.FullName FROM Seal S,dbo_User U WHERE S.userID=U.userID";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -93,14 +86,11 @@ namespace Urgent_Manager.Controller
                 {
                     while (reader.Read())
                     {
-                        CableModel cable = new CableModel();
-                        cable.Cable = reader[0].ToString();
-                        cable.Section = reader[1].ToString();
-                        cable.Pvc = reader[2].ToString();
-                        cable.Color = reader[3].ToString();
-                        cable.Guide = reader[4].ToString();
-                        cable.UserID = reader[6].ToString();
-                        list.Add(cable);
+                        SealModel seal = new SealModel();
+                        seal.SealID = reader[0].ToString();
+                        seal.Color = reader[1].ToString() != "Null" ? reader[1].ToString() : "Empty";
+                        seal.UserID = reader[3].ToString();
+                        list.Add(seal);
                     }
 
                     DbHelper.connection.Close();
@@ -119,18 +109,18 @@ namespace Urgent_Manager.Controller
             }
         }
 
-        // Fetch Single Record From Cable Table
+        // Fetch Single Record From Seal Table
 
-        public CableModel fetchSingleRecord(string cableRef)
+        public SealModel fetchSingleRecord(string sealRef)
         {
-            CableModel cable = new CableModel();
+            SealModel seal = new SealModel();
             try
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT C.*,U.FullName FROM Cable C,dbo_User U WHERE C.userID=U.userID AND C.Cable =@cableRef";
+                string QUERY = "SELECT S.*,U.FullName FROM Seal S,dbo_User U WHERE S.userID=U.userID AND S.Seal =@seal";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
-                cmd.Parameters.AddWithValue("@cableRef",cableRef);
+                cmd.Parameters.AddWithValue("@seal", sealRef);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -138,26 +128,23 @@ namespace Urgent_Manager.Controller
                 {
                     while (reader.Read())
                     {
-                        cable.Cable = reader[0].ToString();
-                        cable.Section = reader[1].ToString();
-                        cable.Pvc = reader[2].ToString();
-                        cable.Color = reader[3].ToString();
-                        cable.Guide = reader[4].ToString();
-                        cable.UserID = reader[6].ToString();
+                        seal.SealID = reader[0].ToString();
+                        seal.Color = reader[1].ToString() != "Null" ? reader[1].ToString() : "Empty";
+                        seal.UserID = reader[3].ToString();
                     }
 
                     DbHelper.connection.Close();
-                    return cable;
+                    return seal;
                 }
 
                 DbHelper.connection.Close();
-                return cable;
+                return seal;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An Error Accured While Processing Your Request \n\n" + ex.Message, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DbHelper.connection.Close();
-                return cable;
+                return seal;
             }
         }
     }

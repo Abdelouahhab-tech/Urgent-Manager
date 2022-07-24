@@ -32,16 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MCName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MCType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Terminal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTerminal = new System.Windows.Forms.Label();
             this.cmbTerminal = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.gtxtToolAdress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblAdress = new System.Windows.Forms.Label();
             this.gtxtToolName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblToolName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,20 +46,10 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 40);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(858, 2);
-            this.gradientPanel1.TabIndex = 24;
-            this.gradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
             // 
             // guna2DataGridView1
             // 
@@ -90,9 +76,9 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 25;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MCName,
-            this.MCType,
             this.Terminal,
             this.User});
+            this.guna2DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -103,13 +89,13 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(33, 332);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(33, 302);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guna2DataGridView1.Size = new System.Drawing.Size(777, 196);
-            this.guna2DataGridView1.TabIndex = 6;
+            this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -132,16 +118,12 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // MCName
             // 
-            this.MCName.HeaderText = "Tool\'s Name";
+            this.MCName.HeaderText = "Tool\'s Reference";
             this.MCName.Name = "MCName";
-            // 
-            // MCType
-            // 
-            this.MCType.HeaderText = "Tool\'s Address";
-            this.MCType.Name = "MCType";
             // 
             // Terminal
             // 
@@ -159,7 +141,7 @@
             this.lblTerminal.AutoSize = true;
             this.lblTerminal.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerminal.ForeColor = System.Drawing.Color.White;
-            this.lblTerminal.Location = new System.Drawing.Point(112, 230);
+            this.lblTerminal.Location = new System.Drawing.Point(112, 188);
             this.lblTerminal.Name = "lblTerminal";
             this.lblTerminal.Size = new System.Drawing.Size(160, 18);
             this.lblTerminal.TabIndex = 22;
@@ -171,6 +153,7 @@
             this.cmbTerminal.BackColor = System.Drawing.Color.Transparent;
             this.cmbTerminal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
             this.cmbTerminal.BorderRadius = 20;
+            this.cmbTerminal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTerminal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbTerminal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTerminal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -178,50 +161,15 @@
             this.cmbTerminal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbTerminal.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbTerminal.ForeColor = System.Drawing.Color.White;
+            this.cmbTerminal.IntegralHeight = false;
             this.cmbTerminal.ItemHeight = 35;
-            this.cmbTerminal.Location = new System.Drawing.Point(288, 218);
+            this.cmbTerminal.Location = new System.Drawing.Point(288, 176);
             this.cmbTerminal.Name = "cmbTerminal";
             this.cmbTerminal.Size = new System.Drawing.Size(401, 41);
-            this.cmbTerminal.TabIndex = 2;
+            this.cmbTerminal.TabIndex = 1;
             this.cmbTerminal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gtxtToolAdress
-            // 
-            this.gtxtToolAdress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gtxtToolAdress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.gtxtToolAdress.BorderRadius = 20;
-            this.gtxtToolAdress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gtxtToolAdress.DefaultText = "";
-            this.gtxtToolAdress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.gtxtToolAdress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gtxtToolAdress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtToolAdress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtToolAdress.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gtxtToolAdress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtToolAdress.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gtxtToolAdress.ForeColor = System.Drawing.Color.White;
-            this.gtxtToolAdress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtToolAdress.Location = new System.Drawing.Point(286, 158);
-            this.gtxtToolAdress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gtxtToolAdress.Name = "gtxtToolAdress";
-            this.gtxtToolAdress.PasswordChar = '\0';
-            this.gtxtToolAdress.PlaceholderText = "Address";
-            this.gtxtToolAdress.SelectedText = "";
-            this.gtxtToolAdress.Size = new System.Drawing.Size(401, 41);
-            this.gtxtToolAdress.TabIndex = 1;
-            this.gtxtToolAdress.TextOffset = new System.Drawing.Point(20, 0);
-            // 
-            // lblAdress
-            // 
-            this.lblAdress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblAdress.AutoSize = true;
-            this.lblAdress.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdress.ForeColor = System.Drawing.Color.White;
-            this.lblAdress.Location = new System.Drawing.Point(112, 170);
-            this.lblAdress.Name = "lblAdress";
-            this.lblAdress.Size = new System.Drawing.Size(112, 18);
-            this.lblAdress.TabIndex = 21;
-            this.lblAdress.Text = "Tool Address : ";
+            this.cmbTerminal.SelectedIndexChanged += new System.EventHandler(this.cmbTerminal_SelectedIndexChanged);
+            this.cmbTerminal.Leave += new System.EventHandler(this.cmbTerminal_Leave);
             // 
             // gtxtToolName
             // 
@@ -248,6 +196,9 @@
             this.gtxtToolName.Size = new System.Drawing.Size(401, 41);
             this.gtxtToolName.TabIndex = 0;
             this.gtxtToolName.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtToolName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtToolName_KeyDown);
+            this.gtxtToolName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gtxtToolName_KeyUp);
+            this.gtxtToolName.Leave += new System.EventHandler(this.gtxtToolName_Leave);
             // 
             // lblToolName
             // 
@@ -298,11 +249,12 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnDelete.Image = global::Urgent_Manager.Properties.Resources.delete;
             this.btnDelete.IndicateFocus = true;
-            this.btnDelete.Location = new System.Drawing.Point(537, 275);
+            this.btnDelete.Location = new System.Drawing.Point(537, 243);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 41);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -319,11 +271,12 @@
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnUpdate.Image = global::Urgent_Manager.Properties.Resources.update;
             this.btnUpdate.IndicateFocus = true;
-            this.btnUpdate.Location = new System.Drawing.Point(411, 275);
+            this.btnUpdate.Location = new System.Drawing.Point(411, 243);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 41);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -341,16 +294,28 @@
             this.btnSave.Image = global::Urgent_Manager.Properties.Resources.diskette;
             this.btnSave.ImageOffset = new System.Drawing.Point(-3, 0);
             this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(288, 275);
+            this.btnSave.Location = new System.Drawing.Point(288, 243);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 41);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 40);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(858, 2);
+            this.gradientPanel1.TabIndex = 24;
+            this.gradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
             // 
             // Tool
             // 
@@ -365,8 +330,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblTerminal);
             this.Controls.Add(this.cmbTerminal);
-            this.Controls.Add(this.gtxtToolAdress);
-            this.Controls.Add(this.lblAdress);
             this.Controls.Add(this.gtxtToolName);
             this.Controls.Add(this.lblToolName);
             this.Controls.Add(this.panel1);
@@ -390,15 +353,12 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private System.Windows.Forms.Label lblTerminal;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTerminal;
-        private Guna.UI2.WinForms.Guna2TextBox gtxtToolAdress;
-        private System.Windows.Forms.Label lblAdress;
         private Guna.UI2.WinForms.Guna2TextBox gtxtToolName;
         private System.Windows.Forms.Label lblToolName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MCName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MCType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Terminal;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
     }

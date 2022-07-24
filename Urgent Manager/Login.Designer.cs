@@ -300,6 +300,7 @@
             this.cmbRoles.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cmbRoles.ForeColor = System.Drawing.Color.White;
             this.cmbRoles.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.cmbRoles.IntegralHeight = false;
             this.cmbRoles.ItemHeight = 35;
             this.cmbRoles.Items.AddRange(new object[] {
             "Administrator",

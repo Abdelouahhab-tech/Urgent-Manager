@@ -249,6 +249,7 @@
             this.cmbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbRole.ForeColor = System.Drawing.Color.White;
+            this.cmbRole.IntegralHeight = false;
             this.cmbRole.ItemHeight = 35;
             this.cmbRole.Items.AddRange(new object[] {
             "Administrator",
@@ -278,6 +279,7 @@
             this.cmbArea.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbArea.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbArea.ForeColor = System.Drawing.Color.White;
+            this.cmbArea.IntegralHeight = false;
             this.cmbArea.ItemHeight = 35;
             this.cmbArea.Items.AddRange(new object[] {
             "None",

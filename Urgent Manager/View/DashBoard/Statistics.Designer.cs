@@ -209,6 +209,7 @@
             this.cmbMachine.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMachine.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMachine.ForeColor = System.Drawing.Color.White;
+            this.cmbMachine.IntegralHeight = false;
             this.cmbMachine.ItemHeight = 30;
             this.cmbMachine.Location = new System.Drawing.Point(398, 332);
             this.cmbMachine.Name = "cmbMachine";
@@ -229,6 +230,7 @@
             this.cmbArea.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbArea.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbArea.ForeColor = System.Drawing.Color.White;
+            this.cmbArea.IntegralHeight = false;
             this.cmbArea.ItemHeight = 30;
             this.cmbArea.Location = new System.Drawing.Point(720, 332);
             this.cmbArea.Name = "cmbArea";
@@ -249,6 +251,7 @@
             this.cmbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbStatus.ForeColor = System.Drawing.Color.White;
+            this.cmbStatus.IntegralHeight = false;
             this.cmbStatus.ItemHeight = 30;
             this.cmbStatus.Items.AddRange(new object[] {
             "Express",

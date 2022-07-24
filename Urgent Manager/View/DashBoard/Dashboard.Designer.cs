@@ -276,6 +276,7 @@
             this.panelControls.Controls.Add(this.btnBobine);
             this.panelControls.Controls.Add(this.btnFamille);
             this.panelControls.Controls.Add(this.btnArea);
+            this.panelControls.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelControls.Location = new System.Drawing.Point(0, 108);
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(204, 300);

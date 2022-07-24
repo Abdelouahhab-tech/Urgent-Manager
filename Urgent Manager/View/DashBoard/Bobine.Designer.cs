@@ -32,12 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MCName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MCType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MCZone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GReference = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGReference = new System.Windows.Forms.Label();
@@ -56,20 +55,14 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new Urgent_Manager.CustomViews.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 40);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(858, 2);
-            this.gradientPanel1.TabIndex = 24;
-            this.gradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
             // 
             // guna2DataGridView1
             // 
@@ -96,11 +89,12 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 25;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MCName,
+            this.Section,
             this.MCType,
             this.MCZone,
-            this.Section,
             this.GReference,
             this.User});
+            this.guna2DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -111,12 +105,12 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(33, 462);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(26, 334);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(777, 184);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(783, 229);
             this.guna2DataGridView1.TabIndex = 8;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
@@ -140,34 +134,41 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // MCName
             // 
-            this.MCName.HeaderText = "Cable Name";
+            this.MCName.FillWeight = 95.63452F;
+            this.MCName.HeaderText = "Cable";
             this.MCName.Name = "MCName";
+            // 
+            // Section
+            // 
+            this.Section.FillWeight = 95.63452F;
+            this.Section.HeaderText = "Section";
+            this.Section.Name = "Section";
             // 
             // MCType
             // 
-            this.MCType.HeaderText = "PVC Type";
+            this.MCType.FillWeight = 95.63452F;
+            this.MCType.HeaderText = "PVC";
             this.MCType.Name = "MCType";
             // 
             // MCZone
             // 
-            this.MCZone.HeaderText = "Cable Color";
+            this.MCZone.FillWeight = 95.63452F;
+            this.MCZone.HeaderText = "Color";
             this.MCZone.Name = "MCZone";
-            // 
-            // Section
-            // 
-            this.Section.HeaderText = "Cable Section";
-            this.Section.Name = "Section";
             // 
             // GReference
             // 
-            this.GReference.HeaderText = "Guide Reference";
+            this.GReference.FillWeight = 95.63452F;
+            this.GReference.HeaderText = "Guide";
             this.GReference.Name = "GReference";
             // 
             // User
             // 
+            this.User.FillWeight = 121.8274F;
             this.User.HeaderText = "Entry Agent";
             this.User.Name = "User";
             // 
@@ -176,7 +177,7 @@
             this.lblGReference.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGReference.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGReference.ForeColor = System.Drawing.Color.White;
-            this.lblGReference.Location = new System.Drawing.Point(131, 353);
+            this.lblGReference.Location = new System.Drawing.Point(86, 221);
             this.lblGReference.Name = "lblGReference";
             this.lblGReference.Size = new System.Drawing.Size(132, 18);
             this.lblGReference.TabIndex = 22;
@@ -198,24 +199,26 @@
             this.gtxtPvc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtPvc.ForeColor = System.Drawing.Color.White;
             this.gtxtPvc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtPvc.Location = new System.Drawing.Point(286, 158);
+            this.gtxtPvc.Location = new System.Drawing.Point(569, 77);
             this.gtxtPvc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtPvc.Name = "gtxtPvc";
             this.gtxtPvc.PasswordChar = '\0';
             this.gtxtPvc.PlaceholderText = "PVC ";
             this.gtxtPvc.SelectedText = "";
-            this.gtxtPvc.Size = new System.Drawing.Size(401, 41);
+            this.gtxtPvc.Size = new System.Drawing.Size(207, 41);
             this.gtxtPvc.TabIndex = 1;
             this.gtxtPvc.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtPvc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtPvc_KeyDown);
+            this.gtxtPvc.Leave += new System.EventHandler(this.gtxtPvc_Leave);
             // 
             // lblPvc
             // 
             this.lblPvc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPvc.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPvc.ForeColor = System.Drawing.Color.White;
-            this.lblPvc.Location = new System.Drawing.Point(131, 170);
+            this.lblPvc.Location = new System.Drawing.Point(452, 89);
             this.lblPvc.Name = "lblPvc";
-            this.lblPvc.Size = new System.Drawing.Size(135, 18);
+            this.lblPvc.Size = new System.Drawing.Size(111, 18);
             this.lblPvc.TabIndex = 21;
             this.lblPvc.Text = "PVC Type :  ";
             // 
@@ -235,24 +238,27 @@
             this.gtxtCableName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtCableName.ForeColor = System.Drawing.Color.White;
             this.gtxtCableName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtCableName.Location = new System.Drawing.Point(288, 99);
+            this.gtxtCableName.Location = new System.Drawing.Point(222, 77);
             this.gtxtCableName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtCableName.Name = "gtxtCableName";
             this.gtxtCableName.PasswordChar = '\0';
             this.gtxtCableName.PlaceholderText = "Cable";
             this.gtxtCableName.SelectedText = "";
-            this.gtxtCableName.Size = new System.Drawing.Size(401, 41);
+            this.gtxtCableName.Size = new System.Drawing.Size(207, 41);
             this.gtxtCableName.TabIndex = 0;
             this.gtxtCableName.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtCableName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtCableName_KeyDown);
+            this.gtxtCableName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gtxtCableName_KeyUp);
+            this.gtxtCableName.Leave += new System.EventHandler(this.gtxtCableName_Leave);
             // 
             // lblCable
             // 
             this.lblCable.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCable.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCable.ForeColor = System.Drawing.Color.White;
-            this.lblCable.Location = new System.Drawing.Point(128, 110);
+            this.lblCable.Location = new System.Drawing.Point(86, 89);
             this.lblCable.Name = "lblCable";
-            this.lblCable.Size = new System.Drawing.Size(141, 18);
+            this.lblCable.Size = new System.Drawing.Size(111, 18);
             this.lblCable.TabIndex = 19;
             this.lblCable.Text = "Cable Name : ";
             // 
@@ -294,24 +300,26 @@
             this.gtxtSection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtSection.ForeColor = System.Drawing.Color.White;
             this.gtxtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtSection.Location = new System.Drawing.Point(286, 283);
+            this.gtxtSection.Location = new System.Drawing.Point(569, 145);
             this.gtxtSection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtSection.Name = "gtxtSection";
             this.gtxtSection.PasswordChar = '\0';
             this.gtxtSection.PlaceholderText = "Section";
             this.gtxtSection.SelectedText = "";
-            this.gtxtSection.Size = new System.Drawing.Size(401, 41);
+            this.gtxtSection.Size = new System.Drawing.Size(207, 41);
             this.gtxtSection.TabIndex = 3;
             this.gtxtSection.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtSection.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtSection_KeyDown);
+            this.gtxtSection.Leave += new System.EventHandler(this.gtxtSection_Leave);
             // 
             // lblSection
             // 
             this.lblSection.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSection.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSection.ForeColor = System.Drawing.Color.White;
-            this.lblSection.Location = new System.Drawing.Point(131, 295);
+            this.lblSection.Location = new System.Drawing.Point(452, 157);
             this.lblSection.Name = "lblSection";
-            this.lblSection.Size = new System.Drawing.Size(135, 18);
+            this.lblSection.Size = new System.Drawing.Size(111, 18);
             this.lblSection.TabIndex = 28;
             this.lblSection.Text = "Section : ";
             // 
@@ -331,24 +339,26 @@
             this.gtxtColor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtColor.ForeColor = System.Drawing.Color.White;
             this.gtxtColor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtColor.Location = new System.Drawing.Point(288, 224);
+            this.gtxtColor.Location = new System.Drawing.Point(222, 145);
             this.gtxtColor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtColor.Name = "gtxtColor";
             this.gtxtColor.PasswordChar = '\0';
             this.gtxtColor.PlaceholderText = "Color";
             this.gtxtColor.SelectedText = "";
-            this.gtxtColor.Size = new System.Drawing.Size(401, 41);
+            this.gtxtColor.Size = new System.Drawing.Size(207, 41);
             this.gtxtColor.TabIndex = 2;
             this.gtxtColor.TextOffset = new System.Drawing.Point(20, 0);
+            this.gtxtColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtColor_KeyDown);
+            this.gtxtColor.Leave += new System.EventHandler(this.gtxtColor_Leave);
             // 
             // lblColor
             // 
             this.lblColor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblColor.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColor.ForeColor = System.Drawing.Color.White;
-            this.lblColor.Location = new System.Drawing.Point(128, 235);
+            this.lblColor.Location = new System.Drawing.Point(86, 157);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(141, 18);
+            this.lblColor.Size = new System.Drawing.Size(111, 18);
             this.lblColor.TabIndex = 27;
             this.lblColor.Text = "Color : ";
             // 
@@ -368,13 +378,13 @@
             this.gtxtGReference.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gtxtGReference.ForeColor = System.Drawing.Color.White;
             this.gtxtGReference.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gtxtGReference.Location = new System.Drawing.Point(286, 342);
+            this.gtxtGReference.Location = new System.Drawing.Point(222, 211);
             this.gtxtGReference.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gtxtGReference.Name = "gtxtGReference";
             this.gtxtGReference.PasswordChar = '\0';
             this.gtxtGReference.PlaceholderText = "Guide";
             this.gtxtGReference.SelectedText = "";
-            this.gtxtGReference.Size = new System.Drawing.Size(401, 41);
+            this.gtxtGReference.Size = new System.Drawing.Size(207, 41);
             this.gtxtGReference.TabIndex = 4;
             this.gtxtGReference.TextOffset = new System.Drawing.Point(20, 0);
             // 
@@ -398,11 +408,12 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnDelete.Image = global::Urgent_Manager.Properties.Resources.delete;
             this.btnDelete.IndicateFocus = true;
-            this.btnDelete.Location = new System.Drawing.Point(537, 405);
+            this.btnDelete.Location = new System.Drawing.Point(471, 275);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 41);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -419,11 +430,12 @@
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
             this.btnUpdate.Image = global::Urgent_Manager.Properties.Resources.update;
             this.btnUpdate.IndicateFocus = true;
-            this.btnUpdate.Location = new System.Drawing.Point(411, 405);
+            this.btnUpdate.Location = new System.Drawing.Point(345, 275);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 41);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -441,18 +453,82 @@
             this.btnSave.Image = global::Urgent_Manager.Properties.Resources.diskette;
             this.btnSave.ImageOffset = new System.Drawing.Point(-3, 0);
             this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(288, 405);
+            this.btnSave.Location = new System.Drawing.Point(222, 275);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 41);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label2.Location = new System.Drawing.Point(403, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 18);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label3.Location = new System.Drawing.Point(747, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 18);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label4.Location = new System.Drawing.Point(747, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 18);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
+            this.label5.Location = new System.Drawing.Point(403, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 18);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "*";
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 40);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(858, 2);
+            this.gradientPanel1.TabIndex = 24;
+            this.gradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(152)))));
             // 
             // Bobine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(842, 668);
+            this.ClientSize = new System.Drawing.Size(842, 572);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gtxtGReference);
             this.Controls.Add(this.gtxtSection);
             this.Controls.Add(this.lblSection);
@@ -476,6 +552,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -498,12 +575,16 @@
         private Guna.UI2.WinForms.Guna2TextBox gtxtColor;
         private System.Windows.Forms.Label lblColor;
         private Guna.UI2.WinForms.Guna2TextBox gtxtGReference;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MCName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section;
         private System.Windows.Forms.DataGridViewTextBoxColumn MCType;
         private System.Windows.Forms.DataGridViewTextBoxColumn MCZone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section;
         private System.Windows.Forms.DataGridViewTextBoxColumn GReference;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

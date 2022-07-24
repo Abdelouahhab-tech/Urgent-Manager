@@ -55,6 +55,8 @@ namespace Urgent_Manager.View.DashBoard
                 {
                     MessageBox.Show("This Family Already Exist !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblFamilyName.ForeColor = Color.Red;
+                    gtxtFamilyName.Focus();
+                    gtxtFamilyName.SelectAll();
                     gtxtFamilyName.FocusedState.BorderColor = Color.White;
                 }
             }
@@ -76,7 +78,7 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtFamilyName.Text == "")
                 LoadData();
-            if (gtxtFamilyName.Text != "")
+            else if (gtxtFamilyName.Text.Trim() != "")
                 getSingleRecord(gtxtFamilyName.Text);
         }
 
@@ -135,6 +137,12 @@ namespace Urgent_Manager.View.DashBoard
                 if (familyName != "")
                     getSingleRecord(familyName);
             }
+        }
+
+        private void gtxtFamilyName_Leave(object sender, EventArgs e)
+        {
+            lblFamilyName.ForeColor = Color.White;
+            gtxtFamilyName.FocusedState.BorderColor = Color.FromArgb(255, 94, 148, 255);
         }
     }
 }
