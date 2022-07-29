@@ -93,9 +93,9 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtToolName.Text.Trim() != "")
             {
-                if (cmbTerminal.Text.Trim() != "")
+                if (toolController.IsExist(gtxtToolName.Text, "Tool", "ToolID"))
                 {
-                    if (toolController.IsExist(gtxtToolName.Text, "Tool", "ToolID"))
+                    if (cmbTerminal.Text.Trim() != "")
                     {
                         ToolModel tool = new ToolModel();
 
@@ -110,20 +110,18 @@ namespace Urgent_Manager.View.DashBoard
                     }
                     else
                     {
-                        MessageBox.Show("Sorry This Tool Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lblTerminal.ForeColor = Color.Red;
-                        gtxtToolName.Focus();
-                        gtxtToolName.FocusedState.BorderColor = Color.White;
-                    }
-                }
-                else
-                {
-                    if (cmbTerminal.Text.Trim() == "")
-                    {
                         lblTerminal.ForeColor = Color.Red;
                         cmbTerminal.Focus();
                         cmbTerminal.FocusedState.BorderColor = Color.White;
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Sorry This Tool Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblTerminal.ForeColor = Color.Red;
+                    gtxtToolName.Focus();
+                    gtxtToolName.SelectAll();
+                    gtxtToolName.FocusedState.BorderColor = Color.White;
                 }
             }
             else
@@ -219,6 +217,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Tool Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblToolName.ForeColor = Color.Red;
                     gtxtToolName.Focus();
+                    gtxtToolName.SelectAll();
                     gtxtToolName.FocusedState.BorderColor = Color.White;
                 }
             }

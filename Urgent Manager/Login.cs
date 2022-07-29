@@ -102,18 +102,9 @@ namespace Urgent_Manager
             }
             else
             {
-                gtxtUserName.Visible = false;
-                gtxtPass.Visible = false;
-                icEyes.Visible = false;
-                btnLogin.Visible = true;
-                btnLogin.Location = new Point(28, 270);
-                guna2ProgressBar1.Location = new Point(28, 350);
-                this.Size = new Size(755, 500);
-                btnLogin.Image = Properties.Resources.user__1_;
-                btnLogin.Text = "Log In";
-                gtxtUserName.Visible = false;
-                gtxtUpdatedPass.Visible = false;
-                icUpdatedPass.Visible = false;
+                Operateur op = new Operateur();
+                op.Show();
+                Hide();
             }
         }
 
@@ -260,13 +251,6 @@ namespace Urgent_Manager
                         MessageBox.Show("All The Fields Are Required","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
-            }
-            else
-            {
-                // Connect To The Operator Window
-                Operateur op = new Operateur();
-                op.Show();
-                Hide();
             }
         }
 

@@ -163,11 +163,6 @@ namespace Urgent_Manager.View.DashBoard
             subForm(new Wire());
         }
 
-        private void btnKit_Click(object sender, EventArgs e)
-        {
-            subForm(new Kit());
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             subForm(new WireData());

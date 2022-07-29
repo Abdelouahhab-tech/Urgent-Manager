@@ -73,19 +73,33 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net45\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net45\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AreaController.cs" />
+    <Compile Include="Controller\AutoComplete.cs" />
     <Compile Include="Controller\CableController.cs" />
     <Compile Include="Controller\DbHelper.cs" />
     <Compile Include="Controller\DGVPrinter.cs" />
     <Compile Include="Controller\FamilyController.cs" />
+    <Compile Include="Controller\GroupController.cs" />
     <Compile Include="Controller\MachineController.cs" />
+    <Compile Include="Controller\MarkerController.cs" />
     <Compile Include="Controller\ProtectionController.cs" />
     <Compile Include="Controller\SealController.cs" />
     <Compile Include="Controller\TerminalController.cs" />
     <Compile Include="Controller\ToolController.cs" />
+    <Compile Include="Controller\UrgentController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\WireController.cs" />
+    <Compile Include="Controller\WPCSController.cs" />
     <Compile Include="CustomViews\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -98,12 +112,16 @@
     <Compile Include="Model\AreaModel.cs" />
     <Compile Include="Model\CableModel.cs" />
     <Compile Include="Model\FamilyModel.cs" />
+    <Compile Include="Model\GroupModel.cs" />
     <Compile Include="Model\MachineModel.cs" />
+    <Compile Include="Model\MarkerModel.cs" />
     <Compile Include="Model\ProtectionModel.cs" />
     <Compile Include="Model\SealModel.cs" />
     <Compile Include="Model\TerminalModel.cs" />
     <Compile Include="Model\ToolModel.cs" />
+    <Compile Include="Model\UrgentModel.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\WireModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Alimentation.cs">
@@ -141,12 +159,6 @@
     </Compile>
     <Compile Include="View\DashBoard\Group.Designer.cs">
       <DependentUpon>Group.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\DashBoard\Kit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DashBoard\Kit.Designer.cs">
-      <DependentUpon>Kit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DashBoard\Machine.cs">
       <SubType>Form</SubType>
@@ -226,12 +238,6 @@
     <Compile Include="View\OptimaisationWindows\ArchiveManager.Designer.cs">
       <DependentUpon>ArchiveManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\OptimaisationWindows\Optimisation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\OptimaisationWindows\Optimisation.Designer.cs">
-      <DependentUpon>Optimisation.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\OptimaisationWindows\UrgentManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,9 +274,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashBoard\Group.resx">
       <DependentUpon>Group.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DashBoard\Kit.resx">
-      <DependentUpon>Kit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashBoard\Machine.resx">
       <DependentUpon>Machine.cs</DependentUpon>
@@ -310,9 +313,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\OptimaisationWindows\ArchiveManager.resx">
       <DependentUpon>ArchiveManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\OptimaisationWindows\Optimisation.resx">
-      <DependentUpon>Optimisation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\OptimaisationWindows\UrgentManager.resx">
       <DependentUpon>UrgentManager.cs</DependentUpon>
@@ -408,6 +408,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

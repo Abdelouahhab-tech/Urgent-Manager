@@ -163,6 +163,16 @@ namespace Urgent_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dropDown {
+            get {
+                object obj = ResourceManager.GetObject("dropDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap locked_padlock_ {
             get {
                 object obj = ResourceManager.GetObject("locked-padlock-", resourceCulture);

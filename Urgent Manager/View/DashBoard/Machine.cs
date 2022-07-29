@@ -94,9 +94,9 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtMachineName.Text.Trim() != "")
             {
-                if (cmbZone.Text.Trim() != "")
+                if (machineController.IsExist(gtxtMachineName.Text, "Machine", "Machine"))
                 {
-                    if (machineController.IsExist(gtxtMachineName.Text, "Machine", "Machine"))
+                    if (cmbZone.Text.Trim() != "")
                     {
                         MachineModel machine = new MachineModel();
                         machine.Machine = gtxtMachineName.Text;
@@ -110,26 +110,27 @@ namespace Urgent_Manager.View.DashBoard
                     }
                     else
                     {
-                        MessageBox.Show("Sorry This Machine Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lblMachine.ForeColor = Color.Red;
-                        gtxtMachineName.Focus();
-                        gtxtMachineName.FocusedState.BorderColor = Color.White;
+                        if (gtxtMachineName.Text.Trim() == "")
+                        {
+                            lblMachine.ForeColor = Color.Red;
+                            gtxtMachineName.Focus();
+                            gtxtMachineName.FocusedState.BorderColor = Color.White;
+                        }
+                        else if (cmbZone.Text.Trim() == "")
+                        {
+                            lblZones.ForeColor = Color.Red;
+                            cmbZone.Focus();
+                            cmbZone.FocusedState.BorderColor = Color.White;
+                        }
                     }
                 }
                 else
                 {
-                    if (gtxtMachineName.Text.Trim() == "")
-                    {
-                        lblMachine.ForeColor = Color.Red;
-                        gtxtMachineName.Focus();
-                        gtxtMachineName.FocusedState.BorderColor = Color.White;
-                    }
-                    else if (cmbZone.Text.Trim() == "")
-                    {
-                        lblZones.ForeColor = Color.Red;
-                        cmbZone.Focus();
-                        cmbZone.FocusedState.BorderColor = Color.White;
-                    }
+                    MessageBox.Show("Sorry This Machine Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblMachine.ForeColor = Color.Red;
+                    gtxtMachineName.Focus();
+                    gtxtMachineName.SelectAll();
+                    gtxtMachineName.FocusedState.BorderColor = Color.White;
                 }
             }
             else
@@ -159,6 +160,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Machine Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblMachine.ForeColor = Color.Red;
                     gtxtMachineName.Focus();
+                    gtxtMachineName.SelectAll();
                     gtxtMachineName.FocusedState.BorderColor = Color.White;
                 }
             }

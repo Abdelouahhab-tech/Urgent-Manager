@@ -371,6 +371,7 @@
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(52, 333);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -390,7 +391,7 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 25;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -404,36 +405,43 @@
             // 
             this.MCName.HeaderText = "User Name";
             this.MCName.Name = "MCName";
+            this.MCName.ReadOnly = true;
             // 
             // MCType
             // 
             this.MCType.HeaderText = "Password";
             this.MCType.Name = "MCType";
+            this.MCType.ReadOnly = true;
             // 
             // MCZone
             // 
             this.MCZone.HeaderText = "Full Name";
             this.MCZone.Name = "MCZone";
+            this.MCZone.ReadOnly = true;
             // 
             // Section
             // 
             this.Section.HeaderText = "User\'s Role";
             this.Section.Name = "Section";
+            this.Section.ReadOnly = true;
             // 
             // Zone
             // 
             this.Zone.HeaderText = "User\'s Area";
             this.Zone.Name = "Zone";
+            this.Zone.ReadOnly = true;
             // 
             // GReference
             // 
             this.GReference.HeaderText = "Is Updated";
             this.GReference.Name = "GReference";
+            this.GReference.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Entry Agent";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // guna2Elipse1
             // 

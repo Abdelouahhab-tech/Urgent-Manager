@@ -38,15 +38,16 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gtxtScanne = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnScanneUrgent = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.lblUnico = new System.Windows.Forms.Label();
+            this.lblMachine = new System.Windows.Forms.Label();
+            this.icValid = new FontAwesome.Sharp.IconPictureBox();
+            this.gtxtScanne = new Guna.UI2.WinForms.Guna2TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icValid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,35 +140,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // gtxtScanne
-            // 
-            this.gtxtScanne.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gtxtScanne.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.gtxtScanne.BorderRadius = 20;
-            this.gtxtScanne.BorderThickness = 2;
-            this.gtxtScanne.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gtxtScanne.DefaultText = "";
-            this.gtxtScanne.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.gtxtScanne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gtxtScanne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtScanne.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gtxtScanne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gtxtScanne.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            this.gtxtScanne.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.gtxtScanne.ForeColor = System.Drawing.Color.White;
-            this.gtxtScanne.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.gtxtScanne.Location = new System.Drawing.Point(164, 115);
-            this.gtxtScanne.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gtxtScanne.Name = "gtxtScanne";
-            this.gtxtScanne.PasswordChar = '\0';
-            this.gtxtScanne.PlaceholderForeColor = System.Drawing.Color.White;
-            this.gtxtScanne.PlaceholderText = "Type  Unico";
-            this.gtxtScanne.SelectedText = "";
-            this.gtxtScanne.Size = new System.Drawing.Size(585, 43);
-            this.gtxtScanne.TabIndex = 0;
-            this.gtxtScanne.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gtxtScanne.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtScanne_KeyDown);
-            // 
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 10;
@@ -187,54 +159,86 @@
             this.btnScanneUrgent.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnScanneUrgent.ImageSize = new System.Drawing.Size(35, 35);
             this.btnScanneUrgent.IndicateFocus = true;
-            this.btnScanneUrgent.Location = new System.Drawing.Point(773, 115);
+            this.btnScanneUrgent.Location = new System.Drawing.Point(773, 118);
             this.btnScanneUrgent.Name = "btnScanneUrgent";
             this.btnScanneUrgent.Size = new System.Drawing.Size(161, 43);
             this.btnScanneUrgent.TabIndex = 1;
             this.btnScanneUrgent.Text = "Save";
+            this.btnScanneUrgent.Click += new System.EventHandler(this.btnScanneUrgent_Click);
             // 
-            // label1
+            // lblUnico
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(432, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Unico : 2400-My-109";
-            this.label1.Visible = false;
+            this.lblUnico.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUnico.AutoSize = true;
+            this.lblUnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnico.ForeColor = System.Drawing.Color.White;
+            this.lblUnico.Location = new System.Drawing.Point(432, 213);
+            this.lblUnico.Name = "lblUnico";
+            this.lblUnico.Size = new System.Drawing.Size(174, 20);
+            this.lblUnico.TabIndex = 3;
+            this.lblUnico.Text = "Unico : 2400-My-109";
+            this.lblUnico.Visible = false;
             // 
-            // label2
+            // lblMachine
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(432, 239);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Machine : M32";
-            this.label2.Visible = false;
+            this.lblMachine.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMachine.AutoSize = true;
+            this.lblMachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMachine.ForeColor = System.Drawing.Color.White;
+            this.lblMachine.Location = new System.Drawing.Point(432, 239);
+            this.lblMachine.Name = "lblMachine";
+            this.lblMachine.Size = new System.Drawing.Size(125, 20);
+            this.lblMachine.TabIndex = 4;
+            this.lblMachine.Text = "Machine : M32";
+            this.lblMachine.Visible = false;
             // 
-            // iconPictureBox1
+            // icValid
             // 
-            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Green;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Green;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 26;
-            this.iconPictureBox1.Location = new System.Drawing.Point(576, 237);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(26, 28);
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Visible = false;
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            this.icValid.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.icValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.icValid.ForeColor = System.Drawing.Color.Green;
+            this.icValid.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.icValid.IconColor = System.Drawing.Color.Green;
+            this.icValid.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icValid.IconSize = 26;
+            this.icValid.Location = new System.Drawing.Point(576, 237);
+            this.icValid.Name = "icValid";
+            this.icValid.Size = new System.Drawing.Size(26, 28);
+            this.icValid.TabIndex = 5;
+            this.icValid.TabStop = false;
+            this.icValid.Visible = false;
+            this.icValid.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            // 
+            // gtxtScanne
+            // 
+            this.gtxtScanne.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gtxtScanne.BorderRadius = 20;
+            this.gtxtScanne.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gtxtScanne.DefaultText = "";
+            this.gtxtScanne.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.gtxtScanne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.gtxtScanne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gtxtScanne.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gtxtScanne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.gtxtScanne.FocusedState.BorderColor = System.Drawing.Color.White;
+            this.gtxtScanne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gtxtScanne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.gtxtScanne.Location = new System.Drawing.Point(232, 118);
+            this.gtxtScanne.Name = "gtxtScanne";
+            this.gtxtScanne.PasswordChar = '\0';
+            this.gtxtScanne.PlaceholderText = "Type Unico";
+            this.gtxtScanne.SelectedText = "";
+            this.gtxtScanne.Size = new System.Drawing.Size(511, 43);
+            this.gtxtScanne.TabIndex = 0;
+            this.gtxtScanne.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gtxtScanne.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gtxtScanne_KeyDown_1);
+            this.gtxtScanne.Leave += new System.EventHandler(this.gtxtScanne_Leave_1);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Alimentation
             // 
@@ -242,11 +246,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(1100, 600);
-            this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnScanneUrgent);
             this.Controls.Add(this.gtxtScanne);
+            this.Controls.Add(this.icValid);
+            this.Controls.Add(this.lblMachine);
+            this.Controls.Add(this.lblUnico);
+            this.Controls.Add(this.btnScanneUrgent);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(960, 486);
@@ -257,7 +261,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icValid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,11 +278,12 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Timer timer1;
-        private Guna.UI2.WinForms.Guna2TextBox gtxtScanne;
         private Guna.UI2.WinForms.Guna2Button btnScanneUrgent;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label lblMachine;
+        private System.Windows.Forms.Label lblUnico;
+        private FontAwesome.Sharp.IconPictureBox icValid;
+        private Guna.UI2.WinForms.Guna2TextBox gtxtScanne;
+        private System.Windows.Forms.Timer timer2;
     }
 }

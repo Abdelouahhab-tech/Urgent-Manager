@@ -54,7 +54,7 @@ namespace Urgent_Manager.Controller
                 cmd.Parameters.AddWithValue("@seal", seal.SealID);
 
                 int result = cmd.ExecuteNonQuery();
-                if (result == 1)
+                if (result > 0)
                     MessageBox.Show("Data Updated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Sorry It Was An Error While Updating Your Data Try Again !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

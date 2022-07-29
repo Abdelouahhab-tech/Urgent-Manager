@@ -92,6 +92,7 @@ namespace Urgent_Manager.View.DashBoard
                     if (result == DialogResult.Yes)
                     {
                         familyController.Delete(gtxtFamilyName.Text,"Family","FAM");
+                        LoadData();
                         gtxtFamilyName.Text = "";
                         gtxtFamilyName.Focus();
                     }
@@ -101,6 +102,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Family Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblFamilyName.ForeColor = Color.Red;
                     gtxtFamilyName.Focus();
+                    gtxtFamilyName.SelectAll();
                     gtxtFamilyName.FocusedState.BorderColor = Color.White;
                 }
             }

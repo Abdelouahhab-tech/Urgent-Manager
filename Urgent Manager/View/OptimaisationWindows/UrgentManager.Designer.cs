@@ -44,12 +44,19 @@
             this.Famille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LeadCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Emplacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emplacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateUrgent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alimentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,12 +87,19 @@
             this.Famille,
             this.Unico,
             this.LeadCode,
-            this.Emplacement,
             this.Machine,
-            this.Zone,
-            this.DateUrgent,
-            this.Status,
-            this.Alimentation});
+            this.Emplacement,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.DateUrgent});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -106,7 +120,7 @@
             this.guna2DataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.guna2DataGridView1.RowTemplate.Height = 45;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(909, 427);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1028, 427);
             this.guna2DataGridView1.TabIndex = 3;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
@@ -135,7 +149,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel1.Location = new System.Drawing.Point(660, 57);
+            this.panel1.Location = new System.Drawing.Point(779, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 2);
             this.panel1.TabIndex = 6;
@@ -166,7 +180,7 @@
             "M03"});
             this.cmbMac.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
             this.cmbMac.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
-            this.cmbMac.Location = new System.Drawing.Point(522, 23);
+            this.cmbMac.Location = new System.Drawing.Point(641, 23);
             this.cmbMac.Name = "cmbMac";
             this.cmbMac.Size = new System.Drawing.Size(109, 36);
             this.cmbMac.TabIndex = 1;
@@ -187,7 +201,7 @@
             this.btnUrgentDelete.Image = global::Urgent_Manager.Properties.Resources.check;
             this.btnUrgentDelete.ImageSize = new System.Drawing.Size(25, 25);
             this.btnUrgentDelete.IndicateFocus = true;
-            this.btnUrgentDelete.Location = new System.Drawing.Point(375, 21);
+            this.btnUrgentDelete.Location = new System.Drawing.Point(494, 21);
             this.btnUrgentDelete.Name = "btnUrgentDelete";
             this.btnUrgentDelete.Size = new System.Drawing.Size(126, 40);
             this.btnUrgentDelete.TabIndex = 2;
@@ -208,7 +222,7 @@
             this.icExport.IconColor = System.Drawing.Color.White;
             this.icExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icExport.IconSize = 40;
-            this.icExport.Location = new System.Drawing.Point(312, 25);
+            this.icExport.Location = new System.Drawing.Point(431, 25);
             this.icExport.Name = "icExport";
             this.icExport.Size = new System.Drawing.Size(45, 38);
             this.icExport.TabIndex = 3;
@@ -231,7 +245,7 @@
             this.gtxtSearch.ForeColor = System.Drawing.Color.White;
             this.gtxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.gtxtSearch.IconLeft = global::Urgent_Manager.Properties.Resources.search;
-            this.gtxtSearch.Location = new System.Drawing.Point(655, 21);
+            this.gtxtSearch.Location = new System.Drawing.Point(774, 21);
             this.gtxtSearch.Name = "gtxtSearch";
             this.gtxtSearch.PasswordChar = '\0';
             this.gtxtSearch.PlaceholderForeColor = System.Drawing.Color.White;
@@ -256,7 +270,7 @@
             this.icPrint.IconColor = System.Drawing.Color.White;
             this.icPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icPrint.IconSize = 40;
-            this.icPrint.Location = new System.Drawing.Point(261, 25);
+            this.icPrint.Location = new System.Drawing.Point(380, 25);
             this.icPrint.Name = "icPrint";
             this.icPrint.Size = new System.Drawing.Size(45, 38);
             this.icPrint.TabIndex = 7;
@@ -280,23 +294,77 @@
             this.LeadCode.Name = "LeadCode";
             this.LeadCode.ReadOnly = true;
             // 
-            // Emplacement
-            // 
-            this.Emplacement.HeaderText = "Location";
-            this.Emplacement.Name = "Emplacement";
-            this.Emplacement.ReadOnly = true;
-            // 
             // Machine
             // 
             this.Machine.HeaderText = "Machine";
             this.Machine.Name = "Machine";
             this.Machine.ReadOnly = true;
             // 
-            // Zone
+            // Emplacement
             // 
-            this.Zone.HeaderText = "Area";
-            this.Zone.Name = "Zone";
-            this.Zone.ReadOnly = true;
+            this.Emplacement.HeaderText = "Location";
+            this.Emplacement.Name = "Emplacement";
+            this.Emplacement.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cable";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Length";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "MarL";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "SealL";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "TerL";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "MarR";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "SealR";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "TerR";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Lead Prep";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Status";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             // 
             // DateUrgent
             // 
@@ -304,24 +372,12 @@
             this.DateUrgent.Name = "DateUrgent";
             this.DateUrgent.ReadOnly = true;
             // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Alimentation
-            // 
-            this.Alimentation.HeaderText = "Alimentation";
-            this.Alimentation.Name = "Alimentation";
-            this.Alimentation.ReadOnly = true;
-            // 
             // UrgentManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(956, 680);
+            this.ClientSize = new System.Drawing.Size(1075, 680);
             this.Controls.Add(this.icPrint);
             this.Controls.Add(this.cmbMac);
             this.Controls.Add(this.btnUrgentDelete);
@@ -351,11 +407,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Famille;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unico;
         private System.Windows.Forms.DataGridViewTextBoxColumn LeadCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Emplacement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Machine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Emplacement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateUrgent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alimentation;
     }
 }

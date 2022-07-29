@@ -88,9 +88,10 @@ namespace Urgent_Manager.View.DashBoard
         {
             if (gtxtSealRef.Text.Trim() != "")
             {
-                if (gtxtSealColor.Text.Trim() != "")
+
+                if (sealController.IsExist(gtxtSealRef.Text, "Seal", "Seal"))
                 {
-                    if (sealController.IsExist(gtxtSealRef.Text, "Seal", "Seal"))
+                    if (gtxtSealColor.Text.Trim() != "")
                     {
                         SealModel seal = new SealModel();
                         seal.SealID = gtxtSealRef.Text;
@@ -105,20 +106,18 @@ namespace Urgent_Manager.View.DashBoard
                     }
                     else
                     {
-                        MessageBox.Show("Sorry This Seal Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lblSealName.ForeColor = System.Drawing.Color.Red;
-                        gtxtSealRef.Focus();
-                        gtxtSealRef.FocusedState.BorderColor = System.Drawing.Color.White;
-                    }
-                }
-                else
-                {
-                    if (gtxtSealColor.Text.Trim() == "")
-                    {
                         lblSealColor.ForeColor = System.Drawing.Color.Red;
                         gtxtSealColor.Focus();
                         gtxtSealColor.FocusedState.BorderColor = System.Drawing.Color.White;
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Sorry This Seal Doesn't Exist ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblSealName.ForeColor = System.Drawing.Color.Red;
+                    gtxtSealRef.Focus();
+                    gtxtSealColor.SelectAll();
+                    gtxtSealRef.FocusedState.BorderColor = System.Drawing.Color.White;
                 }
             }
             else
@@ -150,6 +149,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Seal Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblSealName.ForeColor = System.Drawing.Color.Red;
                     gtxtSealRef.Focus();
+                    gtxtSealColor.SelectAll();
                     gtxtSealRef.FocusedState.BorderColor = System.Drawing.Color.White;
                 }
             }

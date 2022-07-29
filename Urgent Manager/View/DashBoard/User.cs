@@ -167,6 +167,7 @@ namespace Urgent_Manager.View.DashBoard
                     lblUsername.ForeColor = Color.Red;
                     gtxtUsername.Focus();
                     gtxtUsername.SelectAll();
+                    gtxtUsername.SelectAll();
                 }
             }
             else
@@ -196,6 +197,7 @@ namespace Urgent_Manager.View.DashBoard
                         MessageBox.Show("This User Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         lblUsername.ForeColor = Color.Red;
                         gtxtUsername.Focus();
+                        gtxtUsername.SelectAll();
                         gtxtUsername.FocusedState.BorderColor = Color.White;
                     }
                 }

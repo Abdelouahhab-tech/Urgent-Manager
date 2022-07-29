@@ -99,9 +99,9 @@ namespace Urgent_Manager.View.DashBoard
         {
             if(gtxtAreaName.Text.Trim() != "")
             {
-                if(cmbParentArea.Text.Trim() != "")
+                if (areaController.IsExist(gtxtAreaName.Text, "Area", "ZoneName"))
                 {
-                    if (areaController.IsExist(gtxtAreaName.Text, "Area", "ZoneName"))
+                    if (cmbParentArea.Text.Trim() != "")
                     {
                         AreaModel area = new AreaModel();
                         area.AreaName = gtxtAreaName.Text;
@@ -112,11 +112,18 @@ namespace Urgent_Manager.View.DashBoard
                     }
                     else
                     {
-                        MessageBox.Show("This Area Doesn't Exist !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lblAreaName.ForeColor = Color.Red;
-                        gtxtAreaName.Focus();
-                        gtxtAreaName.SelectAll();
+                        lblParentArea.ForeColor = Color.Red;
+                        cmbParentArea.Focus();
+                        cmbParentArea.FocusedState.BorderColor = Color.White;
                     }
+                }
+                else
+                {
+                    MessageBox.Show("This Area Doesn't Exist !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblAreaName.ForeColor = Color.Red;
+                    gtxtAreaName.Focus();
+                    gtxtAreaName.SelectAll();
+                    gtxtAreaName.FocusedState.BorderColor = Color.White;
                 }
             }
             else
@@ -145,6 +152,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Area Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblAreaName.ForeColor = Color.Red;
                     gtxtAreaName.Focus();
+                    gtxtAreaName.SelectAll();
                     gtxtAreaName.FocusedState.BorderColor = Color.White;
                 }
             }

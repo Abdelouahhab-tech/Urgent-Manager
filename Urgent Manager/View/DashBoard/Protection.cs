@@ -91,6 +91,7 @@ namespace Urgent_Manager.View.DashBoard
                     MessageBox.Show("This Protection Doesn't Exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblProtectionRef.ForeColor = Color.Red;
                     gtxtProtectionRef.Focus();
+                    gtxtProtectionRef.SelectAll();
                     gtxtProtectionRef.FocusedState.BorderColor = Color.White;
                 }
             }

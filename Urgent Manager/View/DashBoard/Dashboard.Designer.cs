@@ -49,7 +49,6 @@
             this.btnProtection = new FontAwesome.Sharp.IconButton();
             this.btnSeal = new FontAwesome.Sharp.IconButton();
             this.btnMachine = new FontAwesome.Sharp.IconButton();
-            this.btnKit = new FontAwesome.Sharp.IconButton();
             this.btnTerminal = new FontAwesome.Sharp.IconButton();
             this.btnOutil = new FontAwesome.Sharp.IconButton();
             this.btnBobine = new FontAwesome.Sharp.IconButton();
@@ -270,7 +269,6 @@
             this.panelControls.Controls.Add(this.btnProtection);
             this.panelControls.Controls.Add(this.btnSeal);
             this.panelControls.Controls.Add(this.btnMachine);
-            this.panelControls.Controls.Add(this.btnKit);
             this.panelControls.Controls.Add(this.btnTerminal);
             this.panelControls.Controls.Add(this.btnOutil);
             this.panelControls.Controls.Add(this.btnBobine);
@@ -299,7 +297,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 456);
+            this.iconButton1.Location = new System.Drawing.Point(0, 418);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.iconButton1.Size = new System.Drawing.Size(187, 38);
@@ -324,7 +322,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 35;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 418);
+            this.iconButton2.Location = new System.Drawing.Point(0, 380);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.iconButton2.Size = new System.Drawing.Size(187, 38);
@@ -349,7 +347,7 @@
             this.btnMarker.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarker.IconSize = 35;
             this.btnMarker.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarker.Location = new System.Drawing.Point(0, 380);
+            this.btnMarker.Location = new System.Drawing.Point(0, 342);
             this.btnMarker.Name = "btnMarker";
             this.btnMarker.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnMarker.Size = new System.Drawing.Size(187, 38);
@@ -374,7 +372,7 @@
             this.btnGroup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGroup.IconSize = 35;
             this.btnGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGroup.Location = new System.Drawing.Point(0, 342);
+            this.btnGroup.Location = new System.Drawing.Point(0, 304);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnGroup.Size = new System.Drawing.Size(187, 38);
@@ -399,7 +397,7 @@
             this.btnProtection.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProtection.IconSize = 35;
             this.btnProtection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProtection.Location = new System.Drawing.Point(0, 304);
+            this.btnProtection.Location = new System.Drawing.Point(0, 266);
             this.btnProtection.Name = "btnProtection";
             this.btnProtection.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnProtection.Size = new System.Drawing.Size(187, 38);
@@ -424,7 +422,7 @@
             this.btnSeal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSeal.IconSize = 35;
             this.btnSeal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeal.Location = new System.Drawing.Point(0, 266);
+            this.btnSeal.Location = new System.Drawing.Point(0, 228);
             this.btnSeal.Name = "btnSeal";
             this.btnSeal.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSeal.Size = new System.Drawing.Size(187, 38);
@@ -449,7 +447,7 @@
             this.btnMachine.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMachine.IconSize = 35;
             this.btnMachine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMachine.Location = new System.Drawing.Point(0, 228);
+            this.btnMachine.Location = new System.Drawing.Point(0, 190);
             this.btnMachine.Name = "btnMachine";
             this.btnMachine.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnMachine.Size = new System.Drawing.Size(187, 38);
@@ -457,31 +455,6 @@
             this.btnMachine.Text = "    Add New Machine";
             this.btnMachine.UseVisualStyleBackColor = true;
             this.btnMachine.Click += new System.EventHandler(this.btnMachine_Click);
-            // 
-            // btnKit
-            // 
-            this.btnKit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnKit.FlatAppearance.BorderSize = 0;
-            this.btnKit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(79)))), ((int)(((byte)(12)))));
-            this.btnKit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(12)))));
-            this.btnKit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKit.ForeColor = System.Drawing.Color.White;
-            this.btnKit.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnKit.IconColor = System.Drawing.Color.White;
-            this.btnKit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnKit.IconSize = 35;
-            this.btnKit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKit.Location = new System.Drawing.Point(0, 190);
-            this.btnKit.Name = "btnKit";
-            this.btnKit.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnKit.Size = new System.Drawing.Size(187, 38);
-            this.btnKit.TabIndex = 16;
-            this.btnKit.Text = "    Add New Kit";
-            this.btnKit.UseVisualStyleBackColor = true;
-            this.btnKit.Click += new System.EventHandler(this.btnKit_Click);
             // 
             // btnTerminal
             // 
@@ -715,7 +688,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private FontAwesome.Sharp.IconButton icUrgent;
         private System.Windows.Forms.Panel panelControls;
-        private FontAwesome.Sharp.IconButton btnKit;
         private FontAwesome.Sharp.IconButton btnTerminal;
         private FontAwesome.Sharp.IconButton btnOutil;
         private FontAwesome.Sharp.IconButton btnBobine;
