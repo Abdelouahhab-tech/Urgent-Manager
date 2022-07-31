@@ -145,7 +145,7 @@ namespace Urgent_Manager.Controller
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,M.Machine,W.Adress as 'Location',W.Cable,W.WireLength as 'Length',W.MarL,W.SealL,W.TerL,W.MarR,W.SealR,W.TerR,W.LeadPrep as 'Area',U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Express'";
+                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,M.Machine,W.Adress as 'Location',W.Cable,W.WireLength as 'Length',W.MarL,W.SealL,W.TerL,W.MarR,W.SealR,W.TerR,W.LeadPrep as 'Area',U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Express' ORDER BY U.DateUrgent DESC,U.Shift,W.Groupe";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 DataTable dt = new DataTable();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
@@ -170,7 +170,7 @@ namespace Urgent_Manager.Controller
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,C.Color,W.WireLength,W.Groupe,W.LeadPrep,U.UrgentStatus FROM Wire W,Cable C,Urgent U WHERE W.Cable=C.Cable AND U.UrgentUnico = W.Unico AND U.UrgentStatus = 'Express' AND W.MC=@machine";
+                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,C.Color,W.WireLength,W.Groupe,W.LeadPrep,U.UrgentStatus FROM Wire W,Cable C,Urgent U WHERE W.Cable=C.Cable AND U.UrgentUnico = W.Unico AND U.UrgentStatus = 'Express' AND W.MC=@machine ORDER BY U.DateUrgent DESC,U.Shift,W.Groupe";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 cmd.Parameters.AddWithValue("@machine", machine);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -295,20 +295,29 @@ namespace Urgent_Manager.Controller
         {
             try
             {
-                DbHelper.connection.Open();
-                string QUERY = "SELECT * FROM Urgent WHERE UrgentUnico=@unico AND UrgentStatus='Express'";
-                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
-                cmd.Parameters.AddWithValue("@unico", unico);
-                SqlDataReader reader = cmd.ExecuteReader();
+                string leadCode = getLeadCode(unico);
+                if(leadCode != "")
+                {
+                    DbHelper.connection.Open();
+                    string QUERY = "SELECT U.*,W.LeadCode FROM Urgent U,Wire W WHERE U.UrgentUnico=W.Unico AND U.UrgentStatus='Express' AND W.LeadCode=@leadCode";
+                    SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                    cmd.Parameters.AddWithValue("@leadCode", leadCode);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows)
+                    if (reader.HasRows)
+                    {
+                        DbHelper.connection.Close();
+                        return true;
+                    }
+
+                    DbHelper.connection.Close();
+                    return false;
+                }
+                else
                 {
                     DbHelper.connection.Close();
-                    return true;
+                    return false;
                 }
-
-                DbHelper.connection.Close();
-                return false;
             }
             catch (Exception ex)
             {
@@ -327,7 +336,7 @@ namespace Urgent_Manager.Controller
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT M.Machine,W.Unico,U.UrgentStatus FROM Machine M,Wire W,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentUnico=@unico AND U.UrgentStatus='Express'";
+                string QUERY = "SELECT MC FROM Wire WHERE Unico=@unico";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 cmd.Parameters.AddWithValue("@unico", unico);
 
@@ -351,7 +360,78 @@ namespace Urgent_Manager.Controller
             catch (Exception ex)
             {
                 DbHelper.connection.Close();
+                MessageBox.Show(ex.Message);
                 return machine;
+            }
+        }
+
+        // Check If LeadCode Already Exist
+
+        public string getLeadCode(string unico)
+        {
+            string leadCode = "";
+            try
+            {
+                DbHelper.connection.Open();
+                string QUERY = "SELECT LeadCode FROM Wire WHERE Unico=@unico";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@unico", unico);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+                      leadCode =  reader[0].ToString();
+                    }
+
+                    DbHelper.connection.Close();
+                    return leadCode;
+                }
+
+                DbHelper.connection.Close();
+                return leadCode;
+            }
+            catch (Exception ex)
+            {
+                DbHelper.connection.Close();
+                return leadCode;
+            }
+        }
+
+        // Get Unico From Urgent
+
+        public string getUnico(string leadCode)
+        {
+            string unico = "";
+            try
+            {
+                DbHelper.connection.Open();
+                string QUERY = "SELECT W.Unico,U.UrgentStatus FROM Wire W,Urgent U WHERE U.UrgentUnico=W.Unico AND W.LeadCode=@leadCode";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@leadCode", leadCode);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+                        unico = reader[0].ToString();
+                    }
+
+                    DbHelper.connection.Close();
+                    return unico;
+                }
+
+                DbHelper.connection.Close();
+                return unico;
+            }
+            catch (Exception ex)
+            {
+                DbHelper.connection.Close();
+                return unico;
             }
         }
     }

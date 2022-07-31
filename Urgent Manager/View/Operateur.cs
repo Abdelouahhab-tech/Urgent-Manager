@@ -27,8 +27,11 @@ namespace Urgent_Manager.View
 
         private void Operateur_Load(object sender, EventArgs e)
         {
-
+            updateUrgentStatus();
+            wireController.FillCombobox("Machine", "Machine", cmbPlanBMc);
+            cmbPlanBMc.Text = Environment.MachineName;
             Wpcs.Start();
+            timer2.Start();
             fetchData(Environment.MachineName);
             if(guna2DataGridView1.Rows.Count > 0)
             {
@@ -37,10 +40,14 @@ namespace Urgent_Manager.View
                 {
                     fetchExpressSingleRecord(Environment.MachineName, unico);
                 }
+                panelWire.Visible = true;
+                lblMessage.Visible = false;
             }
             else
             {
                 panelWire.Visible = false;
+                lblMessage.Visible = true;
+                lblMessage.Location = new Point(398, 156);
             }
 
 
@@ -189,6 +196,7 @@ namespace Urgent_Manager.View
                 gtxtUnico.Focus();
                 panelBorderBottom.Visible = true;
                 panelWire.Visible = true;
+                lblMessage.Visible = false;
                 // Fill DataGridView With Normal Wires
 
                 fetchNormalRecords(Environment.MachineName);
@@ -210,6 +218,7 @@ namespace Urgent_Manager.View
                 else
                 {
                     panelWire.Visible = false;
+                    lblMessage.Visible = true;
                     lblUnico.Text = "Loading...";
                     lblLeadCode.Text = "Loading...";
                     lblAdress.Text = "Loading...";
@@ -395,7 +404,6 @@ namespace Urgent_Manager.View
                 {
                     if (wpcsController.DeleteUrgent(urgent.LeadCode, urgent.UrgentUnico))
                     {
-                        MessageBox.Show("updated");
                         if (!chNormalWire.Checked)
                         {
                             fetchData(Environment.MachineName);
@@ -405,9 +413,15 @@ namespace Urgent_Manager.View
                             }
                             else
                             {
+                                lblUnico.Text = "Loading...";
+                                lblLeadCode.Text = "Loading...";
+                                lblAdress.Text = "Loading...";
+                                lblMachine.Text = "Loading...";
+                                lblUrgents.Text = "Loading...";
                                 panelWire.Visible = false;
+                                lblMessage.Visible = true;
+                                lblMessage.Location = new Point(398, 156);
                                 // Initialize All The Data
-                            
                             }
                         }
                         break;
@@ -418,6 +432,50 @@ namespace Urgent_Manager.View
             {
                 
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (!chNormalWire.Checked)
+            {
+                fetchData(Environment.MachineName);
+                if (guna2DataGridView1.Rows.Count == 0)
+                {
+                    lblUnico.Text = "Loading...";
+                    lblLeadCode.Text = "Loading...";
+                    lblAdress.Text = "Loading...";
+                    lblMachine.Text = "Loading...";
+                    lblUrgents.Text = "Loading...";
+                    panelWire.Visible = false;
+                    lblMessage.Visible = true;
+                    lblMessage.Location = new Point(398, 156);
+                }
+                else
+                {
+                    fetchExpressSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                    panelWire.Visible = true;
+                    lblMessage.Visible = false;
+                }
+            }
+        }
+
+        private void chIsPlanB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chIsPlanB.Checked)
+            {
+                cmbPlanBMc.Visible = true;
+                pnlCmbPlanBMachine.Visible = true;
+            }
+            else
+            {
+                cmbPlanBMc.Visible = false;
+                pnlCmbPlanBMachine.Visible = false;
+            }
+        }
+
+        private void cmbPlanBMc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

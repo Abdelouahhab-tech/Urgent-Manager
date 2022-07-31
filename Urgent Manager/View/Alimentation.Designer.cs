@@ -185,7 +185,7 @@
             this.lblMachine.AutoSize = true;
             this.lblMachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMachine.ForeColor = System.Drawing.Color.White;
-            this.lblMachine.Location = new System.Drawing.Point(432, 239);
+            this.lblMachine.Location = new System.Drawing.Point(432, 243);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(125, 20);
             this.lblMachine.TabIndex = 4;
@@ -201,7 +201,7 @@
             this.icValid.IconColor = System.Drawing.Color.Green;
             this.icValid.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icValid.IconSize = 26;
-            this.icValid.Location = new System.Drawing.Point(576, 237);
+            this.icValid.Location = new System.Drawing.Point(576, 241);
             this.icValid.Name = "icValid";
             this.icValid.Size = new System.Drawing.Size(26, 28);
             this.icValid.TabIndex = 5;

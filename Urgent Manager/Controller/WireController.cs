@@ -140,7 +140,7 @@ namespace Urgent_Manager.Controller
             {
                 DbHelper.connection.Open();
 
-                string QUERY = columns != "" ? "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Section,C.Color,C.Pvc,C.Guide,W.WireLength," + columns+"W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID " : "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Color,C.Pvc,C.Guide,W.WireLength,W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID ORDER BY W.Groupe ";
+                string QUERY = columns != "" ? "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Section,C.Color,C.Pvc,C.Guide,W.WireLength," + columns+"W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID ORDER BY W.Groupe" : "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Color,C.Pvc,C.Guide,W.WireLength,W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID ORDER BY W.Groupe ";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 DataTable dt = new DataTable();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
@@ -168,7 +168,7 @@ namespace Urgent_Manager.Controller
             {
                 DbHelper.connection.Open();
 
-                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Section,C.Color,C.Pvc,C.Guide,W.WireLength," + columns+"W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID AND W.Unico = @unico ORDER BY W.Groupe";
+                string QUERY = "SELECT W.Family,W.Unico,W.LeadCode,C.Cable,C.Section,C.Color,C.Pvc,C.Guide,W.WireLength," + columns+"W.TerL,W.ToolL,W.SealL,W.TerR,W.ToolR,W.SealR,W.MC,W.Adress,U.FullName as 'Entry Agent' FROM Wire W,Cable C,dbo_User U WHERE W.Cable = C.Cable AND U.userID = W.UserID AND W.Unico = @unico";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
                 cmd.Parameters.AddWithValue("@unico", unico);
                 DataTable dt = new DataTable();
