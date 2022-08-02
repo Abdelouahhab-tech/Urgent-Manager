@@ -37,16 +37,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gdateTimeUrgent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.icExport = new FontAwesome.Sharp.IconButton();
-            this.Famille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeadCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Emplacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateUrgent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finishedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,17 +64,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 45;
-            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Famille,
-            this.Unico,
-            this.LeadCode,
-            this.Zone,
-            this.Machine,
-            this.Emplacement,
-            this.DateUrgent,
-            this.shift,
-            this.Status,
-            this.finishedDate});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -105,7 +85,7 @@
             this.guna2DataGridView1.RowTemplate.Height = 45;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guna2DataGridView1.Size = new System.Drawing.Size(909, 427);
-            this.guna2DataGridView1.TabIndex = 10;
+            this.guna2DataGridView1.TabIndex = 3;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -152,7 +132,7 @@
             this.gdateTimeUrgent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.gdateTimeUrgent.Name = "gdateTimeUrgent";
             this.gdateTimeUrgent.Size = new System.Drawing.Size(278, 40);
-            this.gdateTimeUrgent.TabIndex = 14;
+            this.gdateTimeUrgent.TabIndex = 0;
             this.gdateTimeUrgent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gdateTimeUrgent.Value = new System.DateTime(2022, 7, 7, 8, 22, 58, 917);
             // 
@@ -173,68 +153,26 @@
             this.icExport.Location = new System.Drawing.Point(596, 21);
             this.icExport.Name = "icExport";
             this.icExport.Size = new System.Drawing.Size(45, 38);
-            this.icExport.TabIndex = 12;
+            this.icExport.TabIndex = 1;
             this.icExport.UseVisualStyleBackColor = true;
             // 
-            // Famille
+            // btnRefresh
             // 
-            this.Famille.HeaderText = "Family";
-            this.Famille.Name = "Famille";
-            this.Famille.ReadOnly = true;
-            // 
-            // Unico
-            // 
-            this.Unico.HeaderText = "Unico";
-            this.Unico.Name = "Unico";
-            this.Unico.ReadOnly = true;
-            // 
-            // LeadCode
-            // 
-            this.LeadCode.HeaderText = "LeadCode";
-            this.LeadCode.Name = "LeadCode";
-            this.LeadCode.ReadOnly = true;
-            // 
-            // Zone
-            // 
-            this.Zone.HeaderText = "Area";
-            this.Zone.Name = "Zone";
-            this.Zone.ReadOnly = true;
-            // 
-            // Machine
-            // 
-            this.Machine.HeaderText = "Machine";
-            this.Machine.Name = "Machine";
-            this.Machine.ReadOnly = true;
-            // 
-            // Emplacement
-            // 
-            this.Emplacement.HeaderText = "Location";
-            this.Emplacement.Name = "Emplacement";
-            this.Emplacement.ReadOnly = true;
-            // 
-            // DateUrgent
-            // 
-            this.DateUrgent.HeaderText = "Urgent Date";
-            this.DateUrgent.Name = "DateUrgent";
-            this.DateUrgent.ReadOnly = true;
-            // 
-            // shift
-            // 
-            this.shift.HeaderText = "Shift";
-            this.shift.Name = "shift";
-            this.shift.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // finishedDate
-            // 
-            this.finishedDate.HeaderText = "Finished Date";
-            this.finishedDate.Name = "finishedDate";
-            this.finishedDate.ReadOnly = true;
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Image = global::Urgent_Manager.Properties.Resources.refresh;
+            this.btnRefresh.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnRefresh.Location = new System.Drawing.Point(545, 21);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(45, 38);
+            this.btnRefresh.TabIndex = 2;
             // 
             // ArchiveManager
             // 
@@ -242,6 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(940, 641);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.gdateTimeUrgent);
             this.Controls.Add(this.icExport);
             this.Controls.Add(this.guna2DataGridView1);
@@ -259,15 +198,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DateTimePicker gdateTimeUrgent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Famille;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LeadCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Machine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Emplacement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateUrgent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shift;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn finishedDate;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

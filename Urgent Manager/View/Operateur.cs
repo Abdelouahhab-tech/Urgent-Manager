@@ -18,6 +18,7 @@ namespace Urgent_Manager.View
         UrgentController urgentController = new UrgentController();
         WireController wireController = new WireController();
         WPCSController wpcsController = new WPCSController(@"C:\Users\21267\Desktop\Database\Job.sdc.arc");
+        string mc = Environment.MachineName;
         public Operateur()
         {
             InitializeComponent();
@@ -28,17 +29,18 @@ namespace Urgent_Manager.View
         private void Operateur_Load(object sender, EventArgs e)
         {
             updateUrgentStatus();
+            urgentController.DeleteUrgent();
             wireController.FillCombobox("Machine", "Machine", cmbPlanBMc);
-            cmbPlanBMc.Text = Environment.MachineName;
+            cmbPlanBMc.Text = mc;
             Wpcs.Start();
             timer2.Start();
-            fetchData(Environment.MachineName);
+            fetchData(mc);
             if(guna2DataGridView1.Rows.Count > 0)
             {
                 string unico = guna2DataGridView1.Rows[0].Cells[1].Value.ToString();
                 if (unico != "")
                 {
-                    fetchExpressSingleRecord(Environment.MachineName, unico);
+                    fetchExpressSingleRecord(mc, unico);
                 }
                 panelWire.Visible = true;
                 lblMessage.Visible = false;
@@ -67,18 +69,15 @@ namespace Urgent_Manager.View
         {
             if(e.RowIndex >= 0)
             {
-                if (!chNormalWire.Checked)
+                if (chNormalWire.Checked)
                 {
-                  fetchExpressSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                  fetchNormalSingleRecord(mc, guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                 }
                 else
-                  fetchNormalSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                {
+                  fetchExpressSingleRecord(mc, guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                }
             }
-        }
-
-        private void guna2DataGridView1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -130,10 +129,9 @@ namespace Urgent_Manager.View
                 // Header Data
                 lblUnico.Text = urgent.UrgentUnico;
                 lblLeadCode.Text = urgent.LeadCode;
-                lblMachine.Text = Environment.MachineName;
+                lblMachine.Text = machine;
                 lblAdress.Text = urgent.Adress;
-                lblUrgents.Text = urgentController.actualUrgents(Environment.MachineName).ToString();
-
+                lblUrgents.Text = urgentController.actualUrgents(machine).ToString();
 
                 // Cable
                 lblBobine.Text = urgent.Cable;
@@ -199,8 +197,8 @@ namespace Urgent_Manager.View
                 lblMessage.Visible = false;
                 // Fill DataGridView With Normal Wires
 
-                fetchNormalRecords(Environment.MachineName);
-                fetchNormalSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                fetchNormalRecords(mc);
+                fetchNormalSingleRecord(mc, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
             }
             else
             {
@@ -209,10 +207,10 @@ namespace Urgent_Manager.View
 
 
                 // Fill DataGridView With Express Wires
-                fetchData(Environment.MachineName);
+                fetchData(mc);
                 if(guna2DataGridView1.Rows.Count > 0)
                 {
-                    fetchExpressSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                    fetchExpressSingleRecord(mc, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
                     panelWire.Visible = true;
                 }
                 else
@@ -222,6 +220,7 @@ namespace Urgent_Manager.View
                     lblUnico.Text = "Loading...";
                     lblLeadCode.Text = "Loading...";
                     lblAdress.Text = "Loading...";
+                    lblMachine.Text = mc;
                 }
             }
         }
@@ -257,9 +256,9 @@ namespace Urgent_Manager.View
                 // Header Data
                 lblUnico.Text = wire.Unico;
                 lblLeadCode.Text = wire.LeadCode;
-                lblMachine.Text = Environment.MachineName;
+                lblMachine.Text = machine;
                 lblAdress.Text = wire.Adress;
-                lblUrgents.Text = urgentController.actualUrgents(Environment.MachineName).ToString();
+                lblUrgents.Text = urgentController.actualUrgents(machine).ToString();
 
 
                 // Cable
@@ -328,14 +327,14 @@ namespace Urgent_Manager.View
                             row = r;
                             guna2DataGridView1.Rows.Clear();
                             guna2DataGridView1.Rows.Add(r);
-                            fetchNormalSingleRecord(Environment.MachineName, row.Cells[1].Value.ToString());
+                            fetchNormalSingleRecord(mc, row.Cells[1].Value.ToString());
                             break;
                         }
                     }
                 }else if(gtxtUnico.Text == "")
                 {
-                    fetchNormalRecords(Environment.MachineName);
-                    fetchNormalSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                    fetchNormalRecords(mc);
+                    fetchNormalSingleRecord(mc, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
                 }
             }
             catch (Exception ex)
@@ -376,7 +375,7 @@ namespace Urgent_Manager.View
                 e.Graphics.DrawString("Color", fItems, Brushes.Black, new Point(100, fHeader.Height + 250));
                 e.Graphics.DrawString(cable.Color, fItems, Brushes.Black, new Point(420, fHeader.Height + 250));
                 e.Graphics.DrawString("MC", fItems, Brushes.Black, new Point(100, fHeader.Height + 350));
-                e.Graphics.DrawString(Environment.MachineName, fItems, Brushes.Black, new Point(420, fHeader.Height + 350));
+                e.Graphics.DrawString(mc, fItems, Brushes.Black, new Point(420, fHeader.Height + 350));
                 BarcodeWriter br = new BarcodeWriter() { Format = BarcodeFormat.CODE_128 };
                 br.Options.Width = e.PageBounds.Width - 20;
                 br.Options.PureBarcode = true;
@@ -396,7 +395,7 @@ namespace Urgent_Manager.View
 
         private void updateUrgentStatus()
         {
-            List<UrgentModel> urgents = urgentController.fetchAllExpressRecords(Environment.MachineName);
+            List<UrgentModel> urgents = urgentController.fetchAllExpressRecords(mc);
         
             try
             {
@@ -406,10 +405,10 @@ namespace Urgent_Manager.View
                     {
                         if (!chNormalWire.Checked)
                         {
-                            fetchData(Environment.MachineName);
+                            fetchData(mc);
                             if(guna2DataGridView1.Rows.Count > 0)
                             {
-                                fetchExpressSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                                fetchExpressSingleRecord(mc, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
                             }
                             else
                             {
@@ -438,7 +437,7 @@ namespace Urgent_Manager.View
         {
             if (!chNormalWire.Checked)
             {
-                fetchData(Environment.MachineName);
+                fetchData(mc);
                 if (guna2DataGridView1.Rows.Count == 0)
                 {
                     lblUnico.Text = "Loading...";
@@ -452,7 +451,7 @@ namespace Urgent_Manager.View
                 }
                 else
                 {
-                    fetchExpressSingleRecord(Environment.MachineName, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
+                    fetchExpressSingleRecord(mc, guna2DataGridView1.Rows[0].Cells[1].Value.ToString());
                     panelWire.Visible = true;
                     lblMessage.Visible = false;
                 }
@@ -469,13 +468,109 @@ namespace Urgent_Manager.View
             else
             {
                 cmbPlanBMc.Visible = false;
+                cmbPlanBMc.SelectedIndex = -1;
                 pnlCmbPlanBMachine.Visible = false;
+                mc = Environment.MachineName;
+                if (chNormalWire.Checked)
+                {
+                    fetchNormalRecords(mc);
+                    if (guna2DataGridView1.Rows.Count > 0)
+                    {
+                        string unico = guna2DataGridView1.Rows[0].Cells[1].Value.ToString();
+                        if (unico != "")
+                        {
+                            fetchNormalSingleRecord(mc, unico);
+                        }
+                        panelWire.Visible = true;
+                        lblMessage.Visible = false;
+                    }
+                    else
+                    {
+                        panelWire.Visible = false;
+                        lblMessage.Visible = true;
+                        lblMessage.Location = new Point(398, 156);
+                    }
+                }
+                else
+                {
+                    fetchData(mc);
+                    if (guna2DataGridView1.Rows.Count > 0)
+                    {
+                        string unico = guna2DataGridView1.Rows[0].Cells[1].Value.ToString();
+                        if (unico != "")
+                        {
+                            fetchExpressSingleRecord(mc, unico);
+                        }
+                        panelWire.Visible = true;
+                        lblMessage.Visible = false;
+                    }
+                    else
+                    {
+                        panelWire.Visible = false;
+                        lblMessage.Visible = true;
+                        lblMessage.Location = new Point(398, 156);
+                    }
+                }
+
             }
         }
 
         private void cmbPlanBMc_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (cmbPlanBMc.Text.Trim() != "")
+            {
+                mc = cmbPlanBMc.Text;
+                if (chNormalWire.Checked)
+                {
+                    fetchNormalRecords(mc);
+                    if (guna2DataGridView1.Rows.Count > 0)
+                    {
+                        string unico = guna2DataGridView1.Rows[0].Cells[1].Value.ToString();
+                        if (unico != "")
+                        {
+                            fetchNormalSingleRecord(mc, unico);
+                        }
+                        panelWire.Visible = true;
+                        lblMessage.Visible = false;
+                    }
+                    else
+                    {
+                        panelWire.Visible = false;
+                        lblMessage.Visible = true;
+                        lblUnico.Text = "Loading...";
+                        lblLeadCode.Text = "Loading...";
+                        lblAdress.Text = "Loading...";
+                        lblMachine.Text = "Loading...";
+                        lblUrgents.Text = "Loading...";
+                        lblMessage.Location = new Point(398, 156);
+                    }
+                }
+                else
+                {
+                    fetchData(mc);
+                    if (guna2DataGridView1.Rows.Count > 0)
+                    {
+                        string unico = guna2DataGridView1.Rows[0].Cells[1].Value.ToString();
+                        if (unico != "")
+                        {
+                            fetchExpressSingleRecord(mc, unico);
+                        }
+                        panelWire.Visible = true;
+                        lblMessage.Visible = false;
+                    }
+                    else
+                    {
+                        panelWire.Visible = false;
+                        lblMessage.Visible = true;
+                        lblUnico.Text = "Loading...";
+                        lblLeadCode.Text = "Loading...";
+                        lblAdress.Text = "Loading...";
+                        lblMachine.Text = "Loading...";
+                        lblUrgents.Text = "Loading...";
+                        lblMessage.Location = new Point(398, 156);
+                    }
+                }
+            }
         }
     }
 }

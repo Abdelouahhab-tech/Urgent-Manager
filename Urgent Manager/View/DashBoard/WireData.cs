@@ -33,7 +33,7 @@ namespace Urgent_Manager.View.DashBoard
             guna2DataGridView1.ScrollBars = ScrollBars.Both;
             foreach(DataGridViewColumn col in guna2DataGridView1.Columns)
             {
-                if (col.HeaderText == "Adress" || col.HeaderText == "Entry Agent" || col.HeaderText == "Unico" || col.HeaderText == "LeadCode")
+                if (col.HeaderText == "Location" || col.HeaderText == "Entry Agent" || col.HeaderText == "Unico" || col.HeaderText == "Lead Code")
                     col.Width = 180;
                 else
                     col.Width = 100;

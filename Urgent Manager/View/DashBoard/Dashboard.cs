@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Urgent_Manager.Controller;
 using Urgent_Manager.View.OptimaisationWindows;
 
 namespace Urgent_Manager.View.DashBoard
 {
     public partial class Dashboard : Form
     {
+
+        UrgentController urgentController = new UrgentController();
         public Dashboard()
         {
             InitializeComponent();
@@ -47,6 +50,7 @@ namespace Urgent_Manager.View.DashBoard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            urgentController.DeleteUrgent();
             if (Login.FullName != "")
                 lblUser.Text = "Welcome " + Login.FullName;
             else

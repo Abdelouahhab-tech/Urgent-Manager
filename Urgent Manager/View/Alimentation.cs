@@ -28,6 +28,7 @@ namespace Urgent_Manager.View
             timer1.Start();
             gtxtScanne.Focus();
             timer1.Start();
+            urgentController.DeleteUrgent();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

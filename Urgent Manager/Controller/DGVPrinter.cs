@@ -1699,6 +1699,8 @@ namespace DGVPrinterHelper //AllocationRequest
         /// </summary>
         /// <param name="dgv">The DataGridView to print</param>
         /// NOTE: Any changes to this method also need to be done in PrintPreviewDataGridView
+        /// 
+        public bool showDialogue = true;
         public void PrintDataGridView(DataGridView dgv)
         {
             if (EnableLogging) Logger.LogInfoMsg("PrintDataGridView process started");
@@ -1710,7 +1712,14 @@ namespace DGVPrinterHelper //AllocationRequest
             this.dgv = dgv;
 
             // display dialog and print
-            if (DialogResult.OK == DisplayPrintDialog())
+            if (showDialogue)
+            {
+                if (DialogResult.OK == DisplayPrintDialog())
+                {
+                    PrintNoDisplay(dgv);
+                }
+            }
+            else
             {
                 PrintNoDisplay(dgv);
             }
