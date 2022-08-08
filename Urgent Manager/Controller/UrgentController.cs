@@ -557,14 +557,15 @@ namespace Urgent_Manager.Controller
 
         // Get All Express Status Machines
 
-        public ArrayList machines()
+        public ArrayList machines(string status)
         {
             ArrayList arr = new ArrayList();
             try
             {
                 DbHelper.connection.Open();
-                string QUERY = "SELECT DISTINCT W.MC FROM Wire W,Urgent U WHERE U.UrgentUnico=W.Unico AND U.UrgentStatus = 'Express'";
+                string QUERY = "SELECT DISTINCT W.MC FROM Wire W,Urgent U WHERE U.UrgentUnico=W.Unico AND U.UrgentStatus =@status";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@status", status);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -595,6 +596,79 @@ namespace Urgent_Manager.Controller
 
                 string QUERY = "SELECT W.Unico,W.LeadCode as 'Lead Code',M.Machine,U.Shift,U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date',U.HUrgent as 'Urgent Time',U.FinishedDate as 'Finished Date',U.UserFinished as 'User Finished' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Finished' ORDER BY U.UrgentUnico";
                 SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                DataTable dt = new DataTable();
+                SqlDataAdapter data = new SqlDataAdapter(cmd);
+                data.Fill(dt);
+                dg.DataSource = dt.DefaultView;
+
+                DbHelper.connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Fetch All Finished Records For Urgent Manager Per Date
+        public void UrgentManagerFinished(Guna2DataGridView dg,string date)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT W.Unico,W.LeadCode as 'Lead Code',M.Machine,U.Shift,U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date',U.HUrgent as 'Urgent Time',U.FinishedDate as 'Finished Date',U.UserFinished as 'User Finished' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Finished' AND U.FinishedDate=@date ORDER BY U.UrgentUnico";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@date", date);
+                DataTable dt = new DataTable();
+                SqlDataAdapter data = new SqlDataAdapter(cmd);
+                data.Fill(dt);
+                dg.DataSource = dt.DefaultView;
+
+                DbHelper.connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Fetch All Finished Records For Urgent Manager Per Machine And Date
+        public void UrgentManagerFinished(Guna2DataGridView dg, string date,string machine)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT W.Unico,W.LeadCode as 'Lead Code',M.Machine,U.Shift,U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date',U.HUrgent as 'Urgent Time',U.FinishedDate as 'Finished Date',U.UserFinished as 'User Finished' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Finished' AND U.FinishedDate=@date AND W.MC=@machine ORDER BY U.UrgentUnico";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@machine", machine);
+                DataTable dt = new DataTable();
+                SqlDataAdapter data = new SqlDataAdapter(cmd);
+                data.Fill(dt);
+                dg.DataSource = dt.DefaultView;
+
+                DbHelper.connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry It Was An Error While Processing Your Request\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DbHelper.connection.Close();
+            }
+        }
+
+        // Fetch All Finished Records For Urgent Manager Per Machine
+        public void UrgentManagerFinishedPerMachine(Guna2DataGridView dg, string machine)
+        {
+            try
+            {
+                DbHelper.connection.Open();
+
+                string QUERY = "SELECT W.Unico,W.LeadCode as 'Lead Code',M.Machine,U.Shift,U.UrgentStatus as 'Status',U.DateUrgent as 'Urgent Date',U.HUrgent as 'Urgent Time',U.FinishedDate as 'Finished Date',U.UserFinished as 'User Finished' FROM Wire W,Machine M,Urgent U WHERE W.Unico=U.UrgentUnico AND M.Machine=W.MC AND U.UrgentStatus = 'Finished' AND W.MC=@machine ORDER BY U.UrgentUnico";
+                SqlCommand cmd = new SqlCommand(QUERY, DbHelper.connection);
+                cmd.Parameters.AddWithValue("@machine", machine);
                 DataTable dt = new DataTable();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 data.Fill(dt);

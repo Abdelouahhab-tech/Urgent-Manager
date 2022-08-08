@@ -78,9 +78,9 @@ namespace Urgent_Manager.View.DashBoard
                 {
                     icUrgent.Visible = false;
                     btnCredentials.Visible = false;
-                    btnArchiveManager.Visible = false;
                     btnUrgentManager.Location = new Point(0, 64);
                     btnStatistics.Location = new Point(0, 102);
+                    btnArchiveManager.Location = new Point(0, 140);
                     subForm(new Statistics());
                 }
                 else

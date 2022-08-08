@@ -67,47 +67,72 @@ namespace Urgent_Manager.View.OptimaisationWindows
                     btnUrgentDelete.Visible = false;
                 }
             }
+
+            if(guna2DataGridView1.Rows.Count > 0)
+            {
+                lblMessage.Visible = false;
+                guna2DataGridView1.Visible = true;
+            }
+            else
+            {
+                lblMessage.Visible = true;
+                guna2DataGridView1.Visible = false;
+            }
         }
 
         private void icPrint_Click(object sender, EventArgs e)
         {
             try
             {
+
                 if (cmbMac.Text.Trim() != "")
                 {
-                    DGVPrinter printer = new DGVPrinter();
-                    printer.Title = "Express Wires";
-                    printer.SubTitle = cmbMac.Text;
-                    printer.TitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-                    printer.PageNumbers = true;
-                    printer.PageNumberInHeader = false;
-                    printer.PorportionalColumns = true;
-                    printer.HeaderCellAlignment = StringAlignment.Near;
-                    printer.Footer = "Printed By " + Login.FullName + " | " + DateTime.Now.ToShortDateString();
-                    printer.FooterColor = Color.LightGray;
-                    printer.SubTitleSpacing = 15;
-                    printer.FooterSpacing = 15;
-                    printer.SubTitleColor = Color.Gray;
-                    printer.printDocument.DefaultPageSettings.Landscape = true;
-                    printer.showDialogue = true;
-                    guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    urgentController.UrgentManagerExpress(guna2DataGridView1, cmbMac.Text,false);
-                    printer.PrintDataGridView(guna2DataGridView1);
-                    urgentController.UrgentManagerExpress(guna2DataGridView1);
-                    cmbMac.SelectedIndex = -1;
-                    urgentController.UrgentManagerExpress(guna2DataGridView1);
-                    guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                    foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+                    if(guna2DataGridView1.Rows.Count > 0)
                     {
-                        if (column.HeaderText == "Unico" || column.HeaderText == "Lead Code" || column.HeaderText == "Urgent Date" || column.HeaderText == "Alimentation" || column.HeaderText == "Location")
-                            column.Width = 150;
-                        else
-                            column.Width = 100;
+                        lblMessage.Visible = false;
+                        guna2DataGridView1.Visible = true;
+
+                        DGVPrinter printer = new DGVPrinter();
+                        printer.Title = "Express Wires";
+                        printer.SubTitle = cmbMac.Text;
+                        printer.TitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                        printer.PageNumbers = true;
+                        printer.PageNumberInHeader = false;
+                        printer.PorportionalColumns = true;
+                        printer.HeaderCellAlignment = StringAlignment.Near;
+                        printer.Footer = "Printed By " + Login.FullName + " | " + DateTime.Now.ToShortDateString();
+                        printer.FooterColor = Color.LightGray;
+                        printer.SubTitleSpacing = 15;
+                        printer.FooterSpacing = 15;
+                        printer.SubTitleColor = Color.Gray;
+                        printer.printDocument.DefaultPageSettings.Landscape = true;
+                        printer.showDialogue = true;
+                        guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        urgentController.UrgentManagerExpress(guna2DataGridView1, cmbMac.Text, false);
+                        printer.PrintDataGridView(guna2DataGridView1);
+                        urgentController.UrgentManagerExpress(guna2DataGridView1);
+                        cmbMac.SelectedIndex = -1;
+                        urgentController.UrgentManagerExpress(guna2DataGridView1);
+                        guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                        foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+                        {
+                            if (column.HeaderText == "Unico" || column.HeaderText == "Lead Code" || column.HeaderText == "Urgent Date" || column.HeaderText == "Alimentation" || column.HeaderText == "Location")
+                                column.Width = 150;
+                            else
+                                column.Width = 100;
+                        }
+                    }
+                    else
+                    {
+                        lblMessage.Visible = true;
+                        guna2DataGridView1.Visible = false;
                     }
                 }
                 else
                 {
-                    ArrayList machines = urgentController.machines();
+                    lblMessage.Visible = false;
+                    guna2DataGridView1.Visible = true;
+                    ArrayList machines = urgentController.machines("Express");
                     int i = 0;
                     foreach (string machine in machines)
                     {
@@ -127,7 +152,7 @@ namespace Urgent_Manager.View.OptimaisationWindows
                         printer.printDocument.DefaultPageSettings.Landscape = true;
                         printer.showDialogue = i == 0 ? true : false;
                         guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        urgentController.UrgentManagerExpress(guna2DataGridView1, machine,false);
+                        urgentController.UrgentManagerExpress(guna2DataGridView1, machine, false);
                         printer.PrintDataGridView(guna2DataGridView1);
                         i++;
                     }
@@ -160,6 +185,17 @@ namespace Urgent_Manager.View.OptimaisationWindows
                 else
                     column.Width = 100;
             }
+            
+            if(guna2DataGridView1.Rows.Count > 0)
+            {
+                lblMessage.Visible = false;
+                guna2DataGridView1.Visible = true;
+            }
+            else
+            {
+                lblMessage.Visible = true;
+                guna2DataGridView1.Visible = false;
+            }
         }
 
         private void cmbMac_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,6 +210,16 @@ namespace Urgent_Manager.View.OptimaisationWindows
                         column.Width = 150;
                     else
                         column.Width = 100;
+                }
+                if(guna2DataGridView1.Rows.Count > 0)
+                {
+                    lblMessage.Visible = false;
+                    guna2DataGridView1.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Visible = true;
+                    guna2DataGridView1.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -196,6 +242,16 @@ namespace Urgent_Manager.View.OptimaisationWindows
                 {
                     urgentController.UrgentManagerExpress(guna2DataGridView1);
                 }
+                if(guna2DataGridView1.Rows.Count > 0)
+                {
+                    lblMessage.Visible = false;
+                    guna2DataGridView1.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Visible = true;
+                    guna2DataGridView1.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -207,8 +263,18 @@ namespace Urgent_Manager.View.OptimaisationWindows
         {
             try
             {
-                lblLoading.Visible = true;
-                await Task.Run(new Action(generateExcel));
+               if(guna2DataGridView1.Rows.Count > 0)
+                {
+                    lblLoading.Visible = true;
+                    await Task.Run(new Action(generateExcel));
+                    lblMessage.Visible = false;
+                    guna2DataGridView1.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Visible = true;
+                    guna2DataGridView1.Visible = false;
+                }
             }
             catch (Exception ex)
             {
